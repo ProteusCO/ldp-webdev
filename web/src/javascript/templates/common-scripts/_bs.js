@@ -14,10 +14,7 @@ function deserialzeBS() {
 			// One-shot?
 			//myArray = myArray.filter(function (el) {return el != id;});
 			//i--;
-			if(!$found.hasClass("in")) {
-				$found.trigger('show.bs.collapse');
-				$found.addClass("in");
-			}
+			$found.click();
 		}
 	}
 	sessionStorage["tl-expanded"] = JSON.stringify(myArray);
