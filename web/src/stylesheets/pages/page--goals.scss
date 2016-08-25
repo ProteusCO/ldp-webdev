@@ -14,7 +14,7 @@ h2.plan-name {
 }
 .goal-viewer {
 	flex: 2 1 70%;
-	padding:1rem;
+	padding: 1.75rem 1rem 1rem;
 	color: $color-lr-grey;
 	position: relative;
 
@@ -35,16 +35,16 @@ h2.plan-name {
 
 	.actions.goal-actions {
 		position: absolute;
-		right: 1rem;
-		top: 1.45rem;
+		right: .75rem;
+		top: 2.25rem;
 	}
 
 }
 
 .printpage {
 	position: absolute;
-	right: 0;
-	top: 4.75rem;
+	right: -.25rem;
+	top: 5.15rem;
 	z-index: 99;
 
 	a {
@@ -671,7 +671,7 @@ div.window.dialog {
 		}
 	}
 
-	.printpage {
+	/*.printpage {
 		position: absolute;
 		right: -.25rem;
 		top: 5.25rem;
@@ -684,7 +684,7 @@ div.window.dialog {
 			}
 		}
 
-	}
+	}*/
 
 }
 
