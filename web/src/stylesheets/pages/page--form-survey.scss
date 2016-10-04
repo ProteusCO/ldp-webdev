@@ -80,6 +80,10 @@
 		}
 	}
 
+	.wol-survey-parent .wizard_submit_registration .wizard_step_summary:last-child .question:last-child {
+		display: block;
+	}
+
 	.wizard_submit_registration {
 
 		.wizard_step_summary .name_field {
