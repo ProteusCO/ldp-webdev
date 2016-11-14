@@ -2,6 +2,7 @@
  * Created by vtdev on 4/7/16.
  */
 function responsiveView() {
+	if(!window.SIDE_BAR_OPEN) return;
 	var wSize = $(window).width();
 	// https://ldp-qa-admin.venturetech.net/config/cms/page?ws.evt=pe.cb.836
 	//noinspection JSUnresolvedVariable - SIDE_BAR_OPEN defined in HTML document
@@ -11,6 +12,7 @@ function responsiveView() {
 
 jQuery(function(){
 	var w = window, $w = $(w);
+	if(!w.SIDE_BAR_OPEN) return;
 	$w.on('load', responsiveView);
 	$('.fa-bars').click(function () {
 		var $body = $("#body-wrapper"),
