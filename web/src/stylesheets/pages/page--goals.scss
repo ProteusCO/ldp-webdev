@@ -12,17 +12,113 @@ h2.plan-name {
 	display: flex;
 	flex-flow: column nowrap;
 }
+
+#main-content-wc-0 {
+	.goal-viewer-heading {
+		h1 {
+			color: $color-lr-brand;
+			font-size: 1.5rem;
+			max-width: none;
+			width: 100%;
+			float: left;
+			padding: 0 0 1rem;
+
+			.goal-type {
+				font-weight: 400;
+			}
+
+		}
+	}
+}
+
+.goal-viewer-heading {
+	flex: 1 0 auto;
+	@include clearfix;
+
+	.actions {
+		float: none;
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+
+	.btn.back {
+		margin-bottom: .5rem;
+		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		float: right;
+
+		&::before {
+			content: '\f112';
+			font-family: FontAwesome;
+			margin-right: 5px;
+			color: inherit;
+		}
+
+	}
+
+	.goal-actions {
+		clear: both;
+
+		.btn {
+			margin:0;
+			border-color: $color-lr-brand;
+			font-size: .9rem;
+			text-transform: uppercase;
+		}
+		.view {
+			border-right: none;
+			border-radius: 20px 0 0 20px;
+			background-color: $color-lr-brand;
+			color: #fff;
+
+			&::before {
+				content: '\f201';
+				font-family: FontAwesome;
+				margin-right: 5px;
+				color: inherit;
+			}
+
+			&:hover {
+				background-color: darken($color-lr-brand, 10%);
+				color: $color-white;
+			}
+
+		}
+		.edit {
+			border-left: none;
+			border-radius: 0 20px 20px 0;
+
+			&::before {
+				content: '\f013';
+				font-family: FontAwesome;
+				margin-right: 5px;
+				color: inherit;
+			}
+
+		}
+
+	}
+
+}
+
 .goal-viewer {
-	flex: 2 1 70%;
-	padding:1rem;
+	flex: 1 1 65%;
+	padding: 1.75rem 1rem 1rem;
 	color: $color-lr-grey;
 	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	background: $color-white;
+
+	> h1 {
+		padding: 0 14rem 0 0 !important;
+	}
 
 	h1 {
 		font-size: 1.75rem;
 		font-weight: 300;
 		margin-bottom: 1.35rem;
-		padding: 0 7.5rem 0 0 !important;
+		//padding: 0 7.5rem 0 0 !important;
 
 		.goal-type {
 			font-weight: 400;
@@ -35,16 +131,16 @@ h2.plan-name {
 
 	.actions.goal-actions {
 		position: absolute;
-		right: 1rem;
-		top: 1.45rem;
+		right: .75rem;
+		top: 2.25rem;
 	}
 
 }
 
 .printpage {
 	position: absolute;
-	right: 0;
-	top: 4.75rem;
+	right: -.25rem;
+	top: 5.15rem;
 	z-index: 99;
 
 	a {
@@ -71,7 +167,7 @@ h2.plan-name {
 	flex: 1 1 30%;
 	border-top: 1px solid #ddd;
 	border-left: none;
-	margin: 1rem 0 1rem 1rem;
+	margin: 0 0 1rem 1rem;
 	text-align: center;
 	padding-top: 2.5rem;
 	position: relative;
@@ -209,8 +305,7 @@ h2.plan-name {
 	}
 
 	.start-date, .end-date {
-		flex: 1;
-		width: 35%;
+		flex: 1 0 50%;
 		//font-size: 85%;
 	}
 
@@ -235,12 +330,13 @@ h2.plan-name {
 		font-weight: 400;
 		color: $brand-primary;
 	}
-	.prop-group.smart-gauge {
+	.smart-guage-wrapper {
 		display: flex;
 		flex: 1;
 		justify-content: flex-start;
 		padding-bottom: 3rem;
 		order: 4;
+		margin-top: 1rem;
 	}
 
 	//CAROUSEL
@@ -345,6 +441,7 @@ section.tracking-metrics {
 	border-top: 1px solid #ddd;
 	margin: 2.85rem 1.5rem 1.5rem;
 	padding-top: 1.75rem;
+	flex: 1 0 100%;
 
 	h1, h2 {
 		text-align: left;
@@ -411,6 +508,13 @@ section.tracking-metrics {
 
 			}
 
+		}
+
+		.metrics-list-header {
+			flex: 1 0 100%;
+			text-align: center;
+			font-weight: 400;
+			font-size: 1.35rem;
 		}
 
 	}
@@ -604,6 +708,33 @@ div.window.dialog {
 
 
 /* ----- MEDIA QUERIES */
+@media (min-width: 768px) {
+	#main-content-wc-0 {
+		.goal-viewer-heading {
+			h1 {
+				font-size: 2rem;
+				max-width: calc(100% - 295px);
+				padding: 1.75rem 0 1rem;
+				width: auto;
+			}
+		}
+	}
+
+	.goal-viewer-heading {
+		.actions {
+			float: right;
+			text-align: center;
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	.goal-wrapper {
+		.smart-guage-wrapper {
+			margin-top: 0;
+		}
+	}
+}
 
 @media (max-width: 1024px) {
 	.alignment .printpage {
@@ -635,13 +766,13 @@ div.window.dialog {
 			flex-direction: column;
 		}
 		.description {
-			flex: 1;
+			flex: 1 0 auto;
 		}
 		.goal-ev {
 			flex: 2;
 		}
 		.start-date, .end-date {
-			width: 75%;
+			flex: 1 0 auto;
 		}
 	}
 }
@@ -653,7 +784,12 @@ div.window.dialog {
 		border-top: none;
 		padding-top: .35rem;
 	}
-	.goal-wrapper, .goal-viewer-wrapper {
+
+	.goal-viewer-wrapper {
+		flex-flow: row wrap;
+	}
+
+	.goal-wrapper {
 		flex-direction: row;
 	}
 
@@ -671,7 +807,7 @@ div.window.dialog {
 		}
 	}
 
-	.printpage {
+	/*.printpage {
 		position: absolute;
 		right: -.25rem;
 		top: 5.25rem;
@@ -684,7 +820,7 @@ div.window.dialog {
 			}
 		}
 
-	}
+	}*/
 
 }
 
@@ -752,6 +888,7 @@ and (orientation:portrait) {
 	.goal-wrapper {
 		flex-flow: column nowrap;
 		padding: 0;
+		flex: 1 0 100%;
 
 		.goal-info-wrapper {
 			flex: 1;
@@ -761,7 +898,7 @@ and (orientation:portrait) {
 		.description, .goal-ev {
 			flex: 2 0 100%;
 		}
-		.start-date, .end-date, .prop-group.smart-gauge {
+		.start-date, .end-date, .smart-guage-wrapper {
 			flex: 1 0 auto;
 			width: auto;
 		}
