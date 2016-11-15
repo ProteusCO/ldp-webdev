@@ -24,9 +24,9 @@ $(document).ready(function () {
                 }, false);
 
                 if(origPostUpdate) origPostUpdate.call(this, data);
+                form.elements['goal-wizard'].value = 'true';
                 if(!hasError) {
                     anchor._skip_gw = true;
-                    form.elements['goal-wizard'].value = 'true';
                     anchor.click();
                 }
             }
