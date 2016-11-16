@@ -89,8 +89,8 @@
 }
 #side-nav .menu .mi > .menuitemlabel:before{
 	font-family: FontAwesome;
-	padding-right: .75rem;
-	min-width: 40px;
+	padding-right: .5rem;
+	min-width: 35px;
 	display: inline-block;
 	font-size: 1.5rem;
 	margin-top: -2px;
@@ -135,6 +135,15 @@
 }
 #side-nav .menu .goals > .menuitemlabel:before {
 	content: "\f201";
+}
+#side-nav .menu .organizational-goals > .menuitemlabel:before {
+	content: '\f1ad';
+}
+#side-nav .menu .leadership-goals > .menuitemlabel:before {
+	content: '\f0c0';
+}
+#side-nav .menu .personal-goals > .menuitemlabel:before {
+	content: '\f24e';
 }
 #side-nav .menu .profile > .menuitemlabel:before {
 	content: "\f022";
