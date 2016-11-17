@@ -195,6 +195,11 @@ div.calendar {
 	z-index: 1900 !important;
 }
 
+a[role=tooltip] {
+	cursor: help;
+	user-select: none;
+}
+
 @media (max-width: 767px)
 and (orientation:portrait) {
 
