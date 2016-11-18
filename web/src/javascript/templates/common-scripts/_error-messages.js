@@ -21,7 +21,7 @@ function setupErrorMessages(ctx){
 	function createWrapper($prop){
 		var $it;
 		if($prop.hasClass('ctb') || $prop.hasClass('rtb'))
-			$it = $prop.find('label').wrap('<span></span>');
+			$it = $prop.find('label').wrap('<span class="msg-wrap"></span>').parent();
 		else
 			$it = $prop.wrap("<span></span>");
 		return $it;
