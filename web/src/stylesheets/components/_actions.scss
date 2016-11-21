@@ -43,11 +43,12 @@
 	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
 }
 
-button.info-icon-button {
+a.info-icon-button {
 	border: none;
 	box-shadow: none !important;
 	background: transparent;
 	padding: 0 3px;
+	margin-top: -10px;
 
 	i.fa-info-circle {
 		font-size: .8rem;
