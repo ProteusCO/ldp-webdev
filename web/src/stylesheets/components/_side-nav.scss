@@ -17,7 +17,7 @@
 		width: 55px;
 		overflow: hidden;
 		.menu {
-			.mi a.menuitemlabel {
+			.mi a.menuitemlabel, .mi div.menuitemlabel {
 				padding: 8px 0 8px 14px;
 			}
 
@@ -61,7 +61,8 @@
 	display: inline-block;
 }
 
-#side-nav .menu .mi a.menuitemlabel{
+#side-nav .menu .mi a.menuitemlabel,
+#side-nav .menu .mi div.menuitemlabel {
 	color: #e1e4e6;
 	text-decoration: none;
 	display: block;
@@ -138,12 +139,15 @@
 }
 #side-nav .menu .organizational-goals > .menuitemlabel:before {
 	content: '\f1ad';
+	padding-left: 5px;
 }
 #side-nav .menu .leadership-goals > .menuitemlabel:before {
 	content: '\f0c0';
+	padding-left: 2px;
 }
 #side-nav .menu .personal-goals > .menuitemlabel:before {
 	content: '\f24e';
+	padding-left: 1px;
 }
 #side-nav .menu .profile > .menuitemlabel:before {
 	content: "\f022";
@@ -151,6 +155,32 @@
 #side-nav .menu .resources > .menuitemlabel:before {
 	content: "\f0b1";
 }
+
+#side-nav .menu li.goals div.goals {
+	border-bottom: 1px solid #4f5a69;
+}
+
+#side-nav .menu li.goals ul li.mi {
+	a.menuitemlabel {
+		font-size: .8rem;
+		&::before {
+			font-size: 1.15rem;
+			padding-right: 5px;
+			min-width: 30px;
+		}
+
+		.sidebar-open & {
+			padding: 15px 10px 12px 35px;
+		}
+
+		.sidebar-closed & {
+			padding: 8px 0 5px 14px;
+		}
+
+	}
+
+}
+
 
 @media (max-width: 767px) {
 	.sidebar-closed,
@@ -165,18 +195,14 @@
 			width: 55px;
 		}
 	}
-}
-@media (max-width: 767px) {
-	.sidebar-closed,
-	#body-wrapper:not(.sidebar-open){
-		#side-nav {
-			width: 0;
-			overflow: hidden;
-		}
-	}
-	.sidebar-open {
-		#side-nav {
-			width: 55px;
+	#side-nav .menu li.goals ul li.mi {
+		a.menuitemlabel {
+			&::before {
+				padding-right: 35px;
+			}
+			.sidebar-open & {
+				padding: 8px 0 5px 14px;
+			}
 		}
 	}
 }
