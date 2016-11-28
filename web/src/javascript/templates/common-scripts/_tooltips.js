@@ -13,9 +13,8 @@ function enableTooltips(ctx) {
 				$el.tooltip();
 			}
 		});
+		$ctx.find('[data-toggle="tooltip"]').tooltip();
 	}
-
-	$ctx.find('[data-toggle="tooltip"]').tooltip();
 	$ctx.find('[data-toggle="popover"]').popover().each(function (idx, el) {
 		var $el = $(el);
 		$el.click(function () {
