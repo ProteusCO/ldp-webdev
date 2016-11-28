@@ -89,6 +89,12 @@ section {
 	}
 }
 
+div.popover {
+	.popover-title:empty {
+		display: none;
+	}
+}
+
 .miwt .menu-component .menu-items {
 	.default, .meeting, .meeting-group,
 	.plan-start-date, .form, .email, .resource, .reminder, .email-login-info, .assign-membership, .confirmation,

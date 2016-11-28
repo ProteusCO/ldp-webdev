@@ -1,5 +1,9 @@
 @import "../config/base-vars";
 
+$meter-green: #3cba54;
+$meter-yellow: #f4c20d;
+$meter-red: #db3236;
+
 .smart-gauge-label {
   font-weight: 400;
   color: $color-lr-grey;
@@ -25,20 +29,20 @@
     margin:0;
   }
   .low{
-    background-color: $brand-danger;
+    background-color: $meter-red;
     border-top-left-radius: $border-radius-sm;
     border-bottom-left-radius: $border-radius-sm;
-    border-bottom: 3px solid darken($brand-danger, 18%);
+    border-bottom: 3px solid darken($meter-red, 18%);
   }
   .medium{
-    background-color: $brand-warning;
-    border-bottom: 3px solid darken($brand-warning, 18%);
+    background-color: $meter-yellow;
+    border-bottom: 3px solid darken($meter-yellow, 18%);
   }
   .high {
-    background-color: $brand-primary;
+    background-color: $meter-green;
     border-top-right-radius: $border-radius-sm;
     border-bottom-right-radius: $border-radius-sm;
-    border-bottom: 3px solid darken($brand-primary, 18%);
+    border-bottom: 3px solid darken($meter-green, 18%);
   }
   .indicator{
     position: absolute;

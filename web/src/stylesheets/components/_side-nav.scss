@@ -24,6 +24,28 @@
 			span.mil {
 				opacity:0;
 			}
+			.mi div.menuitemlabel {
+				height: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+
+			li.goals ul li.mi a.menuitemlabel::before {
+				font-size: 1.5rem;
+			}
+
+			.organizational-goals > .menuitemlabel::before {
+				padding-left: 3px;
+			}
+
+			.leadership-goals > .menuitemlabel::before {
+				padding-left: 0;
+			}
+
+			.personal-goals > .menuitemlabel::before {
+				padding-left: 0;
+				margin-left: -1px;
+			}
 		}
 	}
 }
@@ -61,7 +83,8 @@
 	display: inline-block;
 }
 
-#side-nav .menu .mi a.menuitemlabel{
+#side-nav .menu .mi a.menuitemlabel,
+#side-nav .menu .mi div.menuitemlabel {
 	color: #e1e4e6;
 	text-decoration: none;
 	display: block;
@@ -136,12 +159,50 @@
 #side-nav .menu .goals > .menuitemlabel:before {
 	content: "\f201";
 }
+#side-nav .menu .organizational-goals > .menuitemlabel:before {
+	content: '\f1ad';
+	padding-left: 5px;
+}
+#side-nav .menu .leadership-goals > .menuitemlabel:before {
+	content: '\f0c0';
+	padding-left: 2px;
+}
+#side-nav .menu .personal-goals > .menuitemlabel:before {
+	content: '\f24e';
+	padding-left: 1px;
+}
 #side-nav .menu .profile > .menuitemlabel:before {
 	content: "\f022";
 }
 #side-nav .menu .resources > .menuitemlabel:before {
 	content: "\f0b1";
 }
+
+#side-nav .menu li.goals div.goals {
+	border-bottom: 1px solid #4f5a69;
+}
+
+#side-nav .menu li.goals ul li.mi {
+	a.menuitemlabel {
+		font-size: .8rem;
+		&::before {
+			font-size: 1.15rem;
+			padding-right: 5px;
+			min-width: 30px;
+		}
+
+		.sidebar-open & {
+			padding: 15px 10px 12px 35px;
+		}
+
+		.sidebar-closed & {
+			padding: 8px 0 5px 14px;
+		}
+
+	}
+
+}
+
 
 @media (max-width: 767px) {
 	.sidebar-closed,
@@ -154,20 +215,45 @@
 	.sidebar-open {
 		#side-nav {
 			width: 55px;
+			.menu {
+				.mi div.menuitemlabel {
+					height: 0;
+					padding: 0;
+					overflow: hidden;
+				}
+				li.goals ul li.mi a.menuitemlabel::before {
+					font-size: 1.5rem;
+				}
+
+				.organizational-goals > .menuitemlabel::before {
+					padding-left: 3px;
+				}
+
+				.leadership-goals > .menuitemlabel::before {
+					padding-left: 0;
+				}
+
+				.personal-goals > .menuitemlabel::before {
+					padding-left: 0;
+					margin-left: -1px;
+				}
+				ul li.mi a.menuitemlabel {
+					padding: 8px 0 5px 14px;
+					&::before {
+						padding-right: 35px;
+					}
+				}
+			}
 		}
 	}
-}
-@media (max-width: 767px) {
-	.sidebar-closed,
-	#body-wrapper:not(.sidebar-open){
-		#side-nav {
-			width: 0;
-			overflow: hidden;
-		}
-	}
-	.sidebar-open {
-		#side-nav {
-			width: 55px;
+	#side-nav .menu li.goals ul li.mi {
+		a.menuitemlabel {
+			&::before {
+				padding-right: 35px;
+			}
+			.sidebar-open & {
+				padding: 8px 0 5px 14px;
+			}
 		}
 	}
 }

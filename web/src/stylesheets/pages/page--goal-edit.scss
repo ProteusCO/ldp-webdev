@@ -5,8 +5,16 @@
 @import "../../../../bower_components/bootstrap/scss/buttons";
 
 #main-wrapper #main-content {
-	max-width: 100%;
+	max-width: 1200px;
 	width: 100%;
+	margin: 0 auto;
+	padding: .5rem 0;
+	flex: 1 0 auto;
+}
+
+.goal-config-heading {
+	float: left;
+	display: none;
 }
 
 #side-nav {
@@ -14,6 +22,7 @@
 }
 
 .lr-goal-wizard-menu {
+	//clear: both;
 
 	.wizard-mobile-menu {
 		display: block;
@@ -25,12 +34,25 @@
 
 	.prop-group.smart-gauge {
 		display: none;
-		text-align: center;
+		text-align: right;
 		margin: 1rem 0 2rem;
 
 		> .prop.smart-gauge {
 			display: inline-block;
 			text-align: left;
+			width: 30rem;
+		}
+
+		.smart-guage-label, .meter {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.smart-guage-label {
+			font-weight: 400;
+			width: 10rem;
+			text-align: right;
+			padding-right: .5rem;
 		}
 
 		.meter {
@@ -62,7 +84,7 @@
 		}
 
 		a.menuitemlabel {
-			flex: 1;
+			flex: 1 0 auto;
 			text-align: center;
 			background: transparent;
 			display: flex;
@@ -79,8 +101,9 @@
 			}
 
 			span.wiz-menu-bigtext {
-				font-size: 1.55rem;
+				font-size: 1.75rem;
 				font-weight: 500;
+				margin-right: 2px;
 			}
 
 		}
@@ -118,6 +141,7 @@
 	}
 
 	.wizard-menu {
+
 		li {
 
 			&.goal-definition {
@@ -140,21 +164,21 @@
 
 				&::before {
 					content: '';
-					border-bottom: 37px solid transparent;
+					border-bottom: 39px solid transparent;
 					border-left: 21px solid lighten($color-lighter-grey, 3%);
-					border-top: 37px solid transparent;
+					border-top: 39px solid transparent;
 					display: inline-block;
 					position: absolute;
-					right: -20px;
+					right: -19px;
 					top: 0;
 					z-index: 1;
 				}
 
 				&::after {
 					content: '';
-					border-bottom: 38px solid transparent;
+					border-bottom: 40px solid transparent;
 					border-left: 23px solid $color-lr-brand;
-					border-top: 38px solid transparent;
+					border-top: 40px solid transparent;
 					display: inline-block;
 					position: absolute;
 					right: -22px;
@@ -169,9 +193,9 @@
 
 				&::before {
 					content: '';
-					border-bottom: 37px solid transparent;
+				border-bottom: 39px solid transparent;
 					border-left: 21px solid $body-bg;
-					border-top: 37px solid transparent;
+					border-top: 39px solid transparent;
 					display: inline-block;
 					position: absolute;
 					left: -1px;
@@ -181,9 +205,9 @@
 
 				&::after {
 					content: '';
-					border-bottom: 38px solid transparent;
+					border-bottom: 40px solid transparent;
 					border-left: 23px solid $color-lr-brand;
-					border-top: 38px solid transparent;
+					border-top: 40px solid transparent;
 					display: inline-block;
 					position: absolute;
 					left: -1px;
@@ -226,6 +250,11 @@
 			border: 1px solid $color-lr-brand;
 			border-bottom: none;
 
+			a.menuitemlabel {
+				justify-content: flex-start;
+				padding: 1rem 1rem 1rem 5rem;
+			}
+
 			&.last {
 				border-bottom: 1px solid $color-lr-brand;
 			}
@@ -244,6 +273,28 @@
 
 	}
 
+}
+
+div.message {
+
+	&.important {
+		background: lighten(#FA7100, 38%);
+		color: darken(#FA7100, 12%);
+		border-color: darken(#FA7100, 12%);
+
+		&::before {
+			content: '\f05a';
+			top: 12px;
+			color: inherit;
+		}
+
+	}
+
+}
+
+.clarity-statement + div.message-container {
+	margin-top: 1rem;
+	margin-bottom: -1rem;
 }
 
 #main-content-wc-0 {
@@ -332,10 +383,45 @@ section.wizard-step-section {
 			max-width: 100%;
 		}
 
+		textarea.val {
+			width: 100%;
+			height: 5rem;
+		}
+
 		.goal-measurement-baseline-unit, .goal-measurement-target-label {
 			margin-left: .5rem;
 		}
 
+	}
+
+	div.prop.predicted-ev-calc {
+		label {
+			display: block;
+		}
+	}
+
+	.prop.predicted-ev {
+		//@include clearfix();
+
+		span.select2-container {
+			width: 12rem !important;
+			clear: both;
+			float: left;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	.prop.predicted-ev-other {
+		float: left;
+		margin: 0 0 0 .75rem;
+
+		input {
+			width: 12rem;
+		}
+	}
+
+	.prop.predicted-ev-calc {
+		clear: left;
 	}
 
 	.prop.goal-measurement-time {
@@ -364,6 +450,12 @@ section.wizard-step-section {
 				vertical-align: top;
 			}
 
+			.clock-period {
+				span.select2 {
+					width: 60px !important;
+				}
+			}
+
 		}
 
 	}
@@ -372,6 +464,7 @@ section.wizard-step-section {
 
 section.metric-list {
 	margin-top: 2rem;
+	position: relative;
 
 	.actions {
 		float: none;
@@ -384,13 +477,18 @@ section.metric-list {
 		}
 
 		&.entity-actions {
-			float: right;
-			margin-top: -5px;
-			margin-bottom: 0;
-			text-align: right;
+			float: none;
+			position: absolute;
+			top: -5px;
+			left: 13.25rem;
 			width: auto;
+			margin: 0;
 		}
 
+	}
+
+	&.attitudes .actions.entity-actions {
+		left: 13rem;
 	}
 
 	.leading-indicators {
@@ -401,6 +499,17 @@ section.metric-list {
 			width: 0;
 		}
 
+		.no_data {
+			font-weight: 400;
+			padding-left: 2rem;
+		}
+
+	}
+
+	p.no-data {
+		font-style: italic;
+		color: darken($color-lr-light-grey, 18%);
+		padding-left: 2rem;
 	}
 
 	.element {
@@ -444,6 +553,8 @@ section.metric-list {
 }
 
 .wizard-step-wrapper {
+	/*max-width: 1200px;
+	margin: 0 auto;*/
 
 	section.prop-editor {
 		padding: .75rem;
@@ -453,7 +564,8 @@ section.metric-list {
 	}
 
 	.prop-header .top.actions {
-		display: none;
+		margin-top: -4.5rem;
+		margin-bottom: 3rem;
 	}
 
 	.actions {
@@ -475,6 +587,7 @@ section.metric-list {
 
 		+ p.explainer {
 			font-size: .85rem;
+			padding-left: 23px;
 		}
 
 	}
@@ -490,6 +603,10 @@ section.metric-list {
 			font-size: 1.15rem;
 		}
 
+	}
+
+	p.explainer {
+		color: darken($color-lr-light-grey, 18%);
 	}
 
 	.goal-measurement-time {
@@ -553,6 +670,10 @@ section.metric-list {
 
 		}
 
+		.clock-period span.select2 {
+			width: 60px !important;
+		}
+
 	}
 
 	.actions.bottom {
@@ -574,6 +695,17 @@ section.metric-list {
 
 	}
 
+	.prop-editor .prop {
+		&.description,
+		&.tracking-question,
+		&.tracking-unit	{
+			input[type="text"] {
+				max-width: 100%;
+				width: 100%;
+			}
+		}
+	}
+
 }
 
 .wizard-step-section-header {
@@ -589,6 +721,11 @@ section.metric-list {
 	margin-bottom: .5rem;
 }
 
+.org-objectives {
+	margin-left: 5px;
+	display: inline;
+}
+
 p.instructions {
 	margin: 0;
 	padding: 0;
@@ -596,7 +733,8 @@ p.instructions {
 	font-style: normal;
 
 	&.input-example {
-		font-style: italic;
+		font-size: .8rem;
+		color: darken($color-lr-light-grey, 18%);
 		padding-left: 4px;
 	}
 
@@ -648,8 +786,12 @@ div.prop {
 	label {
 		font-weight: 400;
 		font-size: 1.15rem;
-		display: block;
+		display: inline-block;
 		margin-bottom: 0;
+	}
+
+	span.val {
+		display: block;
 	}
 
 	.prop-body, .prop-footer {
@@ -690,6 +832,27 @@ div.prop {
 
 		> label.tbl {
 			font-size: .85rem;
+			padding-left: 19px;
+		}
+
+		.predicted-ev {
+			display: inline;
+			margin-left: .5rem;
+			font-size: .85rem;
+			&::before {
+				content: '(';
+			}
+			&::after {
+				content: ')';
+			}
+			label {
+				margin-bottom: 0;
+				display: inline;
+				&::after {
+					content: ':';
+					padding-right: 5px;
+				}
+			}
 		}
 
 	}
@@ -703,16 +866,26 @@ div.prop {
 }
 
 div.popover {
-	background: lighten($color-lr-light-grey, 18%);
-	border: 1px solid darken($color-lr-light-grey, 12%);
-	color: $color-lr-grey;
+	background: lighten(#2FC2EF, 1%);
+	border: 1px solid darken(#2FC2EF, 15%);
+	color: $color-white;
+	font-family: $font-roboto;
 
-	h3.popover-title {
-		display: none;
+	h1 {
+		font-size: 1rem;
+	}
+
+	ol {
+		padding-left: 30px;
+	}
+
+	.popover-title {
+		background: darken(#2FC2EF, 15%);
+		border-bottom: 1px solid darken(#2FC2EF, 15%);
 	}
 
 	button.popup-dismiss {
-		@include button-variant(darken($color-lr-light-grey, 10%), $color-white, darken($color-lr-light-grey, 10%));
+		@include button-variant(darken(#2FC2EF, 15%), $color-white, darken(#2FC2EF, 15%));
 		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 		border-width: 1px;
 		border-style: solid;
@@ -720,12 +893,55 @@ div.popover {
 
 	&.bs-tether-element-attached-left .popover-arrow::after,
 	&.popover-right .popover-arrow::after {
-		border-right-color: darken($color-lr-light-grey, 10%);
+		border-right-color: darken(#2FC2EF, 15%);
+	}
+
+	&.bs-tether-element-attached-top .popover-arrow::after,
+	&.popover-bottom .popover-arrow::after {
+		border-bottom-color: darken(#2FC2EF, 15%);
+	}
+
+	&.org-objectives {
+		max-width: 440px;
+
+		span.name {
+			font-weight: 500;
+			&::after {
+				content: ':';
+				padding-right: 5px;
+			}
+		}
+
+	}
+
+	.predicted-ev {
+		display: inline;
+		margin-left: .5rem;
+		font-size: .85rem;
+		font-style: italic;
+		&::before {
+			content: '(';
+		}
+		&::after {
+			content: ')';
+		}
+		label {
+			margin-bottom: 0;
+			display: inline;
+			&::after {
+				content: ':';
+				padding-right: 5px;
+			}
+		}
 	}
 
 }
 
 div.tooltip {
+
+	&.in {
+		opacity: 1;
+	}
 
 	.tooltip-inner {
 		@extend div.popover;
@@ -733,7 +949,7 @@ div.tooltip {
 
 	&.bs-tether-element-attached-bottom .tooltip-arrow,
 	&.tooltip-top .tooltip-arrow {
-		border-top-color: darken($color-lr-light-grey, 10%);
+		border-top-color: darken(#2FC2EF, 15%);
 	}
 
 }
@@ -752,6 +968,28 @@ div.window.dialog {
 			width: 100%;
 		}
 
+		.prop > label {
+			display: inline-block;
+			margin-bottom: 0;
+		}
+
+	}
+
+	&.goal-reminder-opt-out-confirm {
+		.confirm-prompt {
+			font-weight: 400;
+		}
+		div.actions {
+			margin-top: 1rem;
+		}
+		.btn {
+			&.no {
+				@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+			}
+			&.yes {
+				@include button-variant($color-lr-red, $color-white, $color-lr-red);
+			}
+		}
 	}
 
 }
@@ -766,14 +1004,20 @@ div.window.dialog {
 .wizard-navigator {
 	margin-top: 1.5rem;
 	@include clearfix();
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
 
-	.left-group, .right-group {
-		width: 100%;
+	.wizard-nav-group {
+		flex: 1 0 auto;
+	}
+
+	.center-group {
 		text-align: center;
 	}
 
-	.left-group {
-		margin-bottom: 1.5rem;
+	.right-group {
+		text-align: right;
 	}
 
 	.btn.next, .btn.submit {
@@ -788,7 +1032,7 @@ div.window.dialog {
 
 	}
 
-	.btn.back {
+	.btn.previous {
 		@include button-variant($color-lr-brand, $color-white, $color-lr-brand);
 		margin-right: 1rem;
 
@@ -866,33 +1110,27 @@ div.window.dialog {
 		}
 	}
 
-	.wizard-navigator {
-		.left-group {
-			float: left;
-			width: auto;
-			text-align: left;
-			margin-bottom: 0;
-		}
-
-		.right-group {
-			float: right;
-			width: auto;
-			text-align: right;
-		}
-	}
-
 	section.wizard-step-section {
 		margin-top: 1rem;
 		padding: 1.25rem;
+
+		.clarity-statement div.val,
+		.alignment-list-editor .alignment-container,
+		.control-statement div.val,
+		.confidence-statement div.val,
+		.sign-off-statement div.val {
+			padding-left: 2rem;
+		}
+
 	}
 
 	section.metric-list {
 
 		.actions {
 			float: right;
-			margin-bottom: 0;
-			text-align: right;
 			width: auto;
+			margin: -8px 0 0;
+			text-align: right;
 		}
 
 		article.leading-indicator {
@@ -903,6 +1141,10 @@ div.window.dialog {
 
 		.element {
 			padding: 1rem;
+		}
+
+		p.explainer {
+			padding-right: 4.25rem;
 		}
 
 	}
@@ -929,6 +1171,10 @@ div.window.dialog {
 			}
 		}
 
+		.prop > div.val {
+			padding-left: 2rem;
+		}
+
 	}
 
 	div.window.dialog {
@@ -942,6 +1188,11 @@ div.window.dialog {
 }
 
 @media (min-width: 769px) {
+
+	.goal-config-heading {
+		display: block;
+	}
+
 	.lr-goal-wizard-menu {
 
 		.wizard-mobile-menu {
@@ -950,6 +1201,76 @@ div.window.dialog {
 
 		.wizard-menu {
 			display: block;
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.wizard-navigator {
+		.btn.next, .btn.submit {
+			width: 45px;
+			color: transparent;
+			overflow: hidden;
+			white-space: nowrap;
+			text-indent: -4.25ch;
+			&::after {
+				color: $color-white;
+			}
+			&:hover, &:focus {
+				color: transparent;
+				&::after {
+					color: $color-white;
+				}
+			}
+		}
+		.btn.submit {
+			text-indent: -6ch;
+		}
+		.btn.previous {
+			width: 45px;
+			color: transparent;
+			overflow: hidden;
+			white-space: nowrap;
+			&::before {
+				color: $color-lr-brand;
+			}
+			&:hover, &:focus {
+				color: transparent;
+				&::before {
+					color: $color-lr-brand;
+				}
+			}
+		}
+	}
+	section.wizard-step-section {
+		.prop.predicted-ev span.select2-container {
+			margin-bottom: .75rem;
+		}
+		.prop.predicted-ev-other {
+			margin-left: 0;
+			margin-bottom: 1.5rem;
+		}
+		div.prop {
+			&.goal-measurement-target,
+			&.goal-measurement-baseline {
+				input.val {
+					width: 100%;
+				}
+			}
+			.goal-measurement-baseline-unit,
+			.goal-measurement-target-label {
+				display: block;
+				margin: .25rem 0 0 0;
+			}
+		}
+	}
+	.wizard-step-wrapper .prop-header .top.actions {
+		margin-top: 0;
+		margin-bottom: 1rem;
+	}
+	section.metric-list {
+		p.no-data .leading-indicators .no_data {
+			padding-left: 0;
 		}
 	}
 }

@@ -1,5 +1,6 @@
 @import "../config/base-vars";
 @import "../components/strength-meter";
+@import "../components/goal-status-tabs";
 @import "../../../../bower_components/bootstrap/scss/variables";
 @import "../../../../bower_components/bootstrap/scss/mixins";
 @import "../../../../bower_components/bootstrap/scss/buttons";
@@ -10,7 +11,7 @@
 }
 
 #main-content-wc-0 {
-	padding: .5rem;
+	padding: 0;
 }
 
 #main-content-wc-0 .goal-configuration {
@@ -18,9 +19,16 @@
 		&.title {
 			font-size: 1.5rem;
 			color: $brand-primary;
-			text-transform: uppercase;
 			max-width: 100%;
-			float: none;
+			text-transform: none;
+			&::before {
+				font-family: FontAwesome;
+				display: inline-block;
+				padding-right: 3px;
+				font-size: 70%;
+				margin-top: -3px;
+				vertical-align: middle;
+			}
 
 			.title-goal-type {
 				font-weight: 500;
@@ -34,37 +42,12 @@
 			position: relative;
 			display: inline-block;
 			font-size: 1.5rem;
-
-			&::first-letter {
-				font-weight: 500;
-			}
-
-			&::after {
-				content: '\f00c';
-				font-family: FontAwesome;
-				font-size: 1.15rem;
-				display: inline-block;
-				vertical-align: middle;
-				position: absolute;
-				left: -25px;
-				top: 6px;
-			}
-
 		}
 	}
 	.goal-name {
 		padding-left: .25rem;
 		margin-bottom: 1.25rem;
 
-		h1.step-name {
-			display: inline-block;
-			vertical-align: middle;
-			margin-bottom: 0;
-			padding-left: 0;
-			&::first-letter {
-				font-weight: 300;
-			}
-		}
 		.goal-status {
 			display: inline-block;
 			color: $color-light-grey;
@@ -80,6 +63,31 @@
 
 		}
 	}
+
+	.goal-step.step-definition {
+		h1.step-name {
+			margin-bottom: 0;
+		}
+	}
+
+	&.goal-type-organizational {
+		h1.title::before {
+			content: '\f1ad';
+		}
+	}
+
+	&.goal-type-leadership {
+		h1.title::before {
+			content: '\f0c0';
+		}
+	}
+
+	&.goal-type-personal {
+		h1.title::before {
+			content: '\f24e';
+		}
+	}
+
 }
 
 .step-wrapper {
@@ -111,7 +119,9 @@ section.goal-step {
 	background-color: $color-white;
 	border: 1px solid #e5e5e5;
 	padding: 1.25rem 1.25rem 1.25rem 2.35rem;
-	margin-top: 1rem;
+	position: relative;
+	margin-bottom: .75rem;
+
 	.persistence-actions {
 		float: right;
 	}
@@ -120,14 +130,66 @@ section.goal-step {
 		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 	}
 
+	&:not(.step-definition) {
+		padding: 3rem 1.25rem .25rem;
+
+		.step-name-container {
+			background-color: $color-lr-light-grey;
+			padding: .35rem .25rem .25rem 1.5rem;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+
+			h1 {
+
+				#main-content-wc-0 & {
+					color: $color-white;
+					font-size: 1.15rem;
+					line-height: 20px;
+					font-weight: 400;
+					margin: 0;
+				}
+			}
+
+		}
+
+		&.completed {
+			.step-name-container {
+				background-color: $color-lr-brand;
+				&::before {
+					content: '\f00c';
+					font-family: FontAwesome;
+					font-size: 1rem;
+					display: inline-block;
+					vertical-align: middle;
+					position: absolute;
+					left: 7px;
+					top: 5px;
+					color: $color-white;
+				}
+			}
+		}
+
+	}
+
+	&.step-measurable {
+		padding-bottom: 1.25rem;
+	}
+
 }
 
 .goal-header {
-	@include clearfix;
+
+	h1.title {
+		display: block;
+		width: 100%;
+	}
+
 	.actions {
-		float: none;
 		text-align: center;
 		margin-top: 0;
+		display: block;
 	}
 
 	.btn.back {
@@ -205,8 +267,7 @@ section.goal-step {
 	width: 100%;
 
 	.goal-statement {
-		flex-grow:2;
-
+		flex: 1 0 100%;
 	}
 
 	.goal-reporting-frequency,
@@ -214,11 +275,25 @@ section.goal-step {
 	.goal-measured-by,
 	.goal-baseline-amount,
 	.goal-target-amount,
-	.goal-predicted-economic-value {
+	.goal-predicted-economic-value,
+	.goal-economic-value {
 		flex-grow:1;
 		width: 100%;
 		padding-right: 2%;
 	}
+
+	.prop.goal-predicted-economic-value {
+		.goal-predicted-economic-value-calc {
+			font-style: italic;
+			margin-left: 5px;
+			font-size: .8rem;
+			&::before {
+				content: '-';
+				padding-right: 5px;
+			}
+		}
+	}
+
 }
 
 .goal-strength {
@@ -233,18 +308,59 @@ section.goal-step {
 		padding-left: 0;
 	}
 	li {
-		margin-top: .5rem;
+		@include clearfix();
+
+		+ li {
+			margin-top: .5rem;
+		}
+
+		.name, .author {
+			display: block;
+			float: left;
+		}
 
 		.author {
+
 			&:after {
 				content: ": ";
+				padding-right: 5px;
 			}
 		}
 
 		.description {
 			display: block;
+			float: left;
+			clear: left;
 			font-style: italic;
 			color: lighten($color-lr-grey, 5%);
+		}
+
+		.predicted-ev {
+			display: block;
+			float: left;
+			margin: 1px 0 0;
+			color: lighten($color-lr-grey, 5%);
+			font-size: .85rem;
+			&::before {
+				content: '(';
+			}
+			&::after {
+				content: ')';
+			}
+			label {
+				margin-bottom: 0;
+				display: inline;
+				&::after {
+					content: ':';
+					padding-right: 5px;
+				}
+			}
+		}
+	}
+	.goal-alignments {
+		margin-bottom: 0;
+		label {
+			margin-bottom: 0;
 		}
 	}
 }
@@ -276,6 +392,12 @@ section.goal-step {
 
 		.reporting-frequency {
 			margin-bottom: 0;
+			label, span.val {
+				display: inline;
+			}
+			label {
+				margin-right: 5px;
+			}
 		}
 
 		.notification-state {
@@ -321,6 +443,45 @@ div.window.dialog {
 			}
 		}
 	}
+	.predicted-ev-editor {
+		margin-bottom: 1.5rem;
+		@include clearfix();
+		.prop {
+			padding: 0;
+		}
+		.predicted-ev, .ev {
+			margin-bottom: 0;
+			span.select2 {
+				float: left;
+				clear: both;
+				margin-bottom: 1rem;
+			}
+		}
+		.predicted-ev-other, .ev-other {
+			float: left;
+			margin: 0;
+
+			input {
+				width: 11rem;
+				margin: 0 0 0 .75rem;
+			}
+		}
+		.predicted-ev-calc {
+			clear: both;
+		}
+		label {
+			margin-bottom: 0;
+		}
+		span.select2 {
+			width: 12rem !important;
+		}
+		textarea {
+			height: 5rem;
+		}
+	}
+	div.persistence-actions {
+		clear: both;
+	}
 }
 
 @media (min-width: 768px) {
@@ -332,12 +493,12 @@ div.window.dialog {
 		h1 {
 			&.title {
 				font-size: 2rem;
-				max-width: calc(100% - 355px);
-				float: left;
-				padding: 1.75rem 0 1rem;
+				width: calc(100% - 310px);
+				padding: 0;
+				margin-bottom: 0;
 
 				.title-goal-type {
-					font-weight: 500;
+					font-weight: 400;
 				}
 
 			}
@@ -350,11 +511,15 @@ div.window.dialog {
 
 	.goal-header {
 		.actions {
-			float: right;
-			margin-top: -.5rem;
+			display: inline-block;
+			vertical-align: middle;
 		}
 		.row2 {
 			text-align: right;
+		}
+		h1.title {
+			display: inline-block;
+			vertical-align: middle;
 		}
 	}
 
@@ -375,7 +540,8 @@ div.window.dialog {
 		.goal-measured-by,
 		.goal-baseline-amount,
 		.goal-target-amount,
-		.goal-predicted-economic-value {
+		.goal-predicted-economic-value,
+		.goal-economic-value {
 			width: 45%;
 		}
 
@@ -407,4 +573,100 @@ div.window.dialog {
 
 	}
 
+}
+
+@media (max-width: 767px) {
+	.goal-configuration {
+		padding: .5rem;
+	}
+	.goal-header {
+		.actions {
+			@include clearfix();
+		}
+		.btn.back {
+			width: 40px;
+			overflow: hidden;
+			white-space: nowrap;
+			color: transparent;
+			margin-bottom: 0;
+			&::before {
+				color: $color-lr-brand;
+			}
+			&:hover, &:focus {
+				color: transparent;
+				&::after {
+					color: $color-lr-brand;
+				}
+			}
+		}
+		.goal-actions {
+			display: inline-block;
+			float: left;
+			clear: none;
+			&.row1 {
+				margin-bottom: 0;
+			}
+			&.row2 {
+				width: 100%;
+				margin: 1rem 0 0;
+				clear: both;
+			}
+		}
+		.btn.edit {
+			width: 45px;
+			overflow: hidden;
+			white-space: nowrap;
+			color: transparent;
+			&::before {
+				color: $color-white;
+			}
+			&:hover, &:focus {
+				color: transparent !important;
+				&::before {
+					color: $color-white;
+				}
+			}
+		}
+		.btn.view {
+			width: 45px;
+			overflow: hidden;
+			white-space: nowrap;
+			color: transparent;
+			&::before {
+				color: $color-lr-brand;
+			}
+			&:hover, &:focus {
+				color: transparent;
+				&::after {
+					color: $color-lr-brand;
+				}
+			}
+		}
+	}
+
+	section.goal-step {
+		padding: 1.25rem;
+
+		.actions.persistence-actions {
+			margin-bottom: .5rem;
+		}
+
+		.btn.edit {
+			width: 39px;
+			overflow: hidden;
+			white-space: nowrap;
+			color: transparent;
+			&::before {
+				content: '\f040';
+				font-family: FontAwesome;
+				color: $color-lr-brand;
+			}
+			&:hover, &:focus {
+				color: transparent !important;
+				&::before {
+					color: $color-lr-brand;
+				}
+			}
+		}
+	}
 }

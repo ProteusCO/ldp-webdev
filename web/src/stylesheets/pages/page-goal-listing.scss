@@ -1,0 +1,532 @@
+@import "../config/base-vars";
+@import "../../../../bower_components/bootstrap/scss/variables";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../bower_components/bootstrap/scss/buttons";
+
+
+#main-wrapper #main-content {
+	max-width: 100%;
+}
+
+#main-content-wc-0 {
+	.goal-listing-header h1.title {
+		color: $color-lr-brand;
+		&::before {
+			font-family: FontAwesome;
+			display: inline-block;
+			padding-right: 3px;
+			font-size: 70%;
+			margin-top: -3px;
+			vertical-align: middle;
+		}
+	}
+
+	.objective-lists {
+		h1.objective-lists-title {
+			font-size: 1.25rem;
+			font-weight: 400;
+			padding: 0;
+			margin-top: 5px;
+		}
+		h1.objective-list-title {
+			font-size: 1rem;
+			font-weight: 300;
+			font-style: normal;
+			margin-bottom: 1.25rem;
+			padding: 0;
+			.user {
+				font-weight: 400;
+			}
+		}
+	}
+
+	.goal-type-organizational {
+		h1.title::before {
+			content: '\f1ad';
+		}
+	}
+
+	.goal-type-leadership {
+		h1.title::before {
+			content: '\f0c0';
+		}
+	}
+
+	.goal-type-personal {
+		h1.title::before {
+			content: '\f24e';
+		}
+	}
+
+}
+
+.goal-listing-wrapper {
+	span.select2-container {
+		width: 250px !important;
+		float: right;
+		margin: 1rem 0 1rem .5rem;
+	}
+}
+
+.goal-listing-header {
+	margin-bottom: 1rem;
+	@include clearfix();
+
+	.explainer-wrapper {
+		display: block;
+		vertical-align: middle;
+		width: 100%;
+		padding-right: 0;
+
+		span.see-example {
+			margin-left: 5px;
+		}
+
+	}
+
+	div.actions {
+		display: block;
+		vertical-align: middle;
+		text-align: center;
+		margin-top: 1rem;
+		button {
+			margin-right: 0;
+		}
+	}
+
+}
+
+.goal-listing {
+	clear: both;
+}
+
+.goal-wrapper {
+	padding: .75rem;
+	background-color: $color-white;
+	border: 1px solid #e5e5e5;
+	margin: .25rem 0 1rem;
+	display: flex;
+	flex-flow: column nowrap;
+
+	//CAROUSEL
+	.goal-measurement {
+		width: 100%;
+	}
+
+	.carousel-indicators {
+		display: none;
+	}
+
+	.carousel-control {
+
+		&.right, &.left {
+			background-image: none;
+			text-shadow: none;
+		}
+
+		&.right {
+			right: -15px;
+		}
+
+		&.left {
+			left: -15px;
+		}
+
+		.icon-next, .icon-prev {
+			color: $color-lr-grey;
+			font-size: 4rem;
+			margin-top: -4rem;
+			height: 4rem;
+		}
+
+	}
+
+	.carousel-inner {
+
+		.measure-config-graph {
+			margin: 0 1rem;
+		}
+
+		.config-graph {
+			margin: 0 auto;
+			width: 100% !important;
+			height: 100% !important;
+			max-width: 285px !important;
+			max-height: 207px;
+			canvas {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		.carousel-caption {
+			position: relative;
+			bottom: auto;
+			left: auto;
+			right: auto;
+			color: $color-lr-light-grey;
+			text-shadow: none;
+			padding: 1rem 0;
+
+			p {
+				font-size: 1.25rem;
+				font-weight: 500;
+				margin-bottom: 0;
+			}
+
+		}
+
+	}
+
+	.prop-wrapper {
+		flex: 1 0 100%;
+		padding: 0;
+	}
+
+	.goal-alignments-wrapper {
+		flex: 1 0 15%;
+		text-align: center;
+		border-left: none;
+		border-top: 1px solid #e5e5e5;
+		padding: 1rem 0 0 0;
+		margin-top: 1rem;
+
+		.alignments-title {
+			display: block;
+			margin-top: .5rem;
+			font-weight: 400;
+			color: $color-lr-light-grey;
+		}
+
+		.goal-alignments {
+			margin: 1.5rem 0 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				font-size: 1.25rem;
+				font-weight: 500;
+				+ li {
+					margin-top: .75rem
+				}
+			}
+
+		}
+
+	}
+
+	.measure-config {
+		display: flex;
+		flex-flow: row wrap;
+
+		.prop {
+			margin-bottom: 0;
+			padding: 5px 10px;
+
+			.val, .valinterval-update-received {
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			label {
+				margin-bottom: 0;
+				display: block;
+				width: 8rem;
+				&::after{
+					content: ':';
+					margin-right: 3px;
+				}
+			}
+
+			.val {
+				width: 100%;
+			}
+
+			&.goal-name .val {
+				width: 100%;
+			}
+
+			&.last-updated .val {
+				color: $color-lr-red;
+			}
+
+			.valinterval-update-received {
+				color: $color-lr-black;
+			}
+
+			&:not(.goal-name) {
+				flex: 1 0 45%;
+			}
+
+		}
+
+		.goal-name {
+			flex: 1 0 100%;
+
+			label {
+				display: none !important;
+			}
+			a {
+				font-size: 1.65rem;
+				font-weight: 300;
+			}
+		}
+
+	}
+
+
+
+	.unit-name,
+	.description,
+	.report-schedule,
+	.report-time {
+		display: none;
+	}
+
+}
+
+.no-active-goals-wrapper {
+	padding: .75rem;
+	background-color: $color-white;
+	border: 1px solid #e5e5e5;
+	margin: .25rem 0 1rem;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+
+	.no-active-goals-title {
+		color: $color-lr-light-grey;
+		font-weight: 400;
+		margin-bottom: .5rem;
+	}
+
+}
+
+.goal-type-organizational {
+	.wrapper {
+		padding: .75rem;
+		background-color: $color-white;
+		border: 1px solid #e5e5e5;
+		margin: .25rem 0 1rem;
+		display: flex;
+		flex-flow: column nowrap;
+	}
+
+	.no-active-goals-wrapper {
+		background: none;
+		border: none;
+		padding: 0;
+		flex: 1 0 auto;
+		//width: 100%;
+		align-self: center;
+	}
+
+	.objective-lists {
+		flex: 1 0 100%;
+		align-self: center;
+		color: $color-lr-grey;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid #e5e5e5;
+
+		.objective-list {
+			font-size: .9rem;
+			font-style: italic;
+		}
+
+		.objectives {
+			counter-reset: objective-numbering;
+			padding-left: 35px;
+
+			li {
+				list-style: none;
+				font-style: normal;
+				position: relative;
+				&::before {
+					content: counter(objective-numbering);
+					counter-increment: objective-numbering;
+					color: $color-lr-brand;
+					font-size: 3rem;
+					position: absolute;
+					left: -1.25ch;
+					top: 3px;
+					line-height: 1;
+					font-weight: 500;
+				}
+
+				+ li {
+					margin-top: 1rem;
+				}
+
+			}
+
+			.name {
+				font-size: 1.15rem;
+				font-weight: 400;
+				display: block;
+			}
+
+			.description, .predicted-ev {
+				display: inline;
+			}
+
+		}
+
+	}
+
+}
+
+.predicted-ev {
+	margin-left: 5px;
+	font-style: italic;
+	font-size: inherit;
+	&::before {
+		content: '(';
+	}
+	&::after {
+		content: ')';
+	}
+	label {
+		display: inline;
+		&::after {
+			content: ':';
+			padding-right: 5px;
+		}
+	}
+}
+
+.popover {
+	background: #FFF8E0;
+	border: 1px solid darken($color-cornsilk, 12%);
+	color: $color-lr-grey;
+
+	.popover-title {
+		background: darken(#fff8e0, 5%);
+	}
+
+	h1 {
+		font-size: 1rem;
+	}
+
+	&.explainer-p2 {
+		max-width: 440px;
+	}
+
+	.objectives {
+		padding-left: 30px;
+		.name {
+			font-weight: bold;
+			&::after {
+				content: ':';
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&.bs-tether-element-attached-top .popover-arrow::after,
+	&.popover-bottom .popover-arrow::after {
+		border-bottom-color: #FFF8E0;
+	}
+
+}
+
+
+@media (min-width: 768px) {
+	.goal-listing-header {
+		.explainer-wrapper {
+			display: inline-block;
+			width: calc(100% - 7.1rem);
+			padding-right: 1rem;
+		}
+
+		div.actions {
+			display: inline-block;
+			text-align: right;
+			margin-top: 0;
+		}
+	}
+
+	.goal-wrapper {
+		flex-flow: row wrap;
+
+		.goal-measurement {
+			width: 20rem;
+		}
+		.prop-wrapper {
+			padding: 0 1rem 0 2rem;
+			flex: 1 0 45%;
+		}
+	}
+
+	.goal-type-organizational {
+		.wrapper {
+			flex-flow: row wrap;
+		}
+
+		.no-active-goals-wrapper {
+			padding: 0 0 0 .75rem;
+			flex: 1 0 20%;
+		}
+
+		.objective-lists {
+			flex: 1 0 55%;
+			padding-right: 2rem;
+			padding-bottom: 0;
+			border-bottom: 0;
+			border-right: 1px solid #e5e5e5;
+		}
+	}
+
+	.goal-listing-wrapper {
+		span.select2-container {
+			margin: 1rem 0 0 .5rem;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.goal-wrapper {
+		.goal-alignments-wrapper {
+			flex: 1 0 15%;
+			text-align: center;
+			border-top: none;
+			border-left: 1px solid #e5e5e5;
+			padding: 0 0 0 1rem;
+			margin-top: 0;
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.goal-wrapper .measure-config .prop {
+		label {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.val {
+			width: calc(100% - 8.25rem);
+		}
+	}
+
+	.goal-wrapper {
+		.carousel-control {
+
+			&.right {
+				right: -20px;
+			}
+
+			&.left {
+				left: -20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.goal-listing-header {
+		clear: both;
+	}
+	.goal-listing-wrapper span.select2-container {
+		width: 45% !important;
+	}
+}
