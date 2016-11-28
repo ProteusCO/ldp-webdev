@@ -952,6 +952,11 @@ div.tooltip {
 		border-top-color: darken(#2FC2EF, 15%);
 	}
 
+	&.bs-tether-target-attached-left .tooltip-arrow,
+	&.tooltip-left .tooltip-arrow {
+		border-left-color: darken(#2FC2EF, 15%);
+	}
+
 }
 
 div.window.dialog {
@@ -1271,6 +1276,40 @@ div.window.dialog {
 	section.metric-list {
 		p.no-data .leading-indicators .no_data {
 			padding-left: 0;
+		}
+	}
+	.goal-statement {
+		position: relative;
+		.org-objectives {
+			display: block;
+			margin-left: 0;
+		}
+		.prop-footer {
+			position: absolute;
+			top: 0;
+			right: 0;
+			float: none;
+
+			.btn.edit {
+				width: 40px;
+				color: transparent;
+				overflow: hidden;
+				white-space: nowrap;
+				text-indent: -4.25ch;
+				&::after {
+					content: '\f040';
+					font-family: FontAwesome;
+					color: $color-lr-brand;
+					margin-left: 3px;
+				}
+				&:hover, &:focus {
+					color: transparent;
+					&::after {
+						color: $color-lr-brand;
+					}
+				}
+			}
+
 		}
 	}
 }
