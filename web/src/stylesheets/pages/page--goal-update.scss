@@ -87,6 +87,14 @@ div.prop.goal-progress {
 
 }
 
+.prop {
+	.miwt-calendar.cal {
+		input.val {
+			max-width: 7.5rem;
+		}
+	}
+}
+
 .goal-progress.int-measure-value-editor {
 	/*display: flex;
 	flex: 1 0 0;

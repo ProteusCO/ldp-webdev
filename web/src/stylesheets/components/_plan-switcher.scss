@@ -4,7 +4,12 @@
 
   > h2.plan-name {
     max-width: calc(100% - 16.25rem);
-    float: left;
+    display: inline-block;
+
+    + .miwt {
+      clear: both;
+    }
+
   }
 
 }

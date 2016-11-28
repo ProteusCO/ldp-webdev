@@ -17,12 +17,34 @@
 		width: 55px;
 		overflow: hidden;
 		.menu {
-			.mi a.menuitemlabel, .mi div.menuitemlabel {
+			.mi a.menuitemlabel {
 				padding: 8px 0 8px 14px;
 			}
 
 			span.mil {
 				opacity:0;
+			}
+			.mi div.menuitemlabel {
+				height: 0;
+				padding: 0;
+				overflow: hidden;
+			}
+
+			li.goals ul li.mi a.menuitemlabel::before {
+				font-size: 1.5rem;
+			}
+
+			.organizational-goals > .menuitemlabel::before {
+				padding-left: 3px;
+			}
+
+			.leadership-goals > .menuitemlabel::before {
+				padding-left: 0;
+			}
+
+			.personal-goals > .menuitemlabel::before {
+				padding-left: 0;
+				margin-left: -1px;
 			}
 		}
 	}
@@ -193,6 +215,35 @@
 	.sidebar-open {
 		#side-nav {
 			width: 55px;
+			.menu {
+				.mi div.menuitemlabel {
+					height: 0;
+					padding: 0;
+					overflow: hidden;
+				}
+				li.goals ul li.mi a.menuitemlabel::before {
+					font-size: 1.5rem;
+				}
+
+				.organizational-goals > .menuitemlabel::before {
+					padding-left: 3px;
+				}
+
+				.leadership-goals > .menuitemlabel::before {
+					padding-left: 0;
+				}
+
+				.personal-goals > .menuitemlabel::before {
+					padding-left: 0;
+					margin-left: -1px;
+				}
+				ul li.mi a.menuitemlabel {
+					padding: 8px 0 5px 14px;
+					&::before {
+						padding-right: 35px;
+					}
+				}
+			}
 		}
 	}
 	#side-nav .menu li.goals ul li.mi {
