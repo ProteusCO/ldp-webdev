@@ -13,16 +13,17 @@ function enableTooltips(ctx) {
 				$el.tooltip();
 			}
 		});
-		$ctx.find('[data-toggle="tooltip"]').tooltip();
-		$ctx.find('[data-toggle="popover"]').popover().each(function (idx, el) {
-			var $el = $(el);
-			$el.click(function (evt) {
-				$el.popover('toggle');
-			});
-			$el.on('blur', function (evt) {
-				$el.popover('hide');
-			});
-		});
 	}
+
+	$ctx.find('[data-toggle="tooltip"]').tooltip();
+	$ctx.find('[data-toggle="popover"]').popover().each(function (idx, el) {
+		var $el = $(el);
+		$el.click(function () {
+			$el.popover('toggle');
+		});
+		$el.on('blur', function () {
+			$el.popover('hide');
+		});
+	});
 
 }
