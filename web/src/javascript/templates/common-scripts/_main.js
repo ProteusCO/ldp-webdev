@@ -6,7 +6,7 @@ jQuery(function () {
 
 	setupErrorMessages();
 
-
+    enableTargetPopups();
 
 	initSelect2();
 
@@ -46,6 +46,7 @@ jQuery(function () {
 					navHighlight();
 					setupCustomDropdowns(ctx);
 					setupFlipCards(ctx);
+                    enableTargetPopups(ctx);
 					if($(ctx).hasClass('message-container') || $(ctx).find('.message-container').length > 0)
 						errorMessageCleanup();
 					setTimeout(function () {
