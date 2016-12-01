@@ -8,6 +8,7 @@ window.enableTargetPopups = (function(){
     function enableTargetPopups(ctx) {
         var $ctx = !!ctx ? $(ctx.parentNode || document) : $(ctx || document);
         $ctx.find('button[data-popup]').click(function (event) {
+            $('.coaching-selector.dropdown').removeClass('open');
             if(isFirefox){
                 return;
             }
