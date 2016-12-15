@@ -1,6 +1,10 @@
 @import "../config/base-vars";
 @import "../components/plan-switcher";
 
+#main-wrapper #main-content {
+	max-width: 100%;
+}
+
 #main-content-wc-0 {
 	padding: .5rem 1rem;
 }
@@ -16,7 +20,7 @@
 	flex-flow: column nowrap;
 
 	section.card {
-		margin: 0 1rem 1rem 0;
+		margin: 0 0 1rem 0;
 		display: flex;
 		flex-direction: column;
 		border-radius: $border-radius-lg;
@@ -144,7 +148,7 @@
 
 }
 
-.positions, .preferences {
+.positions, .preferences, .internal-use {
 	margin-top: 1rem;
 	width: 100%;
 
@@ -153,6 +157,38 @@
 		padding-left: 0 !important;
 	}
 
+}
+
+.internal-use {
+	.select2-container {
+		width: 100% !important;
+		max-width: 140px;
+	}
+
+	h2.internal-use-label {
+		padding-bottom: 0 !important;
+	}
+
+	.prop.type, .prop.risk {
+		padding: 5px 0;
+		display: inline-block;
+		width: 10rem;
+		margin-right: .5rem;
+	}
+
+	.close-reason {
+		border-top: 1px solid $color-lr-light-grey;
+		padding: 1rem 0 5px;
+		margin-top: .5rem;
+
+		.actions.persistence-actions {
+			margin-top: .75rem;
+		}
+		textarea {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
 }
 
 .user-positions.plan-positions {
@@ -473,6 +509,7 @@ div.window.dialog {
 		flex-flow: row wrap;
 
 		section.card {
+			margin: 0 1rem 1rem 0;
 
 			&.plan-info {
 				flex: 1 0 0;
