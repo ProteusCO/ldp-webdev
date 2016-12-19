@@ -8,3 +8,21 @@
 		width: 65%;
 	}
 }
+
+div.window.dialog {
+	&.add-user-dialog {
+		.prop {
+			span.label-after label {
+				margin-bottom: 0;
+				margin-left: 3px;
+			}
+			p.instructions {
+				padding: 0 0 0 20px;
+				margin-bottom: 0;
+			}
+		}
+		div.actions {
+			margin-top: .5rem;
+		}
+	}
+}

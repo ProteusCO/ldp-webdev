@@ -174,9 +174,23 @@
 #authentication {
 	background-color: #f1f2f7;
 }
+#main-content-wc-0 .brand {
+	max-width: 375px;
+	width: 100%;
+	margin: -.6rem auto 2rem;
+	background: #4F5A69;
+	border-radius: 0 0 $border-radius-sm $border-radius-sm;
+	font-size: 1.5rem;
+	line-height: 1.25;
+	text-align: center;
+	padding: 1rem;
+	border: 1px solid darken(#4F5A69, 10%);
+	color: $color-white;
+	font-weight: 400;
+}
 .form-signin, .form-signout {
 	max-width: 375px;
-	margin: 100px auto 0;
+	margin: 0 auto;
 	background: #fff;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
