@@ -184,7 +184,7 @@ a.logo span {
 	}
 
 	li.help {
-		display: none;
+		//display: none;
 	}
 
 	li.link a span {
@@ -312,10 +312,6 @@ and (orientation: portrait) {
 			flex: 1;
 			display: flex;
 			justify-content: center;
-
-			&.help {
-				display: none;
-			}
 		}
 
 		.dropdown-toggle::after {
@@ -395,12 +391,16 @@ and (orientation: portrait) {
 			flex: 1;
 			float: none;
 			display: flex;
+			min-width: 0;
 
 			a.dropdown-toggle {
 				margin: 0 auto;
 				img.profile-pic {
 					max-width: 75% !important;
 					height: auto !important;
+				}
+				span.welcome {
+					display: none;
 				}
 			}
 
@@ -427,10 +427,6 @@ and (orientation: portrait) {
 					//overflow: hidden;
 					//white-space: nowrap;
 				}
-			}
-
-			&.help {
-				display: none;
 			}
 		}
 
