@@ -178,7 +178,7 @@
 
 	}
 
-	.prop-wrapper {
+	.config-wrapper {
 		flex: 1 0 100%;
 		padding: 0;
 	}
@@ -430,6 +430,52 @@
 
 }
 
+/* ----- TEAM GOALS */
+.actions .btn.fa-print {
+	float: right;
+	margin: 10px 0 -5px;
+}
+
+.miwt-table.search-results {
+	border: none;
+
+	thead {
+		display: none;
+	}
+
+	> tbody > tr {
+		> td {
+			padding: 0;
+			background: transparent;
+		}
+
+		&:hover > td {
+			background: transparent;
+		}
+	}
+}
+
+.search {
+	clear: both;
+}
+
+.search-bar {
+	padding: 10px 0;
+
+	> .sort-actions {
+		float: right;
+		display: block;
+		margin-top: 11px;
+		text-align: right;
+
+		label {
+			display: block;
+			margin-bottom: .25rem;
+			font-size: 90%;
+		}
+	}
+}
+
 
 @media (min-width: 768px) {
 	.goal-listing-header {
@@ -452,7 +498,7 @@
 		.goal-measurement {
 			width: 20rem;
 		}
-		.prop-wrapper {
+		.config-wrapper {
 			padding: 0 1rem 0 2rem;
 			flex: 1 0 45%;
 		}
@@ -526,7 +572,62 @@
 	.goal-listing-header {
 		clear: both;
 	}
+
 	.goal-listing-wrapper span.select2-container {
 		width: 45% !important;
+	}
+
+	.search-bar {
+
+		> .sort-actions {
+			float: none;
+			text-align: left;
+		}
+	}
+}
+
+/* ----- PRINT STYLES */
+@media print {
+
+	#main-header,
+	.search-bar,
+	#page-footer,
+	button.fa-print,
+	.pager-bottom {
+		display: none;
+	}
+
+	.goal-wrapper {
+		-webkit-print-color-adjust: exact;
+		border: none !important;
+		padding: 0 !important;
+		flex-flow: column nowrap !important;
+		align-items: center !important;
+
+		.carousel-control {
+			display: none;
+		}
+
+		> div.carousel {
+			max-height: 19rem !important;
+		}
+
+		div.carousel .goal-measurement {
+			width: 100% !important;
+
+			> .carousel-inner > .carousel-item {
+				display: inline-block !important;
+				width: 47% !important;
+			}
+		}
+
+		.goal-alignments-wrapper {
+			flex: 1 0 15%;
+			text-align: center;
+			border-left: none;
+			border-top: 1px solid #e5e5e5;
+			padding: 1rem 0 0 0;
+			margin-top: 1rem;
+		}
 	}
 }
