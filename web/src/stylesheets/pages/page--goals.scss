@@ -65,6 +65,13 @@ h2.plan-name {
 	flex: 1 0 auto;
 	padding-bottom: 1.5rem;
 
+	.title-wrapper .plan-name {
+		display: block;
+		font-size: 1.25rem;
+		font-weight: 400;
+		color: darken($color-lr-light-grey, 5%);
+	}
+
 	h1 {
 		display: block;
 		width: 100%;
@@ -886,10 +893,14 @@ div.window.dialog {
 	}
 
 	.goal-viewer-heading {
+		.title-wrapper {
+			width: calc(100% - 310px);
+			display: inline-block;
+		}
+
 		h1 {
 			display: inline-block;
 			vertical-align: bottom;
-			width: calc(100% - 310px);
 			padding: 0;
 			margin-bottom: 0;
 		}
