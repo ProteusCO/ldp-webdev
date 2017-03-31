@@ -608,10 +608,20 @@
 
 		.config-wrapper {
 			order: 1;
+			padding: 0 !important;
+
+			.prop {
+				padding: 5px 0 !important;
+			}
 		}
 
 		.carousel {
 			order: 2;
+
+			.measure-config-graph.int-measure {
+				width: 257px !important;
+				height: 182px !important;
+			}
 		}
 
 		.goal-alignments-wrapper {
