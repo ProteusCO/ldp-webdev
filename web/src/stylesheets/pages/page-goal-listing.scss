@@ -206,6 +206,8 @@
 			li {
 				font-size: 1.25rem;
 				font-weight: 500;
+				display: block;
+
 				+ li {
 					margin-top: .75rem
 				}
@@ -433,7 +435,7 @@
 /* ----- TEAM GOALS */
 .actions .btn.fa-print {
 	float: right;
-	margin: 10px 0 -5px;
+	margin: -3.5rem 0 0;
 }
 
 .miwt-table.search-results {
@@ -603,6 +605,18 @@
 		padding: 0 !important;
 		flex-flow: column nowrap !important;
 		align-items: center !important;
+
+		.config-wrapper {
+			order: 1;
+		}
+
+		.carousel {
+			order: 2;
+		}
+
+		.goal-alignments-wrapper {
+			order: 3;
+		}
 
 		.carousel-control {
 			display: none;
