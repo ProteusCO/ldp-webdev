@@ -118,8 +118,9 @@
 	}
 
 	.carousel-control {
+		display: none;
 
-		&.right, &.left {
+		/*&.right, &.left {
 			background-image: none;
 			text-shadow: none;
 		}
@@ -137,22 +138,30 @@
 			font-size: 4rem;
 			margin-top: -4rem;
 			height: 4rem;
-		}
+		}*/
 
 	}
 
 	.carousel-inner {
+		text-align: center;
 
 		.measure-config-graph {
-			margin: 0 1rem;
+			//margin: 0 1rem;
+		}
+
+		> .carousel-item {
+			display: inline-block !important;
+			width: 100%;
 		}
 
 		.config-graph {
 			margin: 0 auto;
 			width: 100% !important;
 			height: 100% !important;
-			max-width: 285px !important;
-			max-height: 207px;
+			//max-width: 237px !important;
+			//max-height: 237px;
+			max-width: 100% !important;
+			max-height: 100%;
 			canvas {
 				max-width: 100%;
 				max-height: 100%;
@@ -160,7 +169,8 @@
 		}
 
 		.carousel-caption {
-			position: relative;
+			display: none;
+			/*position: relative;
 			bottom: auto;
 			left: auto;
 			right: auto;
@@ -172,7 +182,7 @@
 				font-size: 1.25rem;
 				font-weight: 500;
 				margin-bottom: 0;
-			}
+			}*/
 
 		}
 
@@ -185,7 +195,7 @@
 
 	.goal-alignments-wrapper {
 		flex: 1 0 15%;
-		text-align: center;
+		text-align: left;
 		border-left: none;
 		border-top: 1px solid #e5e5e5;
 		padding: 1rem 0 0 0;
@@ -200,13 +210,25 @@
 
 		.goal-alignments {
 			margin: 1.5rem 0 0;
-			padding: 0;
-			list-style: none;
+			padding: 0 0 0 1rem;
+			list-style: outside disc;
 
 			li {
-				font-size: 1.25rem;
+				font-size: 1.15rem;
 				font-weight: 500;
 				display: block;
+				position: relative;
+
+				&::before {
+					content: '';
+					width: 6px;
+					height: 6px;
+					position: absolute;
+					left: -13px;
+					top: 12px;
+					background: $color-lr-black;
+					border-radius: 100%;
+				}
 
 				+ li {
 					margin-top: .75rem
@@ -220,20 +242,24 @@
 	.measure-config {
 		display: flex;
 		flex-flow: row wrap;
+		text-align: left;
 
 		.prop {
 			margin-bottom: 0;
 			padding: 5px 10px;
 
-			.val, .valinterval-update-received {
+			.val, .interval-update-received {
 				display: inline-block;
 				vertical-align: top;
+				text-align: left;
 			}
 
 			label {
 				margin-bottom: 0;
 				display: block;
 				width: 8rem;
+				text-align: left;
+
 				&::after{
 					content: ':';
 					margin-right: 3px;
@@ -252,7 +278,7 @@
 				color: $color-lr-red;
 			}
 
-			.valinterval-update-received {
+			.val.interval-update-received {
 				color: $color-lr-black;
 			}
 
@@ -269,8 +295,9 @@
 				display: none !important;
 			}
 			a {
-				font-size: 1.65rem;
+				font-size: 1.15rem;
 				font-weight: 300;
+				text-align: left;
 			}
 		}
 
@@ -338,7 +365,7 @@
 
 		.objectives {
 			counter-reset: objective-numbering;
-			padding-left: 35px;
+			padding-left: 60px;
 
 			li {
 				list-style: none;
@@ -350,10 +377,13 @@
 					color: $color-lr-brand;
 					font-size: 3rem;
 					position: absolute;
-					left: -1.25ch;
-					top: 3px;
+					left: -4.25rem;
+					top: 1px;
 					line-height: 1;
 					font-weight: 500;
+					width: 60px;
+					text-align: right;
+					letter-spacing: 0;
 				}
 
 				+ li {
@@ -397,7 +427,7 @@
 	}
 }
 
-.popover {
+.popover:not(.tour-tour) {
 	background: #FFF8E0;
 	border: 1px solid darken($color-cornsilk, 12%);
 	color: $color-lr-grey;
@@ -497,12 +527,48 @@
 	.goal-wrapper {
 		flex-flow: row wrap;
 
-		.goal-measurement {
-			width: 20rem;
+		> .carousel {
+			flex: 2 0 100%;
+			display: flex;
+			align-items: center;
 		}
+
+		.carousel-inner {
+
+			> .carousel-item {
+				display: inline-block !important;
+				vertical-align: middle;
+
+				&.measurement-gauge {
+					width: 30%;
+
+					svg {
+						transform: scale(1.8);
+					}
+				}
+
+				&.measurement-line {
+					width: 40%;
+					margin: 0 1rem;
+				}
+			}
+		}
+
+		.goal-alignments-wrapper {
+			flex: 1 0 15%;
+			text-align: left;
+			border-top: none;
+			border-left: 1px solid #e5e5e5;
+			padding: 0 0 0 1.5rem;
+			margin-top: 0;
+		}
+
+		/*.goal-measurement {
+			width: 20rem;
+		}*/
 		.config-wrapper {
-			padding: 0 1rem 0 2rem;
-			flex: 1 0 45%;
+			padding: 0 1rem 0 0;
+			flex: 1 0 40%;
 		}
 	}
 
@@ -534,13 +600,21 @@
 
 @media (min-width: 1024px) {
 	.goal-wrapper {
-		.goal-alignments-wrapper {
-			flex: 1 0 15%;
-			text-align: center;
-			border-top: none;
-			border-left: 1px solid #e5e5e5;
-			padding: 0 0 0 1rem;
-			margin-top: 0;
+
+		> .carousel {
+			flex: 2 0 15%;
+		}
+
+		.carousel-inner > .carousel-item {
+
+			&.measurement-gauge {
+				width: 33%;
+			}
+
+			&.measurement-line {
+				width: 55%;
+				//max-height: 11rem;
+			}
 		}
 	}
 }
@@ -554,9 +628,18 @@
 		.val {
 			width: calc(100% - 8.25rem);
 		}
+
+		&.goal-name a {
+			font-size: 1.65rem;
+		}
 	}
 
 	.goal-wrapper {
+
+		.config-wrapper {
+			padding: 0 1rem 0 2rem;
+		}
+
 		.carousel-control {
 
 			&.right {
@@ -568,6 +651,12 @@
 			}
 		}
 	}
+}
+
+@media (max-width: 1300px) {
+	/*.goal-wrapper .carousel-inner > .carousel-item.measurement-gauge svg {
+		margin-left: -1.5rem;
+	}*/
 }
 
 @media (max-width: 767px) {
@@ -591,6 +680,20 @@
 /* ----- PRINT STYLES */
 @media print {
 
+	@page {
+		size: 8.75in 11.25in; /* 8.5x11 + 0.125 bleed area on each edge */
+		margin: 0.25in;
+	}
+
+	#main-content-wc-0 {
+		padding: 0 !important;
+
+		h1 {
+			padding: 0 !important;
+			margin-bottom: .5rem !important;
+		}
+	}
+
 	#main-header,
 	.search-bar,
 	#page-footer,
@@ -600,58 +703,79 @@
 	}
 
 	.goal-wrapper {
+		width: 7.5in;
 		-webkit-print-color-adjust: exact;
-		border: none !important;
-		padding: 0 !important;
-		flex-flow: column nowrap !important;
-		align-items: center !important;
+		border: 1px solid #e5e5e5 !important;
+		padding: .75rem !important;
+		flex-flow: row nowrap !important;
+		align-items: flex-start !important;
 
 		.config-wrapper {
-			order: 1;
-			padding: 0 !important;
+			flex: 1 0 30%;
+			padding: 0 1rem 0 0 !important;
+			border-right: 1px solid #e5e5e5;
+			align-self: stretch;
 
 			.prop {
 				padding: 5px 0 !important;
+				label,
+				.val {
+					font-size: .8rem !important;
+					display: block;
+				}
+			}
+
+			.measure-config .prop.goal-name a {
+				font-size: 1rem !important;
 			}
 		}
 
-		.carousel {
-			order: 2;
+		> .carousel {
+			//order: 2;
+			flex: 1 0 10%;
+		}
 
-			.measure-config-graph.int-measure {
-				width: 257px !important;
-				height: 182px !important;
+		.carousel-inner > .carousel-item.measurement-gauge svg {
+			transform: scale(1);
+			margin: 0 auto 0 .5rem;
+			min-height: auto !important;
+			min-width: auto !important;
+		}
+
+		.carousel-inner .config-graph {
+			height: 8rem !important;
+			max-width: 12rem !important;
+
+			canvas {
+				max-width: 100% !important;
+				max-height: 100% !important;
 			}
-		}
-
-		.goal-alignments-wrapper {
-			order: 3;
-		}
-
-		.carousel-control {
-			display: none;
-		}
-
-		> div.carousel {
-			max-height: 19rem !important;
 		}
 
 		div.carousel .goal-measurement {
 			width: 100% !important;
 
 			> .carousel-inner > .carousel-item {
-				display: inline-block !important;
-				width: 47% !important;
+				display: block !important;
+				width: 80% !important;
 			}
 		}
 
 		.goal-alignments-wrapper {
 			flex: 1 0 15%;
-			text-align: center;
-			border-left: none;
-			border-top: 1px solid #e5e5e5;
-			padding: 1rem 0 0 0;
-			margin-top: 1rem;
+			border: none !important;
+			padding: 0 0 0 1rem;
+			margin-top: 0;
+
+			.goal-alignments li {
+				font-size: .9rem !important;
+
+				&::before {
+					width: 4px;
+					height: 4px;
+					top: 9px;
+				}
+			}
 		}
 	}
 }
