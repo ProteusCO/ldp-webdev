@@ -136,21 +136,21 @@ $(function () {
 				title: "Configure Goals",
 				content: "Click here to add new goals or edit existing goals.",
 				placement: "left"
-			},
+			}/*,
 			{
 				// Automatically go to Timeline page
 				path: function() {
 					var goToTimeline = "/participant/timeline" + location.pathname.substring("/participant/goals".length);
 					location.href = goToTimeline;
 				}
-			}
+			}*/
 		],
 		storage: false,
 		backdrop: true,
 		backdropPadding: 5
 	});
 
-	// Instance the Participant tour
+	// Instance the EDM tour
 	//noinspection LongLine
 	var edmGoalTour = new Tour({
 		steps: [
