@@ -181,6 +181,13 @@ section.goal-step {
 
 .goal-header {
 
+	.title-wrapper .plan-name {
+		display: block;
+		font-size: 1.25rem;
+		font-weight: 400;
+		color: darken($color-lr-light-grey, 5%);
+	}
+
 	h1.title {
 		display: block;
 		width: 100%;
@@ -493,7 +500,6 @@ div.window.dialog {
 		h1 {
 			&.title {
 				font-size: 2rem;
-				width: calc(100% - 310px);
 				padding: 0;
 				margin-bottom: 0;
 
@@ -510,6 +516,11 @@ div.window.dialog {
 	}
 
 	.goal-header {
+		.title-wrapper {
+			width: calc(100% - 310px);
+			display: inline-block;
+		}
+
 		.actions {
 			display: inline-block;
 			vertical-align: middle;

@@ -76,6 +76,12 @@ $(function () {
 				placement: "left"
 			},
 			{
+				element: ".top-menu li.link.team-goals",
+				title: "Team Goals",
+				content: "Click here at anytime to see a list of your team's goals.",
+				placement: "left"
+			},
+			{
 				element: ".search-bar",
 				title: "My Participant Search",
 				content: "Use this area to search for participants.",

@@ -182,10 +182,10 @@
 .timeline-item {
 	margin-bottom:2rem;
 
-	&.rescheduled, &.canceled, &.completed {
+	/*&.rescheduled, &.canceled, &.completed {
 		.prop.dstart { display: none; }
 		.prop-group.dates .prop + .prop { margin-left: 0; }
-	}
+	}*/
 
 	&.rescheduled, &.canceled {
 		display: none;

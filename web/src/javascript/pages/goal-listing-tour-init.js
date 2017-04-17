@@ -87,55 +87,47 @@ $(function () {
 				placement: "right"
 			},
 			{
-				element: ".lr-participant-menu .goals",
-				title: "Goals",
-				content: "Click here to view Emerging Leader goals."
+				element: ".lr-participant-menu .organizational-goals",
+				title: "Organizational Goals",
+				content: "Click here to view Organizational Goals."
+			},
+			{
+				element: ".lr-participant-menu .leadership-goals",
+				title: "Organizational Goals",
+				content: "Click here to view Leadership Goals."
+			},
+			{
+				element: ".lr-participant-menu .personal-goals",
+				title: "Organizational Goals",
+				content: "Click here to view Personal Goals."
+			},
+			{
+				element: ".goal-listing-wrapper .wrapper",
+				title: "Goal Listing",
+				content: "For each of the goal types (Organizational, Leadership and Personal), active goals" +
+				" and alignments will be displayed in this area.",
+				placement: "top"
+			},
+			{
+				element: ".goal-listing-header .actions .btn.add",
+				title: "Add a Goal",
+				content: "Don't have any active goals or need to add another goal? Click this button to get started.",
+				placement: "left"
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",
 				title: "Timeline",
-				content: "Click here to view Emerging Leader timeline - the development journey."
+				content: "Click here to view Plan timeline."
 			},
 			{
 				element: ".lr-participant-menu .profile",
 				title: "Profile",
-				content: "Click here to view Emerging Leader profile."
+				content: "Click here to view Plan profile."
 			},
 			{
 				element: ".lr-participant-menu .resources",
 				title: "My Resources",
-				content: "Click here to view resources assigned to Emerging Leader timeline."
-			},
-			{
-				element: ".tab-container li.organizational",
-				title: "Organizational Tab",
-				content: "These goals directly impact the current organizational/business goals.",
-				placement: "right"
-			},
-			{
-				element: ".tab-container li.leadership",
-				title: "Leadership Tab",
-				content: "Goals related to leadership and/or behaviors and/or attitudes.",
-				placement: "right"
-			},
-			{
-				element: ".tab-container li.personal",
-				title: "Personal Tab",
-				content: "Goals outside of business, important to the individual, but not necessarily directly tied" +
-				" to EDM expectations.",
-				placement: "right"
-			},
-			{
-				element: ".goals-viewer > .persistence-actions button.completed-goals-toggle",
-				title: "Show Completed Goals",
-				content: "Click here to see goals that have already been completed.",
-				placement: "left"
-			},
-			{
-				element: ".goals-viewer > .persistence-actions button.configure",
-				title: "Configure Goals",
-				content: "Click here to add new goals or edit existing goals.",
-				placement: "left"
+				content: "Click here to view resources assigned to the Plan."
 			}/*,
 			{
 				// Automatically go to Timeline page
@@ -155,69 +147,49 @@ $(function () {
 	var edmGoalTour = new Tour({
 		steps: [
 			{
-				element: ".sidebar-toggle-box .fa-bars",
-				title: "Menu Toggle",
-				content: "Click here to collapse the side navigation to icons only, or expand it to view the entire navigation.",
-				placement: "right"
+				element: ".lr-participant-menu .organizational-goals",
+				title: "Organizational Goals",
+				content: "Click here to view Organizational Goals."
 			},
 			{
-				element: ".lr-participant-menu .goals",
-				title: "Goals",
-				content: "Click here to view Emerging Leader goals."
+				element: ".lr-participant-menu .leadership-goals",
+				title: "Organizational Goals",
+				content: "Click here to view Leadership Goals."
+			},
+			{
+				element: ".lr-participant-menu .personal-goals",
+				title: "Organizational Goals",
+				content: "Click here to view Personal Goals."
+			},
+			{
+				element: ".goal-listing-wrapper .wrapper",
+				title: "Goal Listing",
+				content: "For each of the goal types (Organizational, Leadership and Personal), active goals" +
+				" and alignments will be displayed in this area.",
+				placement: "top"
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",
 				title: "Timeline",
-				content: "Click here to view Emerging Leader timeline - the development journey."
+				content: "Click here to view Plan timeline."
 			},
 			{
 				element: ".lr-participant-menu .profile",
 				title: "Profile",
-				content: "Click here to view Emerging Leader profile."
+				content: "Click here to view Plan profile."
 			},
 			{
 				element: ".lr-participant-menu .resources",
 				title: "My Resources",
-				content: "Click here to view resources assigned to Emerging Leader timeline."
-			},
-			{
-				element: ".tab-container li.organizational",
-				title: "Organizational Tab",
-				content: "These goals directly impact the current organizational/business goals.",
-				placement: "right"
-			},
-			{
-				element: ".tab-container li.leadership",
-				title: "Leadership Tab",
-				content: "Goals related to leadership and/or behaviors and/or attitudes.",
-				placement: "right"
-			},
-			{
-				element: ".tab-container li.personal",
-				title: "Personal Tab",
-				content: "Goals outside of business, important to the individual, but not necessarily directly tied" +
-				" to EDM expectations.",
-				placement: "right"
-			},
-			{
-				element: ".goals-viewer > .persistence-actions button.completed-goals-toggle",
-				title: "Show Completed Goals",
-				content: "Click here to see goals that have already been completed.",
-				placement: "left"
-			},
-			{
-				element: ".goals-viewer > .persistence-actions button.configure",
-				title: "Configure Goals",
-				content: "Click here to add new goals or edit existing goals.",
-				placement: "left"
-			},
+				content: "Click here to view resources assigned to the Plan."
+			}/*,
 			{
 				// Automatically go to Timeline page
 				path: function() {
 					var goToTimeline = "/participant/timeline" + location.pathname.substring("/participant/goals".length);
 					location.href = goToTimeline;
 				}
-			}
+			}*/
 		],
 		storage: false,
 		backdrop: true,
