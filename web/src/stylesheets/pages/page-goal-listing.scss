@@ -485,6 +485,27 @@
 			background: transparent;
 		}
 	}
+
+	tr.no_data {
+		td {
+			padding: .5rem;
+			background: #f7f7f7;
+			border: 1px solid #e7e7e7;
+			color: $color-lr-light-grey;
+		}
+	}
+}
+
+span.privacy-footer {
+	display: block;
+	width: 100%;
+	padding: .5rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	background: $color-info-light;
+	color: $color-info-dark;
+	border: 1px solid $color-info-dark;
+
 }
 
 .search {
@@ -682,7 +703,7 @@
 
 	@page {
 		size: 8.75in 11.25in; /* 8.5x11 + 0.125 bleed area on each edge */
-		margin: 0.25in;
+		//margin: 0.25in;
 	}
 
 	#main-content-wc-0 {
@@ -690,7 +711,7 @@
 
 		h1 {
 			padding: 0 !important;
-			margin-bottom: .5rem !important;
+			margin: 0 auto .5rem !important;
 		}
 	}
 
@@ -704,11 +725,13 @@
 
 	.goal-wrapper {
 		width: 7.5in;
+		margin: 0 auto .5rem;
 		-webkit-print-color-adjust: exact;
 		border: 1px solid #e5e5e5 !important;
 		padding: .75rem !important;
 		flex-flow: row nowrap !important;
 		align-items: flex-start !important;
+		page-break-inside: avoid;
 
 		.config-wrapper {
 			flex: 1 0 30%;
@@ -722,6 +745,7 @@
 				.val {
 					font-size: .8rem !important;
 					display: block;
+					width: 100%;
 				}
 			}
 
@@ -743,7 +767,7 @@
 		}
 
 		.carousel-inner .config-graph {
-			height: 8rem !important;
+			height: 7rem !important;
 			max-width: 12rem !important;
 
 			canvas {
@@ -758,6 +782,7 @@
 			> .carousel-inner > .carousel-item {
 				display: block !important;
 				width: 80% !important;
+				//max-height: 8rem !important;
 			}
 		}
 
