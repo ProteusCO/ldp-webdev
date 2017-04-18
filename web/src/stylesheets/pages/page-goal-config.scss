@@ -517,13 +517,14 @@ div.window.dialog {
 
 	.goal-header {
 		.title-wrapper {
-			width: calc(100% - 310px);
+			width: calc(100% - 325px);
 			display: inline-block;
 		}
 
 		.actions {
 			display: inline-block;
 			vertical-align: middle;
+			width: 325px;
 		}
 		.row2 {
 			text-align: right;
