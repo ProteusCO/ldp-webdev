@@ -152,6 +152,16 @@ input[type=number]{
 			max-width: 8rem;
 		}
 	}
+
+	.zoned-time-editor {
+		.prop.minutes {
+			margin-right: 3px;
+
+			input[type="text"] {
+				width: 4rem;
+			}
+		}
+	}
 }
 
 .user-picture.mode-view {
