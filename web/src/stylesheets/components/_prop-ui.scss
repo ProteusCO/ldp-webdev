@@ -159,6 +159,10 @@ input[type=number]{
 
 			input[type="text"] {
 				width: 4rem;
+
+				&:-moz-ui-invalid:not(output) {
+					box-shadow: none;
+				}
 			}
 		}
 	}
