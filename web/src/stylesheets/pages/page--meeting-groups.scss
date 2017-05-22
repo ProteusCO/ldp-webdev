@@ -129,11 +129,20 @@ div.window.dialog.note-editor-dialog {
 	}
 }
 
-.reschedule-group-meeting {
+.reschedule-group-meeting,
+.confirm-group-meeting {
 	max-width: 65rem !important;
 
-	input[type="text"], textarea {
-		width: 65% !important;
+	.group-meeting-confirmation-prop-editor {
+		input[type="text"], textarea {
+			width: 65%;
+		}
+
+		.clock-period .select2-container {
+			#operation & {
+				width: 60px !important;
+			}
+		}
 	}
 
 }

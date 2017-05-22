@@ -93,12 +93,12 @@ $(function () {
 			},
 			{
 				element: ".lr-participant-menu .leadership-goals",
-				title: "Organizational Goals",
+				title: "Leadership Goals",
 				content: "Click here to view Leadership Goals."
 			},
 			{
 				element: ".lr-participant-menu .personal-goals",
-				title: "Organizational Goals",
+				title: "Personal Goals",
 				content: "Click here to view Personal Goals."
 			},
 			{
@@ -153,12 +153,12 @@ $(function () {
 			},
 			{
 				element: ".lr-participant-menu .leadership-goals",
-				title: "Organizational Goals",
+				title: "Leadership Goals",
 				content: "Click here to view Leadership Goals."
 			},
 			{
 				element: ".lr-participant-menu .personal-goals",
-				title: "Organizational Goals",
+				title: "Personal Goals",
 				content: "Click here to view Personal Goals."
 			},
 			{
@@ -167,6 +167,12 @@ $(function () {
 				content: "For each of the goal types (Organizational, Leadership and Personal), active goals" +
 				" and alignments will be displayed in this area.",
 				placement: "top"
+			},
+			{
+				element: ".goal-listing-header .actions .btn.add",
+				title: "Add a Goal",
+				content: "Don't have any active goals or need to add another goal? Click this button to get started.",
+				placement: "left"
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",

@@ -1,10 +1,32 @@
-
 .user-role-search .search-results > thead {
 	display: none;
 }
 
 .user-viewer {
 	position: relative;
+
+	.message-container {
+		position: relative;
+		z-index: 0;
+		margin: 8px 0 10px;
+
+		&:empty {
+			margin: 0;
+		}
+
+		div.message {
+			padding: 9px 7px 9px 1.75rem;
+		}
+
+	}
+
+	.actions.nav-actions {
+		z-index: 99;
+		position: absolute;
+		right: 0;
+		top: 4.35rem;
+	}
+
 }
 
 .update-password-dialog {

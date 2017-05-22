@@ -86,6 +86,11 @@
 	text-align: right;
 	display: block;
 	padding: 10px 0;
+
+	label {
+		display: block;
+		margin-bottom: 0;
+	}
 }
 
 /* Results Table
