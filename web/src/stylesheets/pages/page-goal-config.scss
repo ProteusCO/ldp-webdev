@@ -301,6 +301,17 @@ section.goal-step {
 		}
 	}
 
+	.prop.goal-economic-value {
+		.goal-economic-value-calc {
+			font-style: italic;
+			margin-left: 5px;
+			font-size: .8rem;
+			&::before {
+				content: '-';
+				padding-right: 5px;
+			}
+		}
+	}
 }
 
 .goal-strength {
