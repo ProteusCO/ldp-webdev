@@ -396,18 +396,30 @@ h2.plan-name {
 	}
 
 	.financial-values-wrapper {
-		display: none;
+		flex: 1 0 100%;
 	}
 
 	.goal-ev {
 		flex: 2 0 100%;
 		width: 100%;
 		padding-bottom: 1.5rem;
+
+		.val.how {
+			font-style: italic;
+			margin-left: 5px;
+			font-size: .8rem;
+			display: inline;
+
+			&::before {
+				content: '-';
+				padding-right: 5px;
+			}
+		}
 	}
 
 	.description {
 		flex: 2 1 100%;
-		order: 3;
+		order: 4;
 		width: 100%;
 		padding: 1.5rem 3rem 1.5rem 0;
 	}
@@ -440,7 +452,7 @@ h2.plan-name {
 		flex: 1 0 100%;
 		justify-content: flex-start;
 		padding-bottom: 3rem;
-		order: 4;
+		order: 5;
 		margin-top: 1rem;
 	}
 
@@ -916,6 +928,10 @@ div.window.dialog {
 		.smart-guage-wrapper {
 			margin-top: 0;
 		}
+
+		.start-date {
+			padding-bottom: 1.5rem;
+		}
 	}
 
 	.goal-viewer, .alignment {
@@ -960,8 +976,10 @@ div.window.dialog {
 		.goal-info-wrapper {
 			flex: 1;
 			flex-direction: column;
+			flex-wrap: nowrap;
 		}
-		.description {
+		.description,
+		.financial-values-wrapper {
 			flex: 1 0 auto;
 		}
 		.goal-ev {
@@ -987,9 +1005,11 @@ div.window.dialog {
 
 	.goal-wrapper {
 		flex-direction: row;
-	}
 
-	.goal-wrapper {
+		.start-date {
+			padding-bottom: 0;
+		}
+
 		.goal-ev {
 			flex: 2 0 100%;
 		}
@@ -1603,6 +1623,7 @@ and (orientation:portrait) {
 			margin: 1rem 0 0;
 			width: 100%;
 			padding: .5rem 1rem 1rem;
+			page-break-inside: avoid;
 
 			&.flipped {
 				.face.back, .face.front {
