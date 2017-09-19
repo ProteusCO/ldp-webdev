@@ -107,6 +107,7 @@
 	margin: .25rem 0 1rem;
 	display: flex;
 	flex-flow: column nowrap;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 
 	//CAROUSEL
 	.goal-measurement {
@@ -246,7 +247,7 @@
 
 		.prop {
 			margin-bottom: 0;
-			padding: 5px 10px;
+			padding: 5px 0;
 
 			.val, .interval-update-received {
 				display: inline-block;
@@ -284,6 +285,29 @@
 
 			&:not(.goal-name) {
 				flex: 1 0 45%;
+			}
+
+			&.ev {
+				flex: 1 0 100%;
+				border-top: 1px solid #e5e5e5;
+				padding-top: .85rem;
+				margin-top: .75rem;
+				font-size: 1.125rem;
+				color: $color-lr-blue;
+
+				label {
+					width: auto;
+					margin-right: .5rem;
+					display: inline;
+				}
+
+				.val {
+					display: inline;
+
+					&.how {
+						display: none;
+					}
+				}
 			}
 
 		}
@@ -564,7 +588,7 @@ span.privacy-footer {
 					width: 30%;
 
 					svg {
-						transform: scale(1.8);
+						transform: scale(1.5);
 					}
 				}
 
@@ -630,6 +654,10 @@ span.privacy-footer {
 
 			&.measurement-gauge {
 				width: 33%;
+
+				svg {
+					transform: scale(1.8);
+				}
 			}
 
 			&.measurement-line {
