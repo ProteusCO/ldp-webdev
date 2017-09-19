@@ -431,6 +431,42 @@ div.window.dialog /*specificity*/ {
 
 	}
 
+	.ev-editor-con {
+
+		.ev-heading {
+			font-size: 1.25rem;
+			font-weight: 400;
+			display: block;
+			border-bottom: 1px solid #ccc;
+			padding-bottom: .25rem;
+			margin-bottom: .65rem;
+		}
+
+		.predicted-ev-editor {
+			background: #ededef;
+			border: 1px solid #9699a6;
+			border-left-width: 8px;
+			padding: 1rem 1rem .5rem;
+			margin-bottom: 2.5rem;
+
+			label {
+				margin-bottom: 0;
+			}
+
+			.val {
+				font-style: italic;
+			}
+
+			.predected-ev-calc {
+				margin-bottom: 0;
+			}
+		}
+
+		.prop {
+			padding: 5px 0;
+		}
+	}
+
 }
 
 .select2-container {
