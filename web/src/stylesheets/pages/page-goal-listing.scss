@@ -2,7 +2,11 @@
 @import "../../../../bower_components/bootstrap/scss/variables";
 @import "../../../../bower_components/bootstrap/scss/mixins";
 @import "../../../../bower_components/bootstrap/scss/buttons";
+@import "../components/goal-legend";
 
+.pager {
+	margin-top: 0;
+}
 
 #main-wrapper #main-content {
 	max-width: 100%;
@@ -120,27 +124,6 @@
 
 	.carousel-control {
 		display: none;
-
-		/*&.right, &.left {
-			background-image: none;
-			text-shadow: none;
-		}
-
-		&.right {
-			right: -15px;
-		}
-
-		&.left {
-			left: -15px;
-		}
-
-		.icon-next, .icon-prev {
-			color: $color-lr-grey;
-			font-size: 4rem;
-			margin-top: -4rem;
-			height: 4rem;
-		}*/
-
 	}
 
 	.carousel-inner {
@@ -537,7 +520,36 @@ span.privacy-footer {
 }
 
 .search-bar {
-	padding: 10px 0;
+	margin-bottom: 0;
+	padding: 10px 0 0;
+
+	.constraint {
+		vertical-align: top;
+
+		&:first-of-type {
+			margin-left: 0;
+			padding-left: 0;
+		}
+
+		.select2-container {
+			min-width: 5rem !important;
+		}
+
+		select[multiple=""] + .select2-container {
+			min-width: 15.5rem !important;
+			max-width: 16rem !important;
+		}
+
+		.select2-container--default .select2-selection--multiple .select2-selection__choice {
+			font-size: 85%;
+		}
+	}
+
+	.actions.search-actions {
+		display: inline-block;
+		vertical-align: top;
+		padding: 30px 10px  10px;
+	}
 
 	> .sort-actions {
 		float: right;
