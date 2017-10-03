@@ -262,6 +262,28 @@ a.logo span {
 	min-width: 20px;
 }
 
+@media (max-width: 1180px) {
+	.top-menu li.link {
+		margin-right: 8px;
+
+		a span {
+			font-size: 75%;
+			max-width: auto;
+		}
+	}
+}
+
+@media (max-width: 968px) {
+	.top-menu li.link {
+		margin-right: 5px;
+		margin-top: 12px;
+
+		a span {
+			display: none;
+		}
+	}
+}
+
 @media (max-width: 768px)
 and (orientation: portrait) {
 
