@@ -526,6 +526,10 @@ span.privacy-footer {
 	.constraint {
 		vertical-align: top;
 
+		select { // hide prior to select2 initialization
+			visibility: hidden;
+		}
+
 		&:first-of-type {
 			margin-left: 0;
 			padding-left: 0;
