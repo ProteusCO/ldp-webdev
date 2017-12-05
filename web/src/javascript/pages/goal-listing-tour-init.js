@@ -77,7 +77,7 @@ $(function () {
 			{
 				element: ".top-menu li.link.resources",
 				title: "Resource Library",
-				content: "Click here to view resources available to all LRSuccessPath members.",
+				content: "Click here to view resources available to all Accelerate members.",
 				placement: "left"
 			},
 			{
