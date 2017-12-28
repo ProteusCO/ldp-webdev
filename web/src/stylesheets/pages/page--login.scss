@@ -282,3 +282,15 @@ header#main-header {
 		}
 	}
 }
+
+.eula {
+	span.value {
+		display: none;
+	}
+	.label {
+		color: black;
+		white-space: normal;
+		font-size: .9rem;
+		line-height: 1.5;
+	}
+}
