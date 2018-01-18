@@ -1,10 +1,12 @@
+@import "../config/base-vars";
 @import "../components/plan-switcher";
 @import "../components/goal_tabs";
 @import "../components/strength-meter";
 @import "../components/flip-cards";
 @import "../components/goal-status-tabs";
 @import "../components/goal-legend";
-@import "../../../../bower_components/bootstrap/scss/mixins/clearfix";
+@import "../../../../bower_components/bootstrap/scss/mixins";
+@import "../../../../bower_components/bootstrap/scss/buttons";
 
 h2.plan-name {
 	border-bottom: none;
@@ -602,6 +604,23 @@ section.tracking-metrics {
 		font-style: italic;
 		color: $color-lr-light-grey;
 		padding-left: 0 !important;
+	}
+
+	.status-toggle {
+		float: right;
+		margin-top: calc(-1.5rem - 1rem - 2rem - 1.5rem); // h1 and h2 padding and font size
+		.btn {
+			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			box-shadow: none;
+			border-radius: unset;
+			background-color: $color-white !important;
+		}
+		.active {
+			background-color: $color-lr-brand !important;
+			color: $color-white !important;
+			font-weight: 500;
+		}
+
 	}
 
 	.metrics-lists {

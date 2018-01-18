@@ -399,6 +399,17 @@ section.goal-step {
 		margin-bottom: 1rem;
 		background-color: $body-bg;
 
+		.leading-indicator-status {
+			background-color: $color-lr-brand;
+			color: $color-white;
+			font-weight: 500;
+			padding: .5rem;
+			position:relative;
+			top: -1.75rem;
+			left: calc(-0.55rem - 1px);
+			display: inline-block;
+		}
+		
 		h1 {
 			font-size: 1.15rem;
 			font-style: italic;
