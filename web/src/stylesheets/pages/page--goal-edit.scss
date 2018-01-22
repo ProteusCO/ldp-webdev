@@ -316,6 +316,18 @@ div.message {
 			}
 		}
 
+		.goal-tags {
+			label {
+				display: block;
+			}
+			.instructions {
+				font-style: italic;
+				display: block;
+			}
+			select {
+				min-width: 100ch;
+			}
+		}
 	}
 
 	.wizard-step-wrapper {
@@ -726,6 +738,8 @@ section.metric-list {
 	}
 
 }
+
+
 
 .instructions-wrapper {
 	display: block;

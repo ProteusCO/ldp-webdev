@@ -175,6 +175,9 @@
 	.config-wrapper {
 		flex: 1 0 100%;
 		padding: 0;
+		.goal-tags {
+
+		}
 	}
 
 	.goal-alignments-wrapper {
@@ -318,7 +321,6 @@
 	.report-time {
 		display: none;
 	}
-
 }
 
 .no-active-goals-wrapper {

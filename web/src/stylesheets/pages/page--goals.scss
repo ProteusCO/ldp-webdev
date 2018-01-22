@@ -24,6 +24,17 @@ h2.plan-name {
 			transform: translateX(-179px);
 		}
 	}
+	.goal-tags {
+		font-size: $font-size-sm;
+		color: $color-lr-light-grey;
+		label {
+			font-weight: 500;
+			&::after {
+				content: ':';
+				padding-right: 5px;
+			}
+		}
+	}
 }
 
 #main-content-wc-0 {
