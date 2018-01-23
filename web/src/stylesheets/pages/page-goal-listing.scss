@@ -176,7 +176,15 @@
 		flex: 1 0 100%;
 		padding: 0;
 		.goal-tags {
-
+			label {
+				font-weight: 400;
+				display: inline-block;
+				padding-right: 5px;
+				margin-top: .75rem;
+				&:after {
+					content: ":";
+				}
+			}
 		}
 	}
 

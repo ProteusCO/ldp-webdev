@@ -25,6 +25,7 @@ h2.plan-name {
 		}
 	}
 	.goal-tags {
+		padding:1rem 1rem 0;
 		font-size: $font-size-sm;
 		color: $color-lr-light-grey;
 		label {
@@ -33,6 +34,9 @@ h2.plan-name {
 				content: ':';
 				padding-right: 5px;
 			}
+		}
+		span {
+			font-style: italic;
 		}
 	}
 }
