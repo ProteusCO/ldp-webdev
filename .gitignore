@@ -7,11 +7,12 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 
-
+.env
+/artifact/
 build/
 node_modules/
-npm-debug.log
 bower_components/
+npm-debug.log
 
 # Sass template
 .sass-cache

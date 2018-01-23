@@ -1,0 +1,367 @@
+@import "../config/base-vars";
+@import "../../../../../node_modules/bootstrap/scss/mixins/hover";
+@import "../../../../../node_modules/bootstrap/scss/mixins/clearfix";
+
+$tab-color-bg: lighten($btn-primary-bg, 5%);
+$tab-color-bg-selected: darken($btn-primary-bg, 10%);
+$tab-color-fg: $color-white;
+
+@import "../mixins/tabs";
+
+$nav-color-bg: lighten($color-app-blue, 5%);
+$nav-bg-selected: darken($color-app-blue, 10%);
+$nav-fg: $color-white;
+
+h2.plan-name {
+	font-size: 2rem;
+	border-bottom: 1px solid #ccc;
+	margin: 0;
+	padding-bottom: .5rem;
+	color: $color-app-grey;
+	font-weight: 300;
+}
+
+.goals-viewer,
+.goal-management{
+	position: relative;
+	.persistence-actions {
+		/*position: absolute;
+		right:4.25rem;
+		top: 4rem;
+		z-index: 1;
+		height:2.5rem;*/
+		float: right;
+		padding-right: .25rem;
+		margin-top: .25rem;
+
+		.btn{
+			color:$brand-primary;
+			background-color: $color-white;
+
+			&.configure {
+				&::before {
+					content: '\f013';
+					font-family: FontAwesome;
+					padding-right: 3px;
+				}
+			}
+
+			&.show-completed {
+				&::before {
+					content: '\f05d';
+					font-family: FontAwesome;
+					padding-right: 3px;
+				}
+			}
+
+			&.hide-completed {
+				&::before {
+					content: '\f058';
+
+					font-family: FontAwesome;
+					padding-right: 3px;
+				}
+			}
+
+			&:hover{
+				background-color: $color-smokey-white;
+				color:$brand-primary;
+			}
+		}
+	}
+
+	.nav-actions {
+		$nav-action-color: $brand-primary;
+		margin-bottom: 0;
+		padding-right: 0;
+		position: absolute;
+		right: .5rem;
+		top: 4px;
+
+		.back /*, .other */ {
+			&:before {
+				color: $nav-action-color;
+				@include hover {
+					color: $nav-action-color;
+				}
+
+				&:focus,
+				&.focus {
+					color: $nav-action-color;
+				}
+
+				&:active,
+				&.active,
+				.open > &.dropdown-toggle {
+					color: $nav-action-color;
+					&:hover,
+					&:focus,
+					&.focus {
+						color: $nav-action-color;
+					}
+				}
+			}
+			&:hover:before {
+				color: darken($nav-action-color, 10%);
+			}
+		}
+	}
+	.tab-container {
+		@include style-tab-elements;
+		.tab-items {
+			.ti.tab-selected a, .ti:hover a {
+				background-color: darken($color-app-brand, 15%);
+			}
+
+			li {
+
+				a::before {
+					content: '';
+					font-size: inherit;
+					text-rendering: auto;
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-family: FontAwesome;
+					display: inline-block;
+					padding-right: 7px;
+				}
+
+				&.organizational a::before { content: '\f0f7'; }
+				&.leadership a::before { content: '\f0c0'; }
+				&.personal a::before { content: '\f24e'; }
+
+			}
+
+		}
+	}
+	.tab-container .tab-content {
+		padding: 0;
+		border-top-width:0;
+
+		.navbar {
+			padding:0;
+			min-height: auto;
+			border-radius: 0;
+			background-color: lighten($color-app-light-grey, 15%);
+			border-right:1px solid lighten($color-app-light-grey, 15%);
+
+			.nav-item + .nav-item {
+				margin-left: 0;
+			}
+
+			.btn {
+				color:$nav-fg;
+				background-color: lighten($color-app-light-grey, 15%);
+				padding: 0.5rem 1rem;
+				border-radius: 0;
+				border-right: 1px solid $color-app-light-grey;
+
+				&:hover {
+					background-color: $color-app-light-grey;
+				}
+
+			}
+			.active .btn {
+				background-color: $color-app-light-grey;
+			}
+
+		}
+
+	}
+
+	.goal-selector {
+
+		.goal-selector-nav {
+			@include clearfix();
+			//width: 100%;
+			width: auto;
+			overflow: auto;
+			float: left;
+		}
+
+		.goal-selector-actions {
+			float: right;
+			margin-right: .65rem;
+			font-size: 90%;
+			font-weight: 400;
+			padding-top: 10px;
+
+			a {
+				color: $color-white;
+				display: inline-block;
+				text-decoration: underline;
+				margin-left: 2rem;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
+
+		}
+
+	}
+
+	.message-container {
+		padding: 0;
+
+		div.message {
+			margin: 1rem 2rem;
+		}
+
+		.message-actions {
+			display: block;
+			padding: 0.5rem 0;
+		}
+
+		.message-content, .message-actions {
+			flex: 1 0 auto;
+		}
+
+	}
+
+}
+
+.goal-management {
+
+	.repo-item-search {
+
+		.entity-actions {
+			margin: 0 0 1rem;
+			float: left;
+			padding-bottom: 2.25rem;
+			width: 100%;
+			border-bottom: 1px solid lighten($color-app-light-grey, 15%);
+		}
+
+		.search-bar {
+			clear: both;
+			padding: 0;
+			margin: 10px 0 20px;
+
+			.constraint {
+				padding: 0;
+				width: 95%;
+
+				.select2-container {
+					max-width: none !important;
+					width: 100% !important;
+				}
+
+			}
+
+		}
+
+		table.miwt-table {
+			border: none;
+			margin-top: 0;
+		}
+
+		.pager-goalconfig-results {
+			padding: 0;
+			margin-top: 0;
+
+			.goalconfig-results {
+
+				thead { display: none; }
+
+				> thead > tr > th, > tbody > tr > td {
+					background: none;
+					text-align: left !important;
+				}
+
+			}
+
+		}
+
+	}
+
+	.tracking-metric {
+		margin: 0 1.5rem;
+
+		.tracking-metric-renderer .prop-group {
+			padding: 0 !important;
+		}
+
+		.actions.tracking-metric-actions { padding: 0; }
+
+		+ .tracking-metric {
+			padding-top: 25px;
+			margin-top: 35px;
+			border-top: 1px solid $color-cloud-grey;
+		}
+
+	}
+
+}
+
+@media (max-width: 768px) {
+	h2.plan-name {
+		font-size: 1.5rem;
+	}
+
+	.goals-viewer,
+	.goal-management {
+		.persistence-actions {
+			padding-right: .25rem;
+		}
+		.btn {
+			&.configure, &.completed-goals-toggle {
+				color: transparent !important;
+				width: 40px;
+				overflow: hidden;
+				white-space: nowrap;
+				padding: .375rem .75rem;
+				&::before {
+					color: $color-app-brand !important;
+				}
+			}
+		}
+
+		.tab-container {
+
+			.tab-content .goal-selector {
+				overflow: auto;
+
+				.goal-selector-nav {
+					width: 200%;
+				}
+
+			}
+
+			.tab-items .ti {
+				a {
+					color: transparent;
+					white-space: nowrap;
+					width: 45px;
+					font-size: 0 !important;
+					padding: .6rem .9rem;
+
+					&::before {
+						color: $color-white;
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+
+		.nav-actions {
+			right: .5rem;
+
+			.back {
+				width: 40px;
+				&::before {
+					padding: .375rem .75rem;
+				}
+			}
+		}
+
+		.goal-selector .goal-selector-actions {
+			width: 100%;
+			text-align: center;
+			padding: 8px 0;
+		}
+
+	}
+
+
+}

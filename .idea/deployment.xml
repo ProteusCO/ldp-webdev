@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="LDP Live (Web)" showExcludedInSync="true">
+  <component name="PublishConfigData" serverName="LDP Live (Web)" showNewOnTargetInSync="false" showExcludedInSync="true">
     <serverData>
       <paths name="LDP Live (Web)">
         <serverdata>
@@ -23,6 +23,16 @@
             <mapping deploy="Javascript/Entropy/components" local="$PROJECT_DIR$/web/build/javascript/components" web="Javascript/Entropy/components" />
             <mapping deploy="Javascript/Entropy/templates" local="$PROJECT_DIR$/web/build/javascript/templates" web="Javascript/Entropy/templates" />
           </mappings>
+        </serverdata>
+      </paths>
+      <paths name="aholt LDP Dev (web)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/build" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="ProgrammaticData" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
