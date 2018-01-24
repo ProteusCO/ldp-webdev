@@ -3,6 +3,7 @@
 @import "../../../../../node_modules/bootstrap/scss/variables";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
 @import "../../../../../node_modules/bootstrap/scss/buttons";
+@import "../mixins/bootstrap-legacy-buttons";
 
 #main-wrapper #main-content {
 	max-width: 1200px;
@@ -473,7 +474,7 @@ section.metric-list {
 		margin-bottom: 1rem;
 
 		.btn {
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 		}
 
 		&.entity-actions {
@@ -581,7 +582,7 @@ section.metric-list {
 
 	.actions {
 		.btn.move {
-			@include button-variant($color-app-light-grey, $color-white, $color-app-light-grey);
+			@include button-variant-legacy($color-app-light-grey, $color-white, $color-app-light-grey);
 		}
 	}
 
@@ -649,7 +650,7 @@ section.metric-list {
 			margin-left: 5px;
 
 			.btn {
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+				@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 			}
 
 		}
@@ -819,7 +820,7 @@ div.prop {
 	}
 
 	.btn.goal-statement-click-to-edit {
-		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 	}
 
 }
@@ -896,8 +897,8 @@ div.popover {
 	}
 
 	button.popup-dismiss {
-		@include button-variant(darken(#2FC2EF, 15%), $color-white, darken(#2FC2EF, 15%));
-		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		@include button-variant-legacy(darken(#2FC2EF, 15%), $color-white, darken(#2FC2EF, 15%));
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 		border-width: 1px;
 		border-style: solid;
 	}
@@ -1000,10 +1001,10 @@ div.window.dialog {
 		}
 		.btn {
 			&.no {
-				@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+				@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 			}
 			&.yes {
-				@include button-variant($color-app-red, $color-white, $color-app-red);
+				@include button-variant-legacy($color-app-red, $color-white, $color-app-red);
 			}
 		}
 	}
@@ -1012,7 +1013,7 @@ div.window.dialog {
 
 .message-container {
 	.btn {
-		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 		margin-left: .5rem;
 	}
 }
@@ -1037,7 +1038,7 @@ div.window.dialog {
 	}
 
 	.btn.next, .btn.submit {
-		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 
 		&::after {
 			content: '\f054';
@@ -1049,7 +1050,7 @@ div.window.dialog {
 	}
 
 	.btn.previous {
-		@include button-variant($color-app-brand, $color-white, $color-app-brand);
+		@include button-variant-legacy($color-app-brand, $color-white, $color-app-brand);
 		margin-right: 1rem;
 
 		&::before {

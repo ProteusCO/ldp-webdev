@@ -42,11 +42,13 @@ gulp.task('javascript:build', function() {
 });
 gulp.task('javascript:vendor', function() {
     return gulp.src([
-        './node_modules/jquery/dist/query.js',
+        './node_modules/jquery/dist/jquery.js',
+        './node_modules/jquery.cookie/jquery.cookie.js',
         './node_modules/popper.js/dist/umd/popper.js',
         './node_modules/select2/dist/js/select2.js',
         './node_modules/select2/dist/js/**/i18n/*.js',
-        './node_modules/bootstrap/dist/js/bootstrap.js'
+        './node_modules/bootstrap/dist/js/bootstrap.js',
+        './node_modules/autotrack/autotrack.js'
     ])
         .pipe(clip())
         .pipe(gulp.dest('./build/Javascript/vendor'))

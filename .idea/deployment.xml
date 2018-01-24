@@ -35,6 +35,16 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="aholt LDP QA (web)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$/build" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="ProgrammaticData" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>

@@ -1,6 +1,7 @@
 @import "../config/base-vars";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
 @import "../mixins/cards";
+@import "../mixins/bootstrap-legacy-buttons";
 
 .resource-viewer {
 	position: relative;
@@ -66,8 +67,8 @@
 	.resource-action {
 
 		.btn {
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+			@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 
 			&:hover {
 				text-decoration: none;
@@ -142,7 +143,7 @@
 				width:24px;
 				overflow: hidden;
 				display: #444;
-				@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+				@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 
 				&:before{
 					display: block;
