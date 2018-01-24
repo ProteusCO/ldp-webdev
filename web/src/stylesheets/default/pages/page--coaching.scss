@@ -1,5 +1,6 @@
 @import "../config/base-vars";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
+@import "../mixins/bootstrap-legacy-buttons";
 
 .coaching-entity-editor {
 	.picture-editor.image-selected {
@@ -16,7 +17,7 @@
 			text-align: right;
 			margin: -3.75rem 0 2rem;
 			.btn {
-				@include button-variant($color-white, $color-app-brand, $color-app-brand)
+				@include button-variant-legacy($color-white, $color-app-brand, $color-app-brand)
 			}
 		}
 		.search_bar {
@@ -25,7 +26,7 @@
 				vertical-align: baseline;
 			}
 			.actions.search_actions .btn {
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+				@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 			}
 		}
 		label {

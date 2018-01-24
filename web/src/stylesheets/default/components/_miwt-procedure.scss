@@ -1,6 +1,6 @@
 @import "../config/base-vars";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
-
+@import "../mixins/bootstrap-legacy-buttons";
 
 table.add-participant-plan {
 	//min-height: 20rem;
@@ -31,12 +31,12 @@ table.add-participant-plan {
 			background-color: transparent;
 		}
 		/*.btn {
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 		}
 		.btn.next-button:not(:disabled),
 		.btn.finish-button:not(:disabled)
 		{
-			@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+			@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 		}
 		.btn:disabled {
 			color: $color-dark-grey;

@@ -5,6 +5,7 @@
 @import "../components/timeline";
 @import "../components/action-items";
 @import "../../../../../node_modules/bootstrap/scss/buttons";
+@import "../mixins/bootstrap-legacy-buttons";
 
 .flex-container {
 	display: flex;
@@ -392,7 +393,7 @@
 			margin-bottom: .25rem;
 
 			.btn.add {
-				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+				@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 				text-transform: none;
 
 			}
@@ -435,7 +436,7 @@
 	}*/
 
 	.btn.engagement-completed {
-		@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 	}
 
 }
@@ -579,7 +580,7 @@ and (orientation: portrait) {
 
 			button {
 				display: inline-block;
-				@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
+				@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
 				padding: 0.5rem .5rem .35rem;
 				background: #fff;
 				border: 1px solid $color-app-brand;

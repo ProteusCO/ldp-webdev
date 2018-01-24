@@ -2,6 +2,7 @@
 @import "../../../../../node_modules/bootstrap/scss/variables";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
 @import "../../../../../node_modules/bootstrap/scss/buttons";
+@import "../mixins/bootstrap-legacy-buttons";
 
 #side-nav, .fa.fa-bars {
 	display: none !important;
@@ -46,8 +47,8 @@
 
 		.btn {
 			float: right;
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-primary-border);
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 			color: transparent;
 			width: 40px;
 			overflow: hidden;
@@ -104,7 +105,7 @@
 	.btn {
 
 		&.remove {
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 			margin-left: 1rem;
 		}
 
@@ -247,7 +248,7 @@
 
 	.resource-engagement {
 		.btn {
-			@include button-variant($color-app-brand, $color-white, $color-app-brand);
+			@include button-variant-legacy($color-app-brand, $color-white, $color-app-brand);
 			margin-bottom: 1rem;
 		}
 
@@ -270,7 +271,7 @@
 				margin-top: 1.75rem;
 			}
 			&.delete {
-				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+				@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 			}
 		}
 		.file-row {

@@ -19,6 +19,9 @@
       <webServer id="e2614517-27c6-46be-95f0-33cf4f08719c" name="aholt LDP Dev (web)" url="http://localhost">
         <fileTransfer port="0" mountedRoot="$USER_HOME$/workspace_data/webdav/dev/Web" accessType="MOUNT" />
       </webServer>
+      <webServer id="54216aa6-7e28-439e-a743-b06ead312324" name="aholt LDP QA (web)" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="$USER_HOME$/workspace_data/webdav/lr-qa/Web" accessType="MOUNT" />
+      </webServer>
     </option>
   </component>
 </project>

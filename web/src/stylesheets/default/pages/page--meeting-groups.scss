@@ -1,6 +1,7 @@
 @import "../../../../../node_modules/bootstrap/scss/mixins";
 @import "../components/schedule";
 @import "../components/time";
+@import "../mixins/bootstrap-legacy-buttons";
 
 .meeting-group-search {
 
@@ -52,9 +53,9 @@
 	}
 	.presence-actions {
 		.presence-btn {
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 			&.selected {
-				@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+				@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 			}
 		}
 	}
@@ -156,8 +157,8 @@ div.window.dialog.note-editor-dialog {
 		right: .5rem;
 
 		.btn {
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius);
+			@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius);
 		}
 	}
 	.message-container {

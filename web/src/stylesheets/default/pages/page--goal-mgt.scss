@@ -5,6 +5,7 @@ $tab-content-color-bg: inherit;
 @import "../../../../../node_modules/bootstrap/scss/variables";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
 @import "../../../../../node_modules/bootstrap/scss/buttons";
+@import "../mixins/bootstrap-legacy-buttons";
 //@import "../../../../../node_modules/bootstrap/scss/mixins/border-radius";
 //@import "../../../../../node_modules/bootstrap/scss/mixins/clearfix";
 
@@ -29,15 +30,15 @@ $tab-content-color-bg: inherit;
 		width: 100%;
 
 		/*&.status-active {
-			@include button-variant($color-white, $color-app-brand, darken($color-app-brand, 15%));
+			@include button-variant-legacy($color-white, $color-app-brand, darken($color-app-brand, 15%));
 		}
 
 		&.status-completed {
-			@include button-variant(darken($color-app-brand, 15%), lighten($color-app-brand, 30%), darken($color-app-brand, 25%));
+			@include button-variant-legacy(darken($color-app-brand, 15%), lighten($color-app-brand, 30%), darken($color-app-brand, 25%));
 		}
 
 		&.status-draft {
-			@include button-variant(darken($color-app-light-grey, 18%), lighten($color-app-light-grey, 25%), $color-app-light-grey);
+			@include button-variant-legacy(darken($color-app-light-grey, 18%), lighten($color-app-light-grey, 25%), $color-app-light-grey);
 		}
 
 		&.active {
@@ -126,7 +127,7 @@ $tab-content-color-bg: inherit;
 	.goal-basics, .smart-wrapper {
 
 		.btn {
-			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
 		}
 
 	}
@@ -404,8 +405,8 @@ $tab-content-color-bg: inherit;
 
 		a.view-progress, .btn {
 			border: 1px solid $btn-primary-border;
-			@include button-variant($color-app-brand, $color-white, $btn-primary-border);
-			@include button-size($btn-padding-y, $btn-padding-x, $font-size-root, $line-height-lg, $border-radius-sm);
+			@include button-variant-legacy($color-app-brand, $color-white, $btn-primary-border);
+			@include button-size-legacy($btn-padding-y, $btn-padding-x, $font-size-root, $line-height-lg, $border-radius-sm);
 			display: inline-block;
 			vertical-align: middle;
 			font-weight: 400;

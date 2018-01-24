@@ -7,6 +7,7 @@
 @import "../components/goal-legend";
 @import "../../../../../node_modules/bootstrap/scss/mixins";
 @import "../../../../../node_modules/bootstrap/scss/buttons";
+@import "../mixins/bootstrap-legacy-buttons";
 
 h2.plan-name {
 	border-bottom: none;
@@ -99,7 +100,7 @@ h2.plan-name {
 
 	.btn.back {
 		margin-bottom: .5rem;
-		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
 		float: right;
 
 		&::before {
@@ -610,7 +611,7 @@ section.tracking-metrics {
 		float: right;
 		margin-top: calc(-1.5rem - 1rem - 2rem - 1.5rem); // h1 and h2 padding and font size
 		.btn {
-			@include button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 			box-shadow: none;
 			border-radius: unset;
 			background-color: $color-white !important;
@@ -787,7 +788,7 @@ section.tracking-metrics {
 
 .goal-measurement-actions, .tracking-metric-actions {
 	.btn {
-		@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
 	}
 }
 
