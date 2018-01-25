@@ -72,62 +72,73 @@ $(function () {
 				element: ".dropdown.profile",
 				title: "Your profile",
 				content: "Click the image to access your profile or logout of the platform.",
-				placement: "left"
+				placement: "left",
+				animation: false
 			},
 			{
 				element: ".top-menu li.link.resources",
 				title: "Resource Library",
 				content: "Click here to view resources available to all Accelerate members.",
-				placement: "left"
+				placement: "left",
+                animation: false
 			},
 			{
 				element: ".sidebar-toggle-box .fa-bars",
 				title: "Menu Toggle",
 				content: "Click here to collapse the side navigation to icons only, or expand it to view the entire navigation.",
-				placement: "right"
+				placement: "right",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .organizational-goals",
 				title: "Organizational Goals",
-				content: "Click here to view Organizational Goals."
+				content: "Click here to view Organizational Goals.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .leadership-goals",
 				title: "Leadership Goals",
-				content: "Click here to view Leadership Goals."
+				content: "Click here to view Leadership Goals.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .personal-goals",
 				title: "Personal Goals",
-				content: "Click here to view Personal Goals."
+				content: "Click here to view Personal Goals.",
+                animation: false
 			},
 			{
 				element: ".goal-listing-wrapper .wrapper",
 				title: "Goal Listing",
 				content: "For each of the goal types (Organizational, Leadership and Personal), active goals" +
 				" and alignments will be displayed in this area.",
-				placement: "top"
+				placement: "top",
+                animation: false
 			},
 			{
 				element: ".goal-listing-header .actions .btn.add",
 				title: "Add a Goal",
 				content: "Don't have any active goals or need to add another goal? Click this button to get started.",
-				placement: "left"
+				placement: "left",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",
 				title: "Timeline",
-				content: "Click here to view Plan timeline."
+				content: "Click here to view Plan timeline.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .profile",
 				title: "Profile",
-				content: "Click here to view Plan profile."
+				content: "Click here to view Plan profile.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .resources",
 				title: "My Resources",
-				content: "Click here to view resources assigned to the Plan."
+				content: "Click here to view resources assigned to the Plan.",
+                animation: false
 			}/*,
 			{
 				// Automatically go to Timeline page
@@ -139,7 +150,19 @@ $(function () {
 		],
 		storage: false,
 		backdrop: true,
-		backdropPadding: 5
+		backdropPadding: 5,
+        template:
+        "<div class='popover tour' style='max-width: 300px;'>" +
+        	"<div class='arrow'></div>" +
+        	"<h3 class='popover-title popover-header'></h3>" +
+        	"<div class='popover-body popover-content'></div>" +
+        	"<div class='popover-navigation'>" +
+        		"<button class='btn btn-default' data-role='prev'>« Prev</button>" +
+        		"<span data-role='separator' style='margin-right: .5rem;'>|</span>" +
+        		"<button class='btn btn-default' data-role='next'>Next »</button>" +
+        		"<button class='btn btn-default' data-role='end'>End tour</button>" +
+        	"</div>" +
+        "</div>"
 	});
 
 	// Instance the EDM tour
@@ -149,45 +172,53 @@ $(function () {
 			{
 				element: ".lr-participant-menu .organizational-goals",
 				title: "Organizational Goals",
-				content: "Click here to view Organizational Goals."
+				content: "Click here to view Organizational Goals.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .leadership-goals",
 				title: "Leadership Goals",
-				content: "Click here to view Leadership Goals."
+				content: "Click here to view Leadership Goals.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .personal-goals",
 				title: "Personal Goals",
-				content: "Click here to view Personal Goals."
+				content: "Click here to view Personal Goals.",
+                animation: false
 			},
 			{
 				element: ".goal-listing-wrapper .wrapper",
 				title: "Goal Listing",
 				content: "For each of the goal types (Organizational, Leadership and Personal), active goals" +
 				" and alignments will be displayed in this area.",
-				placement: "top"
+				placement: "top",
+                animation: false
 			},
 			{
 				element: ".goal-listing-header .actions .btn.add",
 				title: "Add a Goal",
 				content: "Don't have any active goals or need to add another goal? Click this button to get started.",
-				placement: "left"
+				placement: "left",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .timeline-nav",
 				title: "Timeline",
-				content: "Click here to view Plan timeline."
+				content: "Click here to view Plan timeline.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .profile",
 				title: "Profile",
-				content: "Click here to view Plan profile."
+				content: "Click here to view Plan profile.",
+                animation: false
 			},
 			{
 				element: ".lr-participant-menu .resources",
 				title: "My Resources",
-				content: "Click here to view resources assigned to the Plan."
+				content: "Click here to view resources assigned to the Plan.",
+                animation: false
 			}/*,
 			{
 				// Automatically go to Timeline page
@@ -199,7 +230,19 @@ $(function () {
 		],
 		storage: false,
 		backdrop: true,
-		backdropPadding: 5
+		backdropPadding: 5,
+		template:
+        "<div class='popover tour' style='max-width: 300px;'>" +
+        	"<div class='arrow'></div>" +
+        	"<h3 class='popover-title popover-header'></h3>" +
+        	"<div class='popover-body popover-content'></div>" +
+        	"<div class='popover-navigation'>" +
+        		"<button class='btn btn-default' data-role='prev'>« Prev</button>" +
+        		"<span data-role='separator' style='margin-right: .5rem;'>|</span>" +
+        		"<button class='btn btn-default' data-role='next'>Next »</button>" +
+        		"<button class='btn btn-default' data-role='end'>End tour</button>" +
+        	"</div>" +
+        "</div>"
 	});
 
 	launchTourIfNecessary(participantGoalTour);

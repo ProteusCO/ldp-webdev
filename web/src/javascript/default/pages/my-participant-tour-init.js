@@ -61,43 +61,61 @@ $(function () {
 				element: ".dropdown.profile",
 				title: "My Account",
 				content: "Click the image to access My Account or logout of the platform.",
-				placement: "left"
+				placement: "left",
+                animation: false
 			},
 			{
 				element: ".top-menu li.link.resources",
 				title: "Resource Library",
 				content: "Click here to view public resources available to all Accelerate members.",
-				placement: "left"
+				placement: "left",
+                animation: false
 			},
 			{
 				element: ".top-menu li.link.client-participant-listing",
 				title: "My Participants",
 				content: "Click here at anytime to see your list of participants.",
-				placement: "left"
+				placement: "left",
+                animation: false
 			},
 			{
 				element: ".top-menu li.link.team-goals",
 				title: "Team Goals",
 				content: "Click here at anytime to see a list of your team's goals.",
-				placement: "left"
+				placement: "left",
+                animation: false
 			},
 			{
 				element: ".search-bar",
 				title: "My Participant Search",
 				content: "Use this area to search for participants.",
-				placement: "top"
+				placement: "top",
+                animation: false
 			},
 			{
 				element: ".search-results tr.first .card.plan",
 				title: "View a Participant",
 				content: "To continue the tour, click the highlighted process name to view the participant's Goals," +
 				"Timeline, Profile and Resources.",
-				placement: "top"
+				placement: "top",
+                animation: false
 			}
 		],
 		storage: false,
 		backdrop: true,
-		backdropPadding: 5
+		backdropPadding: 5,
+        template:
+        "<div class='popover tour' style='max-width: 300px;'>" +
+        	"<div class='arrow'></div>" +
+        	"<h3 class='popover-title popover-header'></h3>" +
+        	"<div class='popover-body popover-content'></div>" +
+        	"<div class='popover-navigation'>" +
+        		"<button class='btn btn-default' data-role='prev'>« Prev</button>" +
+        		"<span data-role='separator' style='margin-right: .5rem;'>|</span>" +
+        		"<button class='btn btn-default' data-role='next'>Next »</button>" +
+        		"<button class='btn btn-default' data-role='end'>End tour</button>" +
+        	"</div>" +
+        "</div>"
 	});
 
 	launchTourIfNecessary(myParticipantTour);
