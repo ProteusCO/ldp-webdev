@@ -1,0 +1,860 @@
+@import "../config/base-vars";
+@import "../../../../../node_modules/bootstrap/scss/variables";
+@import "../../../../../node_modules/bootstrap/scss/mixins";
+@import "../../../../../node_modules/bootstrap/scss/buttons";
+@import "../components/goal-legend";
+
+.pager {
+	margin-top: 0;
+}
+
+#main-wrapper #main-content {
+	max-width: 100%;
+}
+
+#main-content-wc-0 {
+	.goal-listing-header h1.title {
+		color: $color-app-brand;
+		&::before {
+			font-family: FontAwesome;
+			display: inline-block;
+			padding-right: 3px;
+			font-size: 70%;
+			margin-top: -3px;
+			vertical-align: middle;
+		}
+	}
+
+	.objective-lists {
+		h1.objective-lists-title {
+			font-size: 1.25rem;
+			font-weight: 400;
+			padding: 0;
+			margin-top: 5px;
+		}
+		h1.objective-list-title {
+			font-size: 1rem;
+			font-weight: 300;
+			font-style: normal;
+			margin-bottom: 1.25rem;
+			padding: 0;
+			.user {
+				font-weight: 400;
+			}
+		}
+	}
+
+	.goal-type-organizational {
+		h1.title::before {
+			content: '\f1ad';
+		}
+	}
+
+	.goal-type-leadership {
+		h1.title::before {
+			content: '\f0c0';
+		}
+	}
+
+	.goal-type-personal {
+		h1.title::before {
+			content: '\f24e';
+		}
+	}
+
+}
+
+.goal-listing-wrapper {
+	span.select2-container {
+		width: 250px !important;
+		float: right;
+		margin: 1rem 0 1rem .5rem;
+	}
+}
+
+.goal-listing-header {
+	margin-bottom: 1rem;
+	@include clearfix();
+
+	.explainer-wrapper {
+		display: block;
+		vertical-align: middle;
+		width: 100%;
+		padding-right: 0;
+
+		span.see-example {
+			margin-left: 5px;
+		}
+
+	}
+
+	div.actions {
+		display: block;
+		vertical-align: middle;
+		text-align: center;
+		margin-top: 1rem;
+		button {
+			margin-right: 0;
+		}
+	}
+
+}
+
+.goal-listing {
+	clear: both;
+}
+
+.goal-wrapper {
+	padding: .75rem;
+	background-color: $color-white;
+	border: 1px solid #e5e5e5;
+	margin: .25rem 0 1rem;
+	display: flex;
+	flex-flow: column nowrap;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+
+	//CAROUSEL
+	.goal-measurement {
+		width: 100%;
+	}
+
+	.carousel-indicators {
+		display: none;
+	}
+
+	.carousel-control {
+		display: none;
+	}
+
+	.carousel-inner {
+		text-align: center;
+
+		.measure-config-graph {
+			//margin: 0 1rem;
+		}
+
+		> .carousel-item {
+			display: inline-block !important;
+			width: 100%;
+		}
+
+		.config-graph {
+			margin: 0 auto;
+			width: 100% !important;
+			height: 100% !important;
+			//max-width: 237px !important;
+			//max-height: 237px;
+			max-width: 100% !important;
+			max-height: 100%;
+			canvas {
+				max-width: 100%;
+				max-height: 100%;
+			}
+		}
+
+		.carousel-caption {
+			display: none;
+			/*position: relative;
+			bottom: auto;
+			left: auto;
+			right: auto;
+			color: $color-app-light-grey;
+			text-shadow: none;
+			padding: 1rem 0;
+
+			p {
+				font-size: 1.25rem;
+				font-weight: 500;
+				margin-bottom: 0;
+			}*/
+
+		}
+
+	}
+
+	.config-wrapper {
+		flex: 1 0 100%;
+		padding: 0;
+		.goal-tags {
+			label {
+				font-weight: 400;
+				display: inline-block;
+				padding-right: 5px;
+				margin-top: .75rem;
+				&:after {
+					content: ":";
+				}
+			}
+		}
+	}
+
+	.goal-alignments-wrapper {
+		flex: 1 0 15%;
+		text-align: left;
+		border-left: none;
+		border-top: 1px solid #e5e5e5;
+		padding: 1rem 0 0 0;
+		margin-top: 1rem;
+
+		.alignments-title {
+			display: block;
+			margin-top: .5rem;
+			font-weight: 400;
+			color: $color-app-light-grey;
+		}
+
+		.goal-alignments {
+			margin: 1.5rem 0 0;
+			padding: 0 0 0 1rem;
+			list-style: outside disc;
+
+			li {
+				font-size: 1.15rem;
+				font-weight: 500;
+				display: block;
+				position: relative;
+
+				&::before {
+					content: '';
+					width: 6px;
+					height: 6px;
+					position: absolute;
+					left: -13px;
+					top: 12px;
+					background: $color-app-black;
+					border-radius: 100%;
+				}
+
+				+ li {
+					margin-top: .75rem
+				}
+			}
+
+		}
+
+	}
+
+	.measure-config {
+		display: flex;
+		flex-flow: row wrap;
+		text-align: left;
+
+		.prop {
+			margin-bottom: 0;
+			padding: 5px 0;
+
+			.val, .interval-update-received {
+				display: inline-block;
+				vertical-align: top;
+				text-align: left;
+			}
+
+			label {
+				margin-bottom: 0;
+				display: block;
+				width: 8rem;
+				text-align: left;
+
+				&::after{
+					content: ':';
+					margin-right: 3px;
+				}
+			}
+
+			.val {
+				width: 100%;
+			}
+
+			&.goal-name .val {
+				width: 100%;
+			}
+
+			&.last-updated .val {
+				color: $color-app-red;
+			}
+
+			.val.interval-update-received {
+				color: $color-app-black;
+			}
+
+			&:not(.goal-name) {
+				flex: 1 0 45%;
+			}
+
+			&.ev {
+				flex: 1 0 100%;
+				border-top: 1px solid #e5e5e5;
+				padding-top: .85rem;
+				margin-top: .75rem;
+				font-size: 1.125rem;
+				color: $color-app-blue;
+
+				label {
+					width: auto;
+					margin-right: .5rem;
+					display: inline;
+				}
+
+				.val {
+					display: inline;
+
+					&.how {
+						display: none;
+					}
+				}
+			}
+
+		}
+
+		.goal-name {
+			flex: 1 0 100%;
+
+			label {
+				display: none !important;
+			}
+			a {
+				font-size: 1.15rem;
+				font-weight: 300;
+				text-align: left;
+			}
+		}
+
+	}
+
+
+
+	.unit-name,
+	.description,
+	.report-schedule,
+	.report-time {
+		display: none;
+	}
+}
+
+.no-active-goals-wrapper {
+	padding: .75rem;
+	background-color: $color-white;
+	border: 1px solid #e5e5e5;
+	margin: .25rem 0 1rem;
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+
+	.no-active-goals-title {
+		color: $color-app-light-grey;
+		font-weight: 400;
+		margin-bottom: .5rem;
+	}
+
+}
+
+.goal-type-organizational {
+	.wrapper {
+		padding: .75rem;
+		background-color: $color-white;
+		border: 1px solid #e5e5e5;
+		margin: .25rem 0 1rem;
+		display: flex;
+		flex-flow: column nowrap;
+	}
+
+	.no-active-goals-wrapper {
+		background: none;
+		border: none;
+		padding: 0;
+		flex: 1 0 auto;
+		//width: 100%;
+		align-self: center;
+	}
+
+	.objective-lists {
+		flex: 1 0 100%;
+		align-self: center;
+		color: $color-app-grey;
+		padding-bottom: 1rem;
+		margin-bottom: 1rem;
+		border-bottom: 1px solid #e5e5e5;
+
+		.objective-list {
+			font-size: .9rem;
+			font-style: italic;
+		}
+
+		.objectives {
+			counter-reset: objective-numbering;
+			padding-left: 60px;
+
+			li {
+				list-style: none;
+				font-style: normal;
+				position: relative;
+				&::before {
+					content: counter(objective-numbering);
+					counter-increment: objective-numbering;
+					color: $color-app-brand;
+					font-size: 3rem;
+					position: absolute;
+					left: -4.25rem;
+					top: 1px;
+					line-height: 1;
+					font-weight: 500;
+					width: 60px;
+					text-align: right;
+					letter-spacing: 0;
+				}
+
+				+ li {
+					margin-top: 1rem;
+				}
+
+			}
+
+			.name {
+				font-size: 1.15rem;
+				font-weight: 400;
+				display: block;
+			}
+
+			.description, .predicted-ev {
+				display: inline;
+			}
+
+		}
+
+	}
+
+}
+
+.predicted-ev {
+	margin-left: 5px;
+	font-style: italic;
+	font-size: inherit;
+	&::before {
+		content: '(';
+	}
+	&::after {
+		content: ')';
+	}
+	label {
+		display: inline;
+		&::after {
+			content: ':';
+			padding-right: 5px;
+		}
+	}
+}
+
+.popover:not(.tour-tour) {
+	background: #FFF8E0;
+	border: 1px solid darken($color-cornsilk, 12%);
+	color: $color-app-grey;
+
+	.popover-title {
+		background: darken(#fff8e0, 5%);
+	}
+
+	h1 {
+		font-size: 1rem;
+	}
+
+	&.explainer-p2 {
+		max-width: 440px;
+	}
+
+	.objectives {
+		padding-left: 30px;
+		.name {
+			font-weight: bold;
+			&::after {
+				content: ':';
+				margin-right: 5px;
+			}
+		}
+	}
+
+	&.bs-tether-element-attached-top .popover-arrow::after,
+	&.popover-bottom .popover-arrow::after {
+		border-bottom-color: #FFF8E0;
+	}
+
+}
+
+/* ----- TEAM GOALS */
+.actions .btn.fa-print {
+	float: right;
+	margin: -3.5rem 0 0;
+}
+
+.miwt-table.search-results {
+	border: none;
+
+	thead {
+		display: none;
+	}
+
+	> tbody > tr {
+		> td {
+			padding: 0;
+			background: transparent;
+		}
+
+		&:hover > td {
+			background: transparent;
+		}
+	}
+
+	tr.no_data {
+		td {
+			padding: .5rem;
+			background: #f7f7f7;
+			border: 1px solid #e7e7e7;
+			color: $color-app-light-grey;
+		}
+	}
+}
+
+span.privacy-footer {
+	display: block;
+	width: 100%;
+	padding: .5rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	background: $color-info-light;
+	color: $color-info-dark;
+	border: 1px solid $color-info-dark;
+
+}
+
+.search {
+	clear: both;
+}
+
+.search-bar {
+	margin-bottom: 0;
+	padding: 10px 0 0;
+
+	.constraint {
+		vertical-align: top;
+
+		select { // hide prior to select2 initialization
+			visibility: hidden;
+		}
+
+		&:first-of-type {
+			margin-left: 0;
+			padding-left: 0;
+		}
+
+		.select2-container {
+			min-width: 5rem !important;
+		}
+
+		select[multiple=""] + .select2-container {
+			min-width: 15.5rem !important;
+			max-width: 16rem !important;
+		}
+
+		.select2-container--default .select2-selection--multiple .select2-selection__choice {
+			font-size: 85%;
+		}
+	}
+
+	.actions.search-actions {
+		display: inline-block;
+		vertical-align: top;
+		padding: 30px 10px  10px;
+	}
+
+	> .sort-actions {
+		float: right;
+		display: block;
+		margin-top: 11px;
+		text-align: right;
+
+		label {
+			display: block;
+			margin-bottom: .25rem;
+			font-size: 90%;
+		}
+	}
+}
+
+
+@media (min-width: 768px) {
+	.goal-listing-header {
+		.explainer-wrapper {
+			display: inline-block;
+			width: calc(100% - 7.1rem);
+			padding-right: 1rem;
+		}
+
+		div.actions {
+			display: inline-block;
+			text-align: right;
+			margin-top: 0;
+		}
+	}
+
+	.goal-wrapper {
+		flex-flow: row wrap;
+
+		> .carousel {
+			flex: 2 0 100%;
+			display: flex;
+			align-items: center;
+		}
+
+		.carousel-inner {
+
+			> .carousel-item {
+				display: inline-block !important;
+				vertical-align: middle;
+
+				&.measurement-gauge {
+					width: 30%;
+
+					svg {
+						transform: scale(1.5);
+					}
+				}
+
+				&.measurement-line {
+					width: 40%;
+					margin: 0 1rem;
+				}
+			}
+		}
+
+		.goal-alignments-wrapper {
+			flex: 1 0 15%;
+			text-align: left;
+			border-top: none;
+			border-left: 1px solid #e5e5e5;
+			padding: 0 0 0 1.5rem;
+			margin-top: 0;
+		}
+
+		/*.goal-measurement {
+			width: 20rem;
+		}*/
+		.config-wrapper {
+			padding: 0 1rem 0 0;
+			flex: 1 0 40%;
+		}
+	}
+
+	.goal-type-organizational {
+		.wrapper {
+			flex-flow: row wrap;
+		}
+
+		.no-active-goals-wrapper {
+			padding: 0 0 0 .75rem;
+			flex: 1 0 20%;
+		}
+
+		.objective-lists {
+			flex: 1 0 55%;
+			padding-right: 2rem;
+			padding-bottom: 0;
+			border-bottom: 0;
+			border-right: 1px solid #e5e5e5;
+		}
+	}
+
+	.goal-listing-wrapper {
+		span.select2-container {
+			margin: 1rem 0 0 .5rem;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.goal-wrapper {
+
+		> .carousel {
+			flex: 2 0 15%;
+		}
+
+		.carousel-inner > .carousel-item {
+
+			&.measurement-gauge {
+				width: 33%;
+
+				svg {
+					transform: scale(1.8);
+				}
+			}
+
+			&.measurement-line {
+				width: 55%;
+				//max-height: 11rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 1100px) {
+	.goal-wrapper .measure-config .prop {
+		label {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.val {
+			width: calc(100% - 8.25rem);
+		}
+
+		&.goal-name a {
+			font-size: 1.65rem;
+		}
+	}
+
+	.goal-wrapper {
+
+		.config-wrapper {
+			padding: 0 1rem 0 2rem;
+		}
+
+		.carousel-control {
+
+			&.right {
+				right: -20px;
+			}
+
+			&.left {
+				left: -20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 1300px) {
+	/*.goal-wrapper .carousel-inner > .carousel-item.measurement-gauge svg {
+		margin-left: -1.5rem;
+	}*/
+}
+
+@media (max-width: 767px) {
+	.goal-listing-header {
+		clear: both;
+	}
+
+	.goal-listing-wrapper span.select2-container {
+		width: 45% !important;
+	}
+
+	.search-bar {
+
+		> .sort-actions {
+			float: none;
+			text-align: left;
+		}
+	}
+}
+
+/* ----- PRINT STYLES */
+@media print {
+
+	@page {
+		size: 8.75in 11.25in; /* 8.5x11 + 0.125 bleed area on each edge */
+		//margin: 0.25in;
+	}
+
+	#main-content-wc-0 {
+		padding: 0 !important;
+
+		h1 {
+			padding: 0 !important;
+			margin: 0 auto .5rem !important;
+		}
+	}
+
+	#main-header,
+	.search-bar,
+	#page-footer,
+	button.fa-print,
+	.pager-bottom {
+		display: none;
+	}
+
+	.goal-wrapper {
+		width: 7.5in;
+		margin: 0 auto .5rem;
+		-webkit-print-color-adjust: exact;
+		border: 1px solid #e5e5e5 !important;
+		padding: .75rem !important;
+		flex-flow: row nowrap !important;
+		align-items: flex-start !important;
+		page-break-inside: avoid;
+
+		.config-wrapper {
+			flex: 1 0 30%;
+			padding: 0 1rem 0 0 !important;
+			border-right: 1px solid #e5e5e5;
+			align-self: stretch;
+
+			.prop {
+				padding: 5px 0 !important;
+				label,
+				.val {
+					font-size: .8rem !important;
+					display: block;
+					width: 100%;
+				}
+			}
+
+			.measure-config .prop.goal-name a {
+				font-size: 1rem !important;
+			}
+		}
+
+		> .carousel {
+			//order: 2;
+			flex: 1 0 10%;
+		}
+
+		.carousel-inner > .carousel-item.measurement-gauge svg {
+			transform: scale(1);
+			margin: 0 auto 0 .5rem;
+			min-height: auto !important;
+			min-width: auto !important;
+		}
+
+		.carousel-inner .config-graph {
+			height: 7rem !important;
+			max-width: 12rem !important;
+
+			canvas {
+				max-width: 100% !important;
+				max-height: 100% !important;
+			}
+		}
+
+		div.carousel .goal-measurement {
+			width: 100% !important;
+
+			> .carousel-inner > .carousel-item {
+				display: block !important;
+				width: 80% !important;
+				//max-height: 8rem !important;
+			}
+		}
+
+		.goal-alignments-wrapper {
+			flex: 1 0 15%;
+			border: none !important;
+			padding: 0 0 0 1rem;
+			margin-top: 0;
+
+			.goal-alignments li {
+				font-size: .9rem !important;
+
+				&::before {
+					width: 4px;
+					height: 4px;
+					top: 9px;
+				}
+			}
+		}
+	}
+}

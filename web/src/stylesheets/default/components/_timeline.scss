@@ -1,0 +1,1034 @@
+@import "../config/base-vars";
+@import "../../../../../node_modules/bootstrap/scss/mixins/hover";
+@import "../../../../../node_modules/bootstrap/scss/mixins/text-emphasis";
+@import "../../../../../node_modules/bootstrap/scss/mixins/alert";
+@import "../../../../../node_modules/bootstrap/scss/mixins/clearfix";
+@import "../mixins/bootstrap-legacy-buttons";
+
+// Just hiding for now, may have engineers remove later
+.activity-details {
+	.activity-process-name, .activity-category {
+		display: none;
+	}
+}
+
+
+.participant-timeline {
+	padding: 0 2rem 1.25rem 0;
+
+	.plan-header {
+		padding: 0 0 1.25rem;
+		border-bottom: 1px solid lighten($color-app-light-grey, 25%);
+		border-radius: 0;
+		margin-bottom: 1.25rem;
+
+		h3 {
+			float: left;
+			margin-bottom: 0;
+			padding: 0 !important;
+		}
+	}
+
+	> .card-block {
+		padding: 1.25rem 0 0 2rem;
+	}
+}
+
+.plan-name{
+	font-size: 2rem;
+	margin: 0;
+	color: $color-app-grey;
+	font-weight: 300;
+}
+
+.flex-container {
+	border-top: 3px solid $color-app-light-grey;
+	.timeline-ui{
+		border-right: 1px solid lighten($color-app-light-grey, 25%);
+		padding-right: 4px;
+
+		& + .timeline-ui {
+			border-right-width: 0;
+			padding-right:0;
+		}
+	}
+}
+
+.select-year {
+	margin-bottom: -1rem;
+	margin-top: 2rem;
+	label {
+		display: none;
+	}
+	select.val {
+		min-width: 8.5rem;
+	}
+	.select2-container {
+		max-width: none;
+	}
+}
+.timeline {
+	position: relative;
+}
+
+.plan-actions {
+	float:right;
+	text-align: center;
+	padding-top: 2px;
+	width: 100%;
+	margin-top: .75rem;
+
+	.btn {
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+
+		&::before {
+			font-family: FontAwesome;
+			display: inline-block;
+			font-size: inherit;
+			padding-right: 5px;
+		}
+
+		&.configure {
+			@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+
+			&::before {
+				content: '\f013';
+				color: #fff;
+			}
+
+		}
+
+		&.back::before {
+			content: '\f112';
+			color: $color-app-brand;
+		}
+
+	}
+
+	.selection {
+		text-align: left;
+	}
+
+}
+.plan-header,
+.participant-timeline {
+	background-color: $body-bg;
+	border:none;
+	margin-bottom: 0;
+}
+.timeline:before{
+	background-color: lighten($color-app-light-grey, 25%);
+	bottom: 0;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5px;
+	width: 10px;
+	z-index: 0;
+}
+.timeline.no-data:before {
+	display: none;
+}
+
+.timeline-desk {
+	vertical-align: top;
+	h1 {
+		font-size: 16px;
+		font-weight: 300;
+		margin: 0 0 5px;
+	}
+
+	.card {
+		display: block;
+		margin-left: 25px;
+		position: relative;
+		text-align: left;
+		background: $color-white;
+		border-radius: .5rem;
+		font-size: 0.9rem;
+		line-height: 1.25rem;
+
+		> .actions.configuration-actions {
+			padding: 0 0 1.25rem .75rem;
+
+			.btn {
+				@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			}
+
+		}
+
+	}
+	.card-block {
+		padding: .75rem 1.25rem .75rem .75rem;
+		@include clearfix();
+	}
+	.arrow {
+		display: none;
+	}
+	p {
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+	.panel {
+		margin-bottom: 5px;
+	}
+}
+.timeline-date {
+	left: -200px;
+	position: absolute;
+	text-align: right;
+	top: 12px;
+	width: 150px;
+}
+.timeline-item {
+	margin-bottom:2rem;
+
+	/*&.rescheduled, &.canceled, &.completed {
+		.prop.dstart { display: none; }
+		.prop-group.dates .prop + .prop { margin-left: 0; }
+	}*/
+
+	&.rescheduled, &.canceled {
+		display: none;
+	}
+
+}
+.timeline-item:before {
+	content: "";
+	display: block;
+	width: 50%;
+}
+.timeline-hidden { display: none; }
+.timeline-icon-custom {
+	margin-top:-25px;
+	left: -30px;
+	position: absolute;
+	border-radius: 50%;
+	display: block;
+	height: 80px;
+	width: 80px;
+	z-index: 2;
+	border: 4px solid darken($color-app-light-grey, 10%);
+	text-align: center;
+	.fa {
+		font-size: 42px;
+		margin-top: 14px;
+		display: inline-block;
+		color: $color-smokey-white;
+	}
+	.scheduled & {
+		background-color: $color-app-light-grey;
+	  	border-color: darken($color-app-light-grey, 20%);
+	}
+	.pending &, .external-no-schedule & {
+		background-color: lighten($color-app-light-grey, 20%);
+		border-color: $color-app-light-grey;
+	}
+	.canceled &, .rescheduled & {
+		background-color: lighten($color-app-light-grey, 30%);
+		border-color: lighten($color-app-light-grey, 5%);
+	}
+	.in-progress &/*, .confirmed &*/ {
+		background-color: $color-app-brand;
+		border-color: darken($color-app-brand, 15%);
+	}
+	.confirmed & {
+		background-color: $color-app-brand;
+		border-color: $color-app-brand;
+	}
+	.overdue & {
+		background-color: $color-app-red;
+		border-color: darken($color-app-red, 15%);
+	}
+	.completed & {
+		background-color: lighten($color-app-brand, 20%);
+		border-color: lighten($color-app-brand, 20%);
+	}
+
+	//Add a slash-thru to canceled and rescheduled iconts
+	.canceled &, .rescheduled & {
+		&::after {
+			content: '';
+			background: lighten($color-app-light-grey, 5%);
+			display: block;
+			height: 103%;
+			width: 5px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: rotate(45deg);
+		}
+	}
+
+	.cat-on_boarding & .fa:before {
+		content: "\f21d";
+		display: inline-block;
+		margin: 1px 0 0 2px;
+	}
+	.cat-survey & .fa:before {
+		content: "\f044";
+		display: inline-block;
+		margin: 3px 0 0 5px;
+	}
+	.cat-assessment & .fa:before {
+		content: "\f19c";
+		display: inline-block;
+		margin: 0 0 0 2px;
+	}
+}
+.toolbox {
+	.name {
+		display: inline;
+		padding-left: 1ch;
+	}
+	.repo-item[class*="cat-"],
+	.repo-item.program{
+		display: inline-block;
+		&:before{
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+		}
+	}
+	.repo-item.program:before {
+		content: "\f19d";
+	}
+
+	//Activity Type Fallbacks
+	.type-lessongroupactivitytype {
+		.repo-item::before {content: "\f0c0";}
+	}
+
+	.type-defaultactivitytype {
+		.repo-item::before {content: "\f073";}
+	}
+
+	.type-meetingactivitytype {
+		.repo-item::before {content: "\f0e6";}
+	}
+
+	.type-meetinggroupactivitytype {
+		.repo-item::before {content: "\f234";}
+	}
+
+	//Actual icons based on category
+	.cat-default:before {content: "\f012" !important;}
+	.cat-meeting:before {content: "\f007" !important;}
+	.cat-group_meeting:before {content: "\f0c0" !important;}
+	.cat-survey:before {content: "\f044" !important;}
+	.cat-assessment:before {content: "\f19c" !important;}
+	.cat-on_boarding:before {content: "\f21d" !important;}
+	.cat-file:before {content: "\f093" !important;}
+	.cat-email:before {content:"\f003" !important;}
+	.cat-general:before {content: "\f0d0" !important;}
+	.cat-assignment:before {content: "\f0f6" !important;}
+}
+.timeline-actions {
+	text-align: center;
+	margin: 4px auto;
+
+	> .btn {
+		margin-right: 0;
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $btn-border-radius-sm);
+
+		&.past::after, &.future::after {
+			display: inline-block;
+			font: normal normal normal 14px/1 FontAwesome;
+			font-size: inherit;
+			text-rendering: auto;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			padding-left: .45rem;
+			color: $color-app-brand;
+		}
+
+		&.past::after {
+			content: '\f077';
+		}
+
+		&.future::after {
+			content: '\f078';
+		}
+
+		&:hover {
+			text-decoration: none;
+
+			&::before, &::after { color: $color-app-brand; }
+
+		}
+
+	}
+
+	&.top {
+		margin-bottom: 0;
+
+		> .btn {
+			margin-top: -1.25rem;
+			margin-bottom: 2rem;
+		}
+
+	}
+
+}
+
+.prop-wrapper .task-item-info {
+	.prop {
+		margin-bottom: 0;
+
+		label, .tr-prefix, .val, .tr-display {
+			display: inline;
+			/*font-size: 0.9rem;
+			line-height: 1.25rem;*/
+		}
+
+		label, .tr-prefix {
+			margin: 0 .35rem 0 0;
+			line-height: 1.25rem;
+		}
+	}
+}
+
+.task-item-info {
+
+	.task-item-name {
+		font-size: 16px;
+		display: inline-block;
+		font-weight: 500;
+		max-width: 82%;
+		vertical-align: top;
+		padding-right: 2.25rem;
+		margin-bottom: .35rem;
+	}
+
+	.task-item-date {
+		font-size: 12px;
+		font-style: italic;
+	}
+
+	.task-item-status {
+		font-size: 12px;
+	}
+
+	.task-item-scheduling {
+		padding-right: 15px;
+
+		span.tr-prefix {
+			font-weight: 400;
+		}
+
+	}
+
+	.prop-group.dates {
+
+		+ .task-item-desc {
+			margin-top: 2px;
+		}
+
+	}
+
+	.task-item-transition {
+		padding: 4px 0 3px;
+
+		.tr-prefix, .tr-display {
+			font-size: .9rem;
+			line-height: 1.25rem;
+			display: inline;
+		}
+
+		.tr-prefix {
+			margin: 0 .35rem 0 0;
+		}
+
+	}
+
+}
+
+.activity-summary {
+	font-size: 10px;
+	i.fa {
+		cursor: help;
+	}
+	i.fa:not(:first-of-type) {
+		padding-left: 2px;
+	}
+}
+
+.actions.task-item-actions {
+	position: absolute;
+	top:4px;
+	right:7px;
+	height:100%;
+
+	a.fa, .btn.fa {
+		text-decoration: none;
+		color:inherit;
+		border: 1px solid transparent;
+		@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $border-radius-sm);
+		padding-right: 2rem;
+
+		span {
+			font-family: $font-roboto;
+		}
+
+		&[title="Take Action"] {
+			@include button-variant-legacy($color-app-brand, $color-white, $color-app-brand);
+
+			&:before {
+				//font-family: FontAwesome;
+				position: absolute;
+				right: .9rem;
+			}
+
+		}
+
+		&[title="View"] {
+			@include button-variant-legacy(darken($color-app-light-grey, 5%), $color-white,
+							darken($color-app-light-grey, 5%));
+
+			&:before {
+				content: '\f06e';
+				//font-family: FontAwesome;
+				position: absolute;
+				right: .9rem;
+			}
+
+		}
+
+	}
+
+	a.fa:hover {
+		color: $color-black;
+	}
+
+	.btn.configure-task {
+		font-size: 1.25rem;
+		background: none;
+		border: none;
+		box-shadow: none;
+		width: 18px;
+		overflow: hidden;
+		white-space: nowrap;
+		margin: -4px 5px 0 0;
+		padding: 3px 0 0;
+
+		&.fa-cog::before {
+			padding-right: 5px;
+		}
+
+		&:hover, &:focus {
+			background: none;
+			border: none;
+			color: inherit;
+		}
+
+	}
+
+	&:after {
+		display: block;
+		font-family: FontAwesome;
+		font-size: 18px;
+		position: absolute;
+		bottom: 7px;
+		width:24px;
+		height:24px;
+		right: -4px;
+		text-align: center;
+	}
+	.task-item.pending &:after {
+		content: "\f017";
+	}
+	.task-item.completed &:after {
+		content: "\f00c";
+		bottom: 0;
+	}
+	.task-item.scheduled &:after {
+		content: "\f274";
+	}
+	.task-item.in-progress:not(.overdue) &:after {
+		content: "\f110";
+		animation: fa-spin 5s infinite steps(8);
+	}
+	.task-item.canceled &:after {
+		content: "\f273";
+	}
+	.task-item.rescheduled &:after {
+		content: "\f272";
+	}
+	.task-item.overdue &:after, .task-item.overdue.in-progress &:after {
+		content: "\f06d";
+		animation: none;
+	}
+}
+.timeline-card {
+	padding: .5rem 0 .5rem 1.5rem;
+
+	.last-interacted & {
+		box-shadow: 0 0 25px rgba(42, 53, 66, 0.6);
+		//border: none;
+	}
+
+	&::after {
+		content: 'Recently Modified';
+		font-size: 75%;
+		bottom: 7px;
+		right: 19px;
+		position: absolute;
+		opacity: 0;
+		font-style: italic;
+	}
+
+}
+
+.recently-modified {
+	.timeline-card::after {
+		opacity: 1;
+		transition: opacity 1s ease-in-out;
+	}
+}
+
+.timeline-card-actions {
+	float:right;
+	margin: -.5rem 0 0 0;
+	text-align: right;
+
+	> .btn {
+		color: $color-app-light-grey !important;
+		background-color: transparent !important;
+		box-shadow: none !important;
+		border: none !important;
+		font-size: 24px !important;
+		padding: 0 !important;
+		outline:none !important;
+		margin-right: 0;
+
+		+ .btn {
+			margin-left: .5rem;
+		}
+
+	}
+	> .btn:hover {
+		//color: $color-app-grey;
+		background-color: transparent;
+	}
+	.activity-summary {
+		clear: right;
+		text-align: right;
+		padding-right: 1px;
+	}
+
+	&.actions {
+		button[title="Complete"] {
+			border-radius: 0.2rem !important;
+			font-size: 0.75rem !important;
+			line-height: 1.5 !important;
+			padding: 0.25rem 0.75rem !important;
+			background-color: $color-app-brand !important;
+			border-color: #57a952 !important;
+			color: #fff !important;
+			box-shadow: 0 1px 0 rgba(255, 255, 255, 0.15) inset, 0 1px 1px rgba(0, 0, 0, 0.075) !important;
+
+			&:hover, &:focus {
+				background: darken($color-app-brand, 15%) !important;
+			}
+
+		}
+	}
+
+}
+
+.activity-details {
+	//color: $color-app-grey;
+
+	> div {
+		margin-bottom: 8px;
+	}
+
+	label {
+		font-weight: 400;
+		margin: 0 .35rem 0 0;
+	}
+
+	.activity-name {
+		margin:0 0 10px;
+		padding-right: 1.75rem;
+
+		.group-name::after {
+			content: ':';
+			padding-right: 5px;
+		}
+
+		.meeting-name {
+			font-weight: 300;
+		}
+
+	}
+
+	.activity-status {
+		font-size: .75rem;
+		line-height: .8rem;
+		font-style: italic;
+		font-weight: 300;
+		margin-bottom: .5rem;
+		display: block;
+	}
+
+	.activity-process-name {
+	}
+
+	.activity-date {
+		font-size: 14px;
+		font-style: italic;
+	}
+
+	.prop-group.dates, .prop.activity-time {
+		display: inline;
+	}
+
+	.prop-group.dates {
+		display: block;
+		width: 100%;
+
+		.prop.dstart {
+			display: inline-block;
+			width: 14rem;
+			vertical-align: top;
+			margin-right: 1.5rem;
+		}
+
+		.ical-actions {
+			/* Hide ical icon: LR-1052 */
+			display: none;
+			a {
+				color: transparent;
+				width: 25px;
+				&:hover {
+					color: transparent !important;
+				}
+
+				&::before {
+					color: $color-app-grey;
+					padding-left: 5px;
+				}
+			}
+		}
+	}
+
+	.prop.start-time {
+		margin-right: 1.5rem;
+		width: 14rem;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	.prop.re-reminder {
+		a {
+			@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $line-height-sm, $border-radius-sm);
+			border: 1px solid $color-app-brand;
+			display: inline-block;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+}
+
+.activity-details, .task-item-info {
+	label, .tr-prefix {
+		&::after {
+			content: ':';
+			display: inline-block;
+			color: inherit;
+			font-weight: 400;
+		}
+	}
+}
+
+@include text-emphasis-variant('.activity-summary .pending', $color-app-light-grey);
+@include text-emphasis-variant('.activity-summary .scheduled', darken($color-app-light-grey, 20%));
+@include text-emphasis-variant('.activity-summary .external-no-schedule', $color-app-light-grey);
+@include text-emphasis-variant('.activity-summary .in-progress', $brand-success);
+@include text-emphasis-variant('.activity-summary .completed', lighten($color-app-brand, 25%));
+@include text-emphasis-variant('.activity-summary .overdue', $brand-danger);
+@include text-emphasis-variant('.activity-summary .canceled', lighten($color-app-light-grey, 15%));
+@include text-emphasis-variant('.activity-summary .rescheduled', lighten($color-app-light-grey, 15%));
+
+.task-items {
+	padding-top: .75rem;
+}
+
+.task-item {
+	border-left-width: 5px;
+	position: relative;
+	border-radius: 0;
+
+	&.scheduled {
+		@include alert-variant($color-app-light-grey, darken($color-app-light-grey, 20%), $color-white);
+		border-left-color: darken($color-app-light-grey, 25%);
+	}
+	&.canceled, &.rescheduled {
+		@include alert-variant(lighten($color-app-light-grey, 30%), lighten($color-app-light-grey, 5%),
+						darken($color-app-light-grey, 15%));
+		border-left-color: lighten($color-app-light-grey, 5%);
+	}
+	&.pending, &.external-no-schedule {
+		@include alert-variant(lighten($color-app-light-grey, 25%), $color-app-light-grey, $color-app-black);
+		border-left-color: $color-app-grey;
+	}
+	&.completed {
+		@include alert-variant(lighten($color-app-brand, 30%), darken($color-app-brand, 15%), darken($color-app-brand, 25%));
+		border-left-color: darken($color-app-brand, 15%);
+	}
+	&.overdue, &.overdue.in-progress {
+		@include alert-variant(lighten($color-app-red, 25%), darken($color-app-red, 10%), darken($color-app-red, 15%));
+		border-left-color: darken($color-app-red, 10%);
+	}
+	&.in-progress {
+		@include alert-variant($color-app-brand, darken($color-app-brand, 15%), $color-white);
+		border-left-color: darken($color-app-brand, 15%);
+	}
+
+	.actions.configuration-actions {
+		padding: .5rem 0 .5rem 0.25rem;
+
+		.btn {
+			@include button-size-legacy($btn-padding-y-sm, $btn-padding-x-sm, $font-size-xs, $line-height-sm, $btn-border-radius-sm);
+			text-transform: none;
+		}
+
+	}
+
+	/* Minimize or compact completed and cancelled items */
+	&.completed, &.canceled {
+		.task-type, .dates .dstart, .task-item-desc, .task-item-scheduling {
+			display: none;
+		}
+		.prop-group.dates .prop + .prop {
+			margin-left: 0;
+		}
+		.dates .dend {
+			font-style: italic;
+		}
+		.actions.configuration-actions { padding: 0; }
+	}
+
+	//Hide View button on the following completed tasks
+	&.completed {
+
+		&.confirmationengagementtype,
+		&.reminderengagementtype,
+		&.emailengagementtype,
+		&.assignegengagementtype {
+			.task-item-actions a.view {
+				display: none;
+			}
+		}
+
+	}
+
+}
+
+.task-item-info.prop-body {
+	padding-right: 1.25rem;
+}
+
+/*.prop-group.dates {
+	.prop + .prop { margin-left: 1rem; }
+}*/
+
+.task-item-status {
+	padding-right: 1ch;
+}
+
+.task-item-icon {
+	display: inline;
+	padding: 0 .35rem 0 0;
+	min-width: 1.5rem;
+}
+
+.form-engagement-interactive {
+	.btn.go {
+		@include button-size-legacy($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $line-height-lg, $btn-border-radius-lg);
+		@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+		font-weight: 300;
+	}
+}
+
+.task-item.pending .actions.task-item-actions,
+.activity-details .prop.activity-program-name,
+.task-item-scheduling,
+.prop.task-type,
+.cat-meeting .prop.organizer,
+.cat-meeting .prop.attendees {
+	display: none;
+}
+
+
+@media (max-width: 600px) {
+
+	#main-content-wc-0 {
+		padding: .5rem .8rem;
+	}
+
+	.plan-name {
+		font-size: 1.25rem;
+	}
+
+	.timeline-icon-custom {
+		left: -9px !important;
+		width: 35px !important;
+		height: 35px !important;
+		i.fa {
+			font-size: 17px !important;
+			margin-top: 5px !important;
+		}
+	}
+
+	.plan-actions {
+		.btn, .btn.configure {
+			width: 30px;
+			padding: .25rem .5rem;
+			color: transparent !important;
+			overflow: hidden;
+
+			&:hover, &:focus { color: transparent; }
+
+		}
+
+		.select2-container {
+			width: 8rem !important;
+		}
+
+	}
+
+	.participant-timeline {
+
+		.plan-header {
+			h3 { display: none; }
+		}
+
+	}
+
+	.prop-wrapper {
+
+		.task-item-info {
+
+			.task-item-name {
+				font-size: 1rem;
+			}
+
+			&:not(.task-item-name), .tr-display, .tr-prefix {
+				font-size: .75rem !important;
+			}
+
+			.task-type { display: none;	}
+		}
+
+	}
+
+	.activity-details {
+		h4 {
+			font-size: 1rem;
+		}
+		&:not(h4) {
+			font-size: 90%;
+		}
+	}
+
+}
+
+@media (max-width: 768px) {
+
+	.participant-timeline {
+		> .card-block {
+			padding-left: 1rem;
+		}
+	}
+
+	.timeline {
+		&::before {
+			display: none;
+		}
+	}
+
+	.timeline-icon-custom {
+		width: 40px;
+		height: 40px;
+		left: -20px;
+		margin-top: -17px;
+
+		.fa {
+			font-size: 20px;
+			margin-top: 6px;
+		}
+
+		.cat-survey & .fa:before {
+			margin: 1px 0 0 2px;
+		}
+
+	}
+
+	.timeline-desk {
+		.timeline-card {
+			margin-left: 0;
+			padding-left: .5rem;
+		}
+	}
+
+	.activity-name {
+		font-size: 1.25rem;
+	}
+
+	.actions.task-item-actions {
+		.btn.fa, a.fa {
+			padding: .25rem .15rem;
+			width: 34px;
+
+			span {
+				text-indent: -250%;
+				display: inline-block;
+				line-height: 1;
+				overflow: hidden;
+				white-space: nowrap;
+			}
+			&[title="View"]::before, &[title="Take Action"]::before {
+				right: 11px;
+			}
+		}
+	}
+
+	.activity-details, .task-item-info {
+		.activity-desc, .task-item-desc, .prop.activity-program-name {
+			display: none !important;
+		}
+	}
+
+}
+
+@media (min-width: 1024px) {
+
+	.participant-timeline {
+		padding: 0 2rem 1.25rem 1.5rem;
+		> .card-block {
+			padding: 1.25rem 0 0 3rem;
+		}
+	}
+	.plan-actions {
+		width: auto;
+		margin-top: 0;
+	}
+
+}
+
+@media (max-width: 1280px) {
+	.task-item-info {
+		.task-item-name {
+			max-width: 79%;
+		}
+	}
+}
+
