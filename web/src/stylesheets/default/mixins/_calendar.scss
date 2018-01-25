@@ -42,6 +42,7 @@
     background: lighten($bg-cal-color-secondary, 12%);
     color: set-secondary-font-color(lighten($bg-cal-color-secondary, 12%));
     position: relative;
+    display: table-cell;
 
     &::after {
       content: '';
