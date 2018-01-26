@@ -449,7 +449,7 @@
 	border: 1px solid darken($color-cornsilk, 12%);
 	color: $color-app-grey;
 
-	.popover-title {
+	.popover-header {
 		background: darken(#fff8e0, 5%);
 	}
 
@@ -472,8 +472,8 @@
 		}
 	}
 
-	&.bs-tether-element-attached-top .popover-arrow::after,
-	&.popover-bottom .popover-arrow::after {
+	&.bs-tether-element-attached-top .arrow::after,
+	&.popover-bottom .arrow::after {
 		border-bottom-color: #FFF8E0;
 	}
 

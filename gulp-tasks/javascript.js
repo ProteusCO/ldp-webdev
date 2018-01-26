@@ -48,6 +48,7 @@ gulp.task('javascript:vendor', function() {
         './node_modules/select2/dist/js/select2.js',
         './node_modules/select2/dist/js/**/i18n/*.js',
         './node_modules/bootstrap/dist/js/bootstrap.js',
+        './node_modules/bootstrap-tour/build/js/bootstrap-tour.js',
         './node_modules/autotrack/autotrack.js'
     ])
         .pipe(clip())

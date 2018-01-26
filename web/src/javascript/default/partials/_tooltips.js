@@ -16,16 +16,19 @@ function enableTooltips(ctx) {
 		$ctx.find('[data-toggle="tooltip"]').tooltip();
 	}
 	$ctx.find('[data-toggle="popover"]').each(function (idx, el) {
-		var $el = $(el);
 		//Fix for API-braking changes to popovers between bootstrap 4 alpha and bootstrap 4 release
-		var template = $el.data('template');
-		if(typeof template !== 'undefined' && template) {
-			template = template.replace('popover-content', 'popover-body').replace('popover-arrow', 'arrow');
-			$el.data('template', template);
-		}
-		//End fix.
+		var template = el.getAttribute('data-template');
+        if(typeof template !== 'undefined' && template) {
+            template = template
+				.replace('popover-content', 'popover-body')
+				.replace('popover-arrow', 'arrow')
+				.replace('popover-title', 'popover-header');
+            el.setAttribute('data-template', template);
+        }
+        //End fix.
+        var $el = $(el);
 		$el.popover();
-		$el.click(function () {
+        $el.click(function () {
 			$el.popover('toggle');
 		});
 		$el.on('blur', function () {

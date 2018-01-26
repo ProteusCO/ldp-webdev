@@ -910,7 +910,7 @@ div.popover {
 		padding-left: 30px;
 	}
 
-	.popover-title {
+	.popover-header {
 		background: darken(#2FC2EF, 15%);
 		border-bottom: 1px solid darken(#2FC2EF, 15%);
 	}
@@ -922,13 +922,13 @@ div.popover {
 		border-style: solid;
 	}
 
-	&.bs-tether-element-attached-left .popover-arrow::after,
-	&.popover-right .popover-arrow::after {
+	&.bs-tether-element-attached-left .arrow::after,
+	&.popover-right .arrow::after {
 		border-right-color: darken(#2FC2EF, 15%);
 	}
 
-	&.bs-tether-element-attached-top .popover-arrow::after,
-	&.popover-bottom .popover-arrow::after {
+	&.bs-tether-element-attached-top .arrow::after,
+	&.popover-bottom .arrow::after {
 		border-bottom-color: darken(#2FC2EF, 15%);
 	}
 
