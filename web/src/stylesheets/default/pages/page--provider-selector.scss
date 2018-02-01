@@ -1,0 +1,9 @@
+@import "../config/base-vars";
+
+.provider-selector-logout {
+	width: 100%;
+
+	.nav.top-menu {
+		flex-direction: row-reverse;
+	}
+}

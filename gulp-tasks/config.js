@@ -31,6 +31,9 @@ gulp.task('config:files', function() {
 
     gulp.src('./web/src/config/MIWT Templates/**')
         .pipe(gulp.dest('./build/ConfigurationFiles/MIWT Templates/'));
+
+    gulp.src('./web/src/config/HTML Templates/**')
+        .pipe(gulp.dest('./build/ConfigurationFiles/HTML Templates/'));
 });
 
 gulp.task('config:clean', function(cb) {
