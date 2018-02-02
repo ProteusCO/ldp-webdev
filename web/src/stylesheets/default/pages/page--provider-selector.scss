@@ -7,3 +7,21 @@
 		flex-direction: row-reverse;
 	}
 }
+
+.coaching-selector.standalone {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 75vw;
+	margin: 0 auto;
+	padding-top: 40px;
+
+	form {
+		flex: 0 1 30%;
+		background: $color-white;
+		border-radius: 5px;
+		padding: 0.5rem;
+		margin: 0.5rem;
+	}
+}
