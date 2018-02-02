@@ -8,7 +8,7 @@ div.window.dialog /*specificity*/ {
 	background-color: $modal-content-bg;
 	background-clip: padding-box;
 	border: 1px solid $modal-content-border-color;
-	border-radius: $border-radius-lg;
+	border-radius: 0;
 	@include box-shadow(0 3px 9px rgba(0,0,0,.5));
 	overflow: hidden;
 	// Remove focus outline from opened modal
