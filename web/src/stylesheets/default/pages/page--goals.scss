@@ -26,7 +26,7 @@ h2.plan-name {
 		}
 	}
 	.goal-tags {
-		padding:1rem 1rem 0;
+		padding: 1rem 1rem 0;
 		font-size: $font-size-sm;
 		color: $color-app-light-grey;
 		label {
@@ -131,7 +131,7 @@ h2.plan-name {
 		clear: both;
 
 		.btn {
-			margin:0;
+			margin: 0;
 			border-color: $color-app-brand;
 			font-size: .9rem;
 			text-transform: uppercase;
@@ -363,7 +363,7 @@ h2.plan-name {
 		font-size: 85%;
 	}
 
-	> .goal-measurement{
+	> .goal-measurement {
 		text-align: center;
 		flex-flow: row wrap;
 		flex: 2;
@@ -471,10 +471,10 @@ h2.plan-name {
 	}
 	.config-graph-text {
 		position: absolute;
-		top:calc(50% - 40px);
-		bottom:0;
-		left:0;
-		right:0;
+		top: calc(50% - 40px);
+		bottom: 0;
+		left: 0;
+		right: 0;
 		font-size: 3rem;
 		font-weight: 400;
 		color: $brand-primary;
@@ -544,7 +544,7 @@ h2.plan-name {
 	min-width: 8rem;
 
 	.legend-header {
-		color:$color-app-grey;
+		color: $color-app-grey;
 		font-weight: 300;
 		margin-bottom: .25rem;
 		font-size: 1rem;
@@ -673,7 +673,7 @@ section.tracking-metrics {
 					color: $color-app-grey;
 					line-height: 1.25;
 				}
-				.measure-config-graph{
+				.measure-config-graph {
 					/*margin-top: 2rem;
 					min-height: 13.25rem;
 					flex: 1 0 auto;*/
@@ -682,8 +682,8 @@ section.tracking-metrics {
 				.boolean-measure .config-graph,
 				.word-measure .config-graph {
 					display: flex;
-					.chart-legend{
-						margin-left:.5rem;
+					.chart-legend {
+						margin-left: .5rem;
 						display: block;
 						width: 100%;
 					}
@@ -808,12 +808,12 @@ section.tracking-metrics {
 }
 
 .update-tracking-measure-dialog,
-.update-goal-measure-dialog{
-	width:50rem !important;
-	.prop-header{
+.update-goal-measure-dialog {
+	width: 50rem !important;
+	.prop-header {
 		display: none;
 	}
-	.prop-body{
+	.prop-body {
 
 	}
 
@@ -834,7 +834,7 @@ section.tracking-metrics {
 			margin-right: 5px;
 			border-radius: 100%;
 		}
-		span{
+		span {
 			&.legend-label {
 				display: inline;
 				width: auto;
@@ -850,7 +850,6 @@ section.tracking-metrics {
 	}
 
 }
-
 
 /* ----- UPDATE GOALS DIALOG */
 .int-measure-value-editor {
@@ -880,7 +879,9 @@ section.tracking-metrics {
 		padding-left: 5px;
 	}
 
-	.prop { padding: 0; }
+	.prop {
+		padding: 0;
+	}
 
 	.int-measure-slider {
 		margin-top: 1rem;
@@ -939,7 +940,6 @@ div.window.dialog {
 		}
 	}
 }
-
 
 /* ----- MEDIA QUERIES */
 @media (min-width: 768px) {
@@ -1113,7 +1113,9 @@ div.window.dialog {
 		.goal-measurement {
 			justify-content: center;
 
-			.goal-measurement { width: 100%; }
+			.goal-measurement {
+				width: 100%;
+			}
 
 		}
 
@@ -1121,8 +1123,7 @@ div.window.dialog {
 
 }
 
-@media (max-width: 767px)
-and (orientation:portrait) {
+@media (max-width: 767px) and (orientation: portrait) {
 	#main-content-wc-0 {
 		padding: .5rem;
 	}
@@ -1283,13 +1284,13 @@ and (orientation:portrait) {
 					margin: 1rem 0;
 
 					[data-chart-type="pie"] canvas {
-                        //margin: 0 auto;
-                        //width: 175px !important;
-                        //height: 175px !important;
+						//margin: 0 auto;
+						//width: 175px !important;
+						//height: 175px !important;
 						margin-left: -1rem;
 						width: 50% !important;
 						height: 50% !important;
-                    }
+					}
 
 				}
 			}
@@ -1353,7 +1354,6 @@ and (orientation:portrait) {
 	}
 
 }
-
 
 /* ----- ##### BEGIN PRINT STYLES ##### ----- */
 @media print {

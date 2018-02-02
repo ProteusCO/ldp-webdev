@@ -14,6 +14,7 @@ input.custom-file {
 		outline: -webkit-focus-ring-color auto 5px;
 	}
 }
+
 label.custom-file {
 	display: inline-block;
 	font-weight: $btn-font-weight;
@@ -33,6 +34,7 @@ label.custom-file {
 		pointer-events: none;
 	}
 }
+
 label.custom-file:hover {
 	@include box-shadow($btn-focus-box-shadow, $btn-active-box-shadow);
 }

@@ -11,7 +11,7 @@
 	text-align: center;
 
 	li a {
-		color:$menu-item-inactive;
+		color: $menu-item-inactive;
 		font-size: 12px;
 		list-style: none;
 		padding: 15px 10px;
@@ -39,7 +39,7 @@
 		border-bottom: none;
 		text-transform: uppercase;
 	}
-	> li:last-child > a:hover{
+	> li:last-child > a:hover {
 		color: #444;
 	}
 }
@@ -101,16 +101,16 @@
 }
 
 .field span.label,
-.top-menu a.dropdown{
+.top-menu a.dropdown {
 	color: #444;
 	font-size: 90%;
 }
-
 
 .header, .footer {
 	min-height: 60px;
 	padding: 0 15px;
 }
+
 .white-bg {
 	background: #fff;
 	border-bottom: 1px solid #f1f2f7;
@@ -163,7 +163,7 @@ a.logo span {
 	}
 	> li.dropdown a.dropdown-toggle:hover,
 	> li > .fa:hover {
-		color:#444;
+		color: #444;
 	}
 	> li.mi-active > .fa {
 		color: $menu-item-active;
@@ -267,7 +267,8 @@ a.logo span {
 		padding: 6px 0 8px;
 	}
 }
-.has-side-menu #main-header .sidebar-toggle-box .fa-bars{
+
+.has-side-menu #main-header .sidebar-toggle-box .fa-bars {
 	visibility: visible;
 	min-width: 20px;
 }
@@ -294,8 +295,7 @@ a.logo span {
 	}
 }
 
-@media (max-width: 768px)
-and (orientation: portrait) {
+@media (max-width: 768px) and (orientation: portrait) {
 
 	div.lr-top-menu {
 		position: fixed;
@@ -356,7 +356,7 @@ and (orientation: portrait) {
 			left: auto;
 			right: 0;
 			border-radius: 0;
-			box-shadow: 0 0 5px rgba(0,0,0,0.3);
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
 			> li:last-child {
 				border-radius: 0;
@@ -451,7 +451,9 @@ and (orientation: portrait) {
 					width: 35px;
 					text-align: center;
 					padding: 6px 3px;
-					&::before { font-size: 1.3rem; }
+					&::before {
+						font-size: 1.3rem;
+					}
 				}
 				span {
 					display: none;
@@ -472,7 +474,7 @@ and (orientation: portrait) {
 			left: auto;
 			right: 0;
 			border-radius: 0;
-			box-shadow: 0 0 5px rgba(0,0,0,0.3);
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
 			> li:last-child {
 				border-radius: 0;
@@ -487,8 +489,7 @@ and (orientation: portrait) {
 	}
 }
 
-@media (min-width: 1024px)
-and (max-width: 1080px) {
+@media (min-width: 1024px) and (max-width: 1080px) {
 	.top-menu > li.link {
 		max-width: 5.5rem;
 	}

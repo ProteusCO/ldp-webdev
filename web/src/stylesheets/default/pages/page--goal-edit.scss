@@ -194,7 +194,7 @@
 
 				&::before {
 					content: '';
-				border-bottom: 39px solid transparent;
+					border-bottom: 39px solid transparent;
 					border-left: 21px solid $body-bg;
 					border-top: 39px solid transparent;
 					display: inline-block;
@@ -517,7 +517,7 @@ section.metric-list {
 			background-color: $color-white;
 
 			font-weight: 500;
-			position:relative;
+			position: relative;
 			top: -.65rem;
 			left: .25rem;
 		}
@@ -727,7 +727,7 @@ section.metric-list {
 	.prop-editor .prop {
 		&.description,
 		&.tracking-question,
-		&.tracking-unit	{
+		&.tracking-unit {
 			input[type="text"] {
 				max-width: 100%;
 				width: 100%;
@@ -744,8 +744,6 @@ section.metric-list {
 	}
 
 }
-
-
 
 .instructions-wrapper {
 	display: block;
@@ -808,7 +806,8 @@ div.prop {
 .goal-statement {
 	@include clearfix();
 	background: #FFF8E0;
-	/*background: darken($color-cornsilk, 5%)*/;
+	/*background: darken($color-cornsilk, 5%)*/
+;
 	border: 1px solid darken($color-cornsilk, 12%);
 	color: $color-app-grey;
 	padding: 1rem;

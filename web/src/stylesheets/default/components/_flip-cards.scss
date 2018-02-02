@@ -16,6 +16,7 @@
 
 	}
 }
+
 .flip-card {
 	width: 270px;
 	transform-style: preserve-3d;
@@ -27,14 +28,17 @@
 	}
 
 }
+
 .flip-card .face {
 	backface-visibility: hidden;
 	z-index: 2;
 }
+
 .flip-card .face.front {
 	position: absolute;
 	z-index: 1;
 }
+
 .flip-card .face.back {
 	padding-top: 10%;
 	transform: rotatey(-180deg);

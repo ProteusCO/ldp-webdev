@@ -70,7 +70,7 @@ $tab-content-color-bg: inherit;
 
 				&.active {
 					border: 1px solid $color-app-brand;
-					box-shadow: 0 0 10px rgba(0,0,0,0.5) !important;
+					box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
 					text-decoration: none;
 				}
 
@@ -323,7 +323,7 @@ $tab-content-color-bg: inherit;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	.prop {
-			flex: 10 45%;
+		flex: 10 45%;
 
 		&.description,
 		&.recording-question {
@@ -331,19 +331,22 @@ $tab-content-color-bg: inherit;
 		}
 	}
 }
+
 .word-actions {
 	display: inline-block;
 }
+
 .words {
 	caption {
-		margin-top:0;
-		caption-side:bottom;
+		margin-top: 0;
+		caption-side: bottom;
 	}
 	.word {
 		margin-left: 2ch;
 		display: list-item;
 	}
 }
+
 .prop-editor .prop span.rtb {
 	display: block;
 	padding-left: 0;
@@ -361,8 +364,8 @@ $tab-content-color-bg: inherit;
 }
 
 .edit-goal-dialog {
-	width:50rem !important;
-	.prop-header{
+	width: 50rem !important;
+	.prop-header {
 		display: none;
 	}
 
@@ -520,7 +523,7 @@ div.window.dialog {
 
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
 	#main-content-wc-0 {
 		padding: .5rem .75rem;
 	}
@@ -631,7 +634,7 @@ div.window.dialog {
 
 }
 
-@media (max-width:1024px) {
+@media (max-width: 1024px) {
 	.goal-basics {
 		.prop.description {
 			width: 100%;
@@ -643,7 +646,7 @@ div.window.dialog {
 	}
 }
 
-@media (min-width:1024px) {
+@media (min-width: 1024px) {
 	.smart-wrapper {
 		align-items: stretch;
 		flex-flow: row wrap;

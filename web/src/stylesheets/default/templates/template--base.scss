@@ -19,7 +19,9 @@ body {
 	font-weight: 300;
 }
 
-#main-wrapper main { padding-bottom: 3rem; }
+#main-wrapper main {
+	padding-bottom: 3rem;
+}
 
 ::selection {
 	background: #FF6C60;
@@ -99,8 +101,8 @@ div.popover {
 .miwt .menu-component .menu-items {
 	.default, .meeting, .meeting-group,
 	.plan-start-date, .form, .email, .resource, .reminder, .email-login-info, .assign-membership, .confirmation,
-	.result-upload,	.fileentity, .uri, .manual, .lesson-group {
-		a.menu-item{
+	.result-upload, .fileentity, .uri, .manual, .lesson-group {
+		a.menu-item {
 			display: inline-block;
 			width: calc(100% - 30px);
 		}
@@ -114,25 +116,56 @@ div.popover {
 			content: '\f096';
 		}
 	}
-	.plan-start-date:before {content: "\f271";}
-	.form:before { content: "\f00b"; }
-	.email:before {content: "\f003";}
-	.resource:before { content: "\f0b1"; }
-	.reminder:before {content: "\f274";}
-	.email-login-info:before {content: "\f090";}
-	.manual:before {content: "\f14a";}
-	.assign-membership:before {content: "\f234";}
-	.confirmation:before {content: "\f087";}
-	.result-upload:before {content: "\f093";}
+	.plan-start-date:before {
+		content: "\f271";
+	}
+	.form:before {
+		content: "\f00b";
+	}
+	.email:before {
+		content: "\f003";
+	}
+	.resource:before {
+		content: "\f0b1";
+	}
+	.reminder:before {
+		content: "\f274";
+	}
+	.email-login-info:before {
+		content: "\f090";
+	}
+	.manual:before {
+		content: "\f14a";
+	}
+	.assign-membership:before {
+		content: "\f234";
+	}
+	.confirmation:before {
+		content: "\f087";
+	}
+	.result-upload:before {
+		content: "\f093";
+	}
 
+	.default:before {
+		content: "\f012";
+	}
+	.meeting:before {
+		content: "\f007";
+	}
+	.meeting-group:before {
+		content: "\f0c0";
+	}
+	.lesson-group:before {
+		content: "\f02d";
+	}
 
-	.default:before {content: "\f012";}
-	.meeting:before {content: "\f007";}
-	.meeting-group:before {content: "\f0c0";}
-	.lesson-group:before {content: "\f02d";}
-
-	.fileentity:before {content: "\f016";}
-	.uri:before {content: "\f0c1";}
+	.fileentity:before {
+		content: "\f016";
+	}
+	.uri:before {
+		content: "\f0c1";
+	}
 }
 
 .instructions {
@@ -141,6 +174,7 @@ div.popover {
 	color: $color-app-grey;
 	font-style: italic;
 }
+
 p.instructions {
 	padding-bottom: 0;
 }
@@ -148,11 +182,15 @@ p.instructions {
 .prop-wrapper {
 
 	.prop.time {
-		.prop-group-title { margin-top: 0; }
+		.prop-group-title {
+			margin-top: 0;
+		}
 	}
 
 	.prop.timezone {
-		> label { margin-top: 15px; }
+		> label {
+			margin-top: 15px;
+		}
 	}
 
 }
@@ -207,8 +245,7 @@ a[role=tooltip] {
 	user-select: none;
 }
 
-@media (max-width: 767px)
-and (orientation:portrait) {
+@media (max-width: 767px) and (orientation: portrait) {
 
 	.back-top {
 		display: block;

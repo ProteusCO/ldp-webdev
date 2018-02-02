@@ -160,7 +160,9 @@ section.tracking-metrics-update {
 }
 
 .click-here-container {
-	span { padding: 0 5px; }
+	span {
+		padding: 0 5px;
+	}
 }
 
 @media (max-width: 600px) {
@@ -170,7 +172,6 @@ section.tracking-metrics-update {
 	}
 
 }
-
 
 @media (min-width: 1024px) {
 	.goal-update {

@@ -25,9 +25,8 @@
 	}
 }
 
-
 .resource-name {
-	font-size:1.15rem;
+	font-size: 1.15rem;
 	margin: 0;
 	text-align: center;
 	padding: $card-spacer-y $card-spacer-x !important;
@@ -59,7 +58,7 @@
 	padding: $card-spacer-y $card-spacer-x;
 }
 
-.resource-content{
+.resource-content {
 	display: block;
 	text-align: center;
 	margin: $card-spacer-y 0;
@@ -83,7 +82,7 @@
 
 }
 
-.resource-cite{
+.resource-cite {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 0;
@@ -93,11 +92,11 @@
 	border-top: $card-border-width solid $card-border-color;
 	font-size: smaller;
 	.resource-source,
-	.resource-author{
+	.resource-author {
 		display: inline-block;
-		flex:1;
+		flex: 1;
 
-		label{
+		label {
 			margin-right: 4px;
 			margin-bottom: 0;
 			font-weight: 400;
@@ -116,8 +115,8 @@
 	display: flex;
 	flex-flow: column nowrap;
 
-	div.resource{
-		position:relative;
+	div.resource {
+		position: relative;
 		display: flex;
 		flex: 1 0 0;
 		justify-content: center;
@@ -131,28 +130,28 @@
 
 		.actions {
 			position: absolute;
-			right:18px;
-			top:16px;
-			z-index:1;
+			right: 18px;
+			top: 16px;
+			z-index: 1;
 
 			.btn {
-				padding:0;
-				margin:0;
-				font-size:16px;
-				height:24px;
-				width:24px;
+				padding: 0;
+				margin: 0;
+				font-size: 16px;
+				height: 24px;
+				width: 24px;
 				overflow: hidden;
 				display: #444;
 				@include button-variant-legacy($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 
-				&:before{
+				&:before {
 					display: block;
 					content: "\f00d";
 					font-size: 1rem;
 					font-family: FontAwesome;
 				}
-				&:hover{
-					background:$btn-danger-bg;
+				&:hover {
+					background: $btn-danger-bg;
 				}
 			}
 		}

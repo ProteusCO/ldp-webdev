@@ -1,5 +1,5 @@
 /**
-	 * Created by vtdev on 5/18/16.
+ * Created by vtdev on 5/18/16.
  */
 jQuery(function () {
 
@@ -7,9 +7,9 @@ jQuery(function () {
 		//noinspection JSUnusedGlobalSymbols
 		form.submit_options = {
 			postUpdate: function () {
-				window.scrollTo(0,0);
+				window.scrollTo(0, 0)
 			}
-		};
-	});
+		}
+	})
 
-});
+})

@@ -8,18 +8,18 @@
  */
 
 jQuery(function () {
-    $(".carousel").each(function() {
-        var persistentId = $(this).data('carousel-id');
-        if(persistentId) {
-            $( this ).on('slid.bs.carousel', function (e) {
-                var itemIdx = e.relatedTarget.getAttribute('data-carousel-index');
-                localStorage.setItem(persistentId, itemIdx);
-            });
+	$('.carousel').each(function () {
+		var persistentId = $(this).data('carousel-id')
+		if (persistentId) {
+			$(this).on('slid.bs.carousel', function (e) {
+				var itemIdx = e.relatedTarget.getAttribute('data-carousel-index')
+				localStorage.setItem(persistentId, itemIdx)
+			})
 
-            var storedIdx = localStorage.getItem(persistentId);
-            if(storedIdx && Number(storedIdx)) {
-                $( this ).carousel(Number(storedIdx));
-            }
-        }
-    });
-});
+			var storedIdx = localStorage.getItem(persistentId)
+			if (storedIdx && Number(storedIdx)) {
+				$(this).carousel(Number(storedIdx))
+			}
+		}
+	})
+})

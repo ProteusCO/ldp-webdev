@@ -2,8 +2,9 @@
 @import "../mixins/bootstrap-legacy-buttons";
 
 .actions .btn {
-	margin-right:4px;
+	margin-right: 4px;
 }
+
 .actions .btn, .procedure-navigation .btn, .recipients .btn {
 	@include button-variant-legacy($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
 

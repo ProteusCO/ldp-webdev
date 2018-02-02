@@ -1,51 +1,51 @@
 //@import "../config/base-vars";
 
 .team-goals-instruction {
-  margin-top: .75rem;
+	margin-top: .75rem;
 
-  &::before {
-    content: 'Legend:';
-    font-size: .825rem;
-    font-weight: 400;
-    display: block;
-  }
+	&::before {
+		content: 'Legend:';
+		font-size: .825rem;
+		font-weight: 400;
+		display: block;
+	}
 
-  .instructions {
-    display: inline-block;
-    border-top: 1px solid #e5e5e5;
-    padding: 2px 0 0;
-    margin-top: 3px;
+	.instructions {
+		display: inline-block;
+		border-top: 1px solid #e5e5e5;
+		padding: 2px 0 0;
+		margin-top: 3px;
 
-    > span {
-      display: inline-block;
-      vertical-align: baseline;
-      font-size: .825rem;
-      font-style: normal;
+		> span {
+			display: inline-block;
+			vertical-align: baseline;
+			font-size: .825rem;
+			font-style: normal;
 
-      + span {
-        margin-left: .625rem;
-      }
+			+ span {
+				margin-left: .625rem;
+			}
 
-      &::before {
-        content: '';
-        margin-right: 3px;
-        width: 10px;
-        height: 10px;
-        border-radius: 100%;
-        display: inline-block;
-      }
-    }
-  }
+			&::before {
+				content: '';
+				margin-right: 3px;
+				width: 10px;
+				height: 10px;
+				border-radius: 100%;
+				display: inline-block;
+			}
+		}
+	}
 
-  .on-track::before {
-    background-color: $color-app-brand;
-  }
+	.on-track::before {
+		background-color: $color-app-brand;
+	}
 
-  .off-track::before {
-    background-color: $color-app-red;
-  }
+	.off-track::before {
+		background-color: $color-app-red;
+	}
 
-  .unknown::before {
-    background-color: #bbbbbb;
-  }
+	.unknown::before {
+		background-color: #bbbbbb;
+	}
 }

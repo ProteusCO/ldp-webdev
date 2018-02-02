@@ -25,7 +25,9 @@
 	position: relative;
 	@include clearfix();
 
-	.form_entry { @include clearfix(); }
+	.form_entry {
+		@include clearfix();
+	}
 
 	h2 {
 		padding-top: 0 !important;

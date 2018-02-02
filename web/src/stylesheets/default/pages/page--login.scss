@@ -22,7 +22,7 @@
 
 .form-signin .title {
 	margin: 0;
-	padding:20px 15px;
+	padding: 20px 15px;
 	text-align: center;
 	background: $header-bg;
 	border-radius: 5px 5px 0 0;
@@ -38,11 +38,13 @@
 .form-signin .checkbox {
 	margin-bottom: 14px;
 }
+
 .form-signin .checkbox {
 	font-family: $font-family-sans-serif;
 	color: #b6b6b6;
 	font-weight: 300;
 }
+
 .form-signin .form-control {
 	position: relative;
 	font-size: 16px;
@@ -52,9 +54,11 @@
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
+
 .form-signin .form-control:focus {
 	z-index: 2;
 }
+
 .form-signin input[type="text"], .form-signin input[type="password"] {
 	margin-bottom: 15px;
 	border-radius: 5px;
@@ -62,7 +66,7 @@
 	border: 1px solid #eaeaea;
 	box-shadow: none;
 	font-size: 12px;
-	padding:2px 4px;
+	padding: 2px 4px;
 	width: 100%;
 }
 
@@ -108,7 +112,7 @@
 	padding: 20px;
 }
 
-.login-social-link  {
+.login-social-link {
 	display: inline-block;
 	margin-top: 20px;
 	margin-bottom: 15px;
@@ -133,15 +137,14 @@
 	background: #5193ea;
 	margin-right: 22px;
 	box-shadow: 0 4px #2775e2;
-	float:left;
+	float: left;
 }
 
 .login-social-link a.twitter {
 	background: #44ccfe;
 	box-shadow: 0 4px #2bb4e8;
-	float:left;
+	float: left;
 }
-
 
 .set-pw-intro {
 	padding: 1rem;
@@ -175,6 +178,7 @@
 #authentication {
 	background-color: #f1f2f7;
 }
+
 #main-content-wc-0 .brand {
 	max-width: 375px;
 	width: 100%;
@@ -189,6 +193,7 @@
 	color: $color-white;
 	font-weight: 400;
 }
+
 .form-signin, .form-signout {
 	max-width: 375px;
 	margin: 0 auto;
@@ -196,15 +201,18 @@
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
-.form-signin .fields{
+
+.form-signin .fields {
 	text-align: left;
-	padding:20px 3rem;
+	padding: 20px 3rem;
 }
+
 .form-signin .message-container,
 .form-signin .actions {
-	padding-left:20px;
-	padding-right:20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
+
 .form-signin {
 
 	.text p, .password-rules {
@@ -212,7 +220,7 @@
 		font-size: 90%;
 	}
 
-	.message-container{
+	.message-container {
 		margin: 10px 0 25px;
 	}
 
@@ -248,9 +256,14 @@
 }
 
 .password-reset {
-	.password-rules { padding: 25px 20px 0; }
+	.password-rules {
+		padding: 25px 20px 0;
+	}
 
-	.username .value { color: $color-app-grey; font-size: .9rem; }
+	.username .value {
+		color: $color-app-grey;
+		font-size: .9rem;
+	}
 
 	.actions {
 		padding-bottom: 25px;
@@ -258,7 +271,9 @@
 
 	.fields {
 
-		> .field { margin-bottom: 15px; }
+		> .field {
+			margin-bottom: 15px;
+		}
 	}
 
 	.label label, .value input {
@@ -270,6 +285,7 @@
 .form-reset #retrieve-password {
 	text-align: center;
 }
+
 header#main-header {
 	display: none;
 }

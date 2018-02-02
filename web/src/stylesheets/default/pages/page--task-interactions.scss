@@ -127,13 +127,17 @@
 		.prop-header-title {
 			margin: 0;
 
-			h1 {padding-top: 0 !important;}
+			h1 {
+				padding-top: 0 !important;
+			}
 		}
 
 	}
 
 	.emailtemplate-config {
-		.prop-header-actions { display: none; }
+		.prop-header-actions {
+			display: none;
+		}
 	}
 
 	.recipients-wrapper {
@@ -315,7 +319,6 @@
 			margin-top: 1.5rem;
 			border-top: 1px solid lighten($color-app-light-grey, 25%);
 			padding-top: 1.5rem;
-
 
 			> span {
 				flex: 1 0 0;

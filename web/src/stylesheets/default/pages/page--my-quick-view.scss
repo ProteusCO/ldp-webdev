@@ -7,8 +7,8 @@
 	border-bottom: none;
 }
 
-.flex-container{
-	display:flex;
+.flex-container {
+	display: flex;
 	flex-flow: column nowrap;
 	color: $color-app-grey;
 
@@ -186,7 +186,6 @@
 		&.dynamic-constraints {
 			font-size: 90%;
 
-
 			> span.constraint {
 				display: block;
 				width: 100%;
@@ -307,7 +306,7 @@
 			}
 
 			.checkbox-constrsint[checked="checked"] + label.checkbox-constrsint {
-				box-shadow: 0 0 8px rgba(0,0,0,0.8);
+				box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 			}
 
 		}
@@ -393,11 +392,11 @@
 						&::after {
 							content: '';
 							background: transparent;
-							box-shadow: 0 0 8px rgba(0,0,0,0.8);
+							box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
 							display: block;
 							height: 100%;
 							width: 100%;
-							position:absolute;
+							position: absolute;
 							top: 0;
 							left: 0;
 							z-index: -1;
@@ -493,7 +492,7 @@
 	}
 }*/
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
 	.myquickview-mgt {
 		.constraints {
 			&.standard {

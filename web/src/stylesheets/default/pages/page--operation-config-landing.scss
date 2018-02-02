@@ -4,24 +4,24 @@
 // LANDING PAGE STYLES
 #operation, #configuration {
 
-  #main-content-wc-0 .inlinewindowcontent > div, #main-content-wc-0 .inlinewindowcontent > section {
+	#main-content-wc-0 .inlinewindowcontent > div, #main-content-wc-0 .inlinewindowcontent > section {
 
-    h1, h2 {
-      margin-bottom: 0;
-      border-bottom: 1px solid $color-app-grey;
-    }
+		h1, h2 {
+			margin-bottom: 0;
+			border-bottom: 1px solid $color-app-grey;
+		}
 
-  }
+	}
 
-  .search-wrapper {
+	.search-wrapper {
 
-    .actions.entity-actions {
-      margin-top: -4rem;
-    }
+		.actions.entity-actions {
+			margin-top: -4rem;
+		}
 
-    .search-bar {
-      clear: both;
-    }
-  }
+		.search-bar {
+			clear: both;
+		}
+	}
 
 }

@@ -22,7 +22,7 @@ h2.plan-name {
 }
 
 .goals-viewer,
-.goal-management{
+.goal-management {
 	position: relative;
 	.persistence-actions {
 		/*position: absolute;
@@ -34,8 +34,8 @@ h2.plan-name {
 		padding-right: .25rem;
 		margin-top: .25rem;
 
-		.btn{
-			color:$brand-primary;
+		.btn {
+			color: $brand-primary;
 			background-color: $color-white;
 
 			&.configure {
@@ -63,9 +63,9 @@ h2.plan-name {
 				}
 			}
 
-			&:hover{
+			&:hover {
 				background-color: $color-smokey-white;
-				color:$brand-primary;
+				color: $brand-primary;
 			}
 		}
 	}
@@ -78,7 +78,8 @@ h2.plan-name {
 		right: .5rem;
 		top: 4px;
 
-		.back /*, .other */ {
+		.back /*, .other */
+		{
 			&:before {
 				color: $nav-action-color;
 				@include hover {
@@ -126,9 +127,15 @@ h2.plan-name {
 					padding-right: 7px;
 				}
 
-				&.organizational a::before { content: '\f0f7'; }
-				&.leadership a::before { content: '\f0c0'; }
-				&.personal a::before { content: '\f24e'; }
+				&.organizational a::before {
+					content: '\f0f7';
+				}
+				&.leadership a::before {
+					content: '\f0c0';
+				}
+				&.personal a::before {
+					content: '\f24e';
+				}
 
 			}
 
@@ -136,21 +143,21 @@ h2.plan-name {
 	}
 	.tab-container .tab-content {
 		padding: 0;
-		border-top-width:0;
+		border-top-width: 0;
 
 		.navbar {
-			padding:0;
+			padding: 0;
 			min-height: auto;
 			border-radius: 0;
 			background-color: lighten($color-app-light-grey, 15%);
-			border-right:1px solid lighten($color-app-light-grey, 15%);
+			border-right: 1px solid lighten($color-app-light-grey, 15%);
 
 			.nav-item + .nav-item {
 				margin-left: 0;
 			}
 
 			.btn {
-				color:$nav-fg;
+				color: $nav-fg;
 				background-color: lighten($color-app-light-grey, 15%);
 				padding: 0.5rem 1rem;
 				border-radius: 0;
@@ -262,7 +269,9 @@ h2.plan-name {
 
 			.goalconfig-results {
 
-				thead { display: none; }
+				thead {
+					display: none;
+				}
 
 				> thead > tr > th, > tbody > tr > td {
 					background: none;
@@ -282,7 +291,9 @@ h2.plan-name {
 			padding: 0 !important;
 		}
 
-		.actions.tracking-metric-actions { padding: 0; }
+		.actions.tracking-metric-actions {
+			padding: 0;
+		}
 
 		+ .tracking-metric {
 			padding-top: 25px;
@@ -362,6 +373,5 @@ h2.plan-name {
 		}
 
 	}
-
 
 }
