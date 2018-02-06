@@ -11,8 +11,11 @@ function setupBackgroundImages () {
 			+ 'font-size: .85rem;'
 			+ 'color: #2e2e2e;'
 			+ 'text-transform: none;'
-			+ 'padding: .25rem 0 .25rem 4.25rem;'
+			+ 'padding: .5rem 1rem .5rem 1rem;'
 			+ 'background: url(' + backgroundurl + ') left center/contain no-repeat;'
+			+ 'text-align: center;'
+			+ 'background-position-x: 5%;'
+			+ 'cursor: pointer;'
 		target.style.cssText += styleString
 	})
 }
