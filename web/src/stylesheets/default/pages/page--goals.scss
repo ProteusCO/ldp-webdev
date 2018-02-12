@@ -1360,15 +1360,30 @@ div.window.dialog {
 
 	@page {
 		size: landscape;
-		margin: .2in .15in .15in .15in;
+		margin: .5in .15in .15in .15in;
 	}
 
-	div {
-		/*float: none !important;
-		position: relative;
-		page-break-inside: avoid;*/
-		//display: block !important;
-		//position: relative !important;
+	div.page {
+		div,
+		section {
+			float: none !important;
+			//page-break-inside: avoid;
+			display: block !important;
+			position: relative !important;
+		}
+
+		#main-header, .sidebar-toggle-box, .coaching-selector.dropdown,
+		#side-nav, #page-footer,
+		ul.tab-items, nav.goal-selector, .actions,
+		.goal-wrapper .carousel-control,
+		.status-toggle,
+		.team-goals-instruction {
+			display: none !important;
+		}
+	}
+
+	body {
+		background: transparent !important;
 	}
 
 	#main-content-wc-0 {
@@ -1396,500 +1411,191 @@ div.window.dialog {
 
 	}
 
-	.goal-viewer-wrapper {
+	.goal-info-wrapper {
 		position: relative;
-		float: none;
-
-		.team-goals-instruction {
-			display: none;
-		}
-
-		&::before {
-			content: 'Goal Progress Report';
-			font-size: 1.5rem;
-			display: block;
-			width: 100%;
-			text-align: left;
-			font-weight: 400;
-			margin-bottom: .75rem;
-			border-bottom: 1px solid lighten($color-app-light-grey, 25%);
-			padding: 0 0 .5rem;
-		}
-	}
-
-	.goal-viewer-heading .title-wrapper {
-		width: 100%;
-	}
-
-	#main-header, .sidebar-toggle-box, .coaching-selector.dropdown,
-	#side-nav, #page-footer,
-	ul.tab-items, nav.goal-selector, .actions,
-	.goal-wrapper .carousel-control {
-		display: none !important;
-	}
-
-	.goal-wrapper .carousel-inner {
-		display: flex;
-		flex-flow: row nowrap;
-
-		> .carousel-item {
-			/*display: inline-block !important;
-			vertical-align: top;*/
-			display: inline-flex !important;
-			flex-flow: column nowrap;
-			perspective: 1px;
-
-			&.measurement-line {
-				flex: 1 0 60%;
-				width: 60% !important;
-				min-height: 310px;
-				position: relative;
-
-				canvas {
-					transform: translateY(15px);
-				}
-			}
-
-			&.measurement-gauge {
-				flex: 1 0 25%;
-				width: 25% !important;
-				//float: right;
-			}
-
-		}
-
-		.carousel-caption {
-			position: absolute;
-			bottom: -12px;
-			width: 100%;
-
-			p {
-				font-size: 80% !important;
-			}
-
-		}
-
-	}
-
-	.goal-wrapper .prop-group.goal-measurement .measurement-gauge .measure-config-graph .config-graph {
-		width: 100% !important;
-		height: auto !important;
-	}
-
-	.goal-wrapper .prop-group.goal-measurement .measurement-line .measure-config-graph .config-graph {
-		width: 100% !important;
-		height: 260px !important;
-		canvas {
-		}
-	}
-
-	.goal-status-container {
-		margin-top: 0;
-		font-weight: 400;
-		position: absolute;
-		right: 0;
-		width: auto;
-		top: 0;
-
-		> span.status-completed {
-			border: none;
-			background: transparent;
-		}
-	}
-
-	.goal-wrapper {
-		padding: 0;
-		position: relative;
-		/*page-break-inside: avoid;
 		page-break-after: always;
-		page-break-before: avoid;*/
-
-		.goal-info-wrapper {
-			margin-top: 0;
-			order: 1;
-			flex: 1 0 100%;
-			flex-flow: row wrap;
-			position: relative;
-
-			.description {
-				label, .val {
-					display: inline;
-				}
-			}
-
-		}
 
 		.financial-values-wrapper {
-			max-width: 100%;
 
-			.goal-ev:first-child {
-				max-width: calc(100% - 13rem);
-			}
-		}
-
-		.smart-guage-wrapper {
-			//padding-bottom: 8rem;
-			padding-bottom: 1rem;
-			-webkit-print-color-adjust: exact;
-
-			.prop-group.smart-gauge {
-				order: 2;
+			&::after {
+				content: '';
+				display: table;
+				clear: both;
 			}
 
-			.meter {
-				width: 20rem;
+			.goal-ev {
+				width: auto;
+				float: left !important;
+				margin-right: 50px;
+				padding-top: 1rem;
 			}
-		}
-
-		.prop-group.goal-measurement {
-			order: 2;
-			flex: 1 0 100%;
-			page-break-inside: avoid !important;
-			page-break-before: always !important;
-			position: relative;
-			float: none;
-			padding-top: 2rem;
-		}
-
-		> .goal-measurement .goal-measurement {
-			position: relative;
-			float: none;
-			page-break-inside: avoid;
 		}
 
 		.description {
-			order: 1;
-			flex: 1 0 100%;
-			padding-top: 0;
+			padding: 0 0 1.5rem;
 		}
-		.start-date {
-			order: 3;
-		}
-		.end-date {
-			order: 4;
-		}
-		.measure-info, .metric-last-updated {
-			text-align: left;
-			font-size: .8rem;
-			label {
-				font-size: .8rem;
+
+		.start-date, .end-date {
+			padding-bottom: 1.5rem;
+			width: auto;
+			margin-right: 50px;
+			float: left !important;
+
+			&::after {
+				content: '';
+				display: table;
+				clear: both;
 			}
-		}
-		.measure-info {
-			flex: 1 0 auto;
-			max-width: 50%;
 		}
 	}
 
-	.goal-viewer {
+	.goal-measurement {
+		page-break-inside: avoid;
 		padding-top: 0;
-		position: relative;
-		//page-break-after: always !important;
 
-		.measure-info .metric-last-updated .val {
-			font-style: normal;
-			color: #000;
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.carousel-inner .measurement-item,
+		.measure-info,
+		.measure-metric-info {
+			float: left !important;
+			width: 45%;
+		}
+	}
+
+	.goal-wrapper .smart-guage-wrapper {
+		padding-bottom: 1rem;
+		-webkit-print-color-adjust: exact;
+		clear: both;
+	}
+
+	section.tracking-metrics {
+		margin: 0;
+		padding-top: 0;
+		border-top: none;
+		page-break-before: always;
+
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		.metrics-lists div.tracking-metrics {
+			position: relative;
+			width: 100%;
+			padding: 0 20px;
 
 			&::after {
-				display: none;
-			}
-		}
-
-		.goal-viewer-wrapper {
-			flex-direction: row;
-		}
-
-		.tab-container .tab-content, section.tracking-metrics {
-			border: none;
-		}
-		section.tracking-metrics {
-			border-top: none;
-			margin: 0;
-			padding-top: 0;
-			display: block;
-			position: relative;
-			page-break-before: always;
-			page-break-after: always;
-
-			.metrics-lists {
-				max-width: 100%;
-				display: block;
-				position: relative !important;
+				content: '';
+				display: table;
+				clear: both;
 			}
 
-			h1.tracking-metrics-label {
-				font-weight: 400;
-				margin-top: 2rem !important;
-				display: block;
-				padding: .75rem 0 .5rem;
-			}
-
-			div.tracking-metrics {
-				//display: flex;
-				//flex-flow: row wrap;
-				display: block;
+			&.attitudes {
+				margin-top: 2rem;
 				padding: 0;
-				max-width: 100%;
-				width: 100%;
-				position: relative;
+				border-right: 0;
+				page-break-inside: avoid;
 
-				&::after {
-					content: '';
-					display: table;
-					clear: both;
-				}
-
-				&.attitudes {
-					border-right: none;
-					order: 2;
-					margin-top: 2rem;
-					clear: both;
-				}
-
-				&.behaviors {
-					order: 1;
-				}
-
-				span.metrics-list-header {
+				.metrics-list-header {
+					float: left;
 					display: block;
 					width: 100%;
-				}
-
-				.tracking-metric {
-					width: 48%;
-					//display: inline-block;
-					float: left;
-					min-height: 25rem;
-					margin: 0 0 .25rem;
-					padding: .5rem;
-					position: relative;
-
-					&:nth-of-type(3) {
-						page-break-inside: avoid !important;
-					}
 
 					&::after {
 						content: '';
 						display: table;
 						clear: both;
 					}
-
-					.measure-config-graph {
-						margin-top: .25rem;
-					}
-
-					.config-graph {
-						width: 260px !important; //350
-						height: 190px !important; //260
-
-						canvas {
-							width: 100% !important;
-							height: auto !important;
-							margin-left: 0;
-						}
-					}
 				}
 
-				h1.metric-label {
-					font-size: 1.05rem !important;
+				.tracking-metric {
+					width: 45%;
+					float: left !important;
+					padding: 0 20px;
+				}
+			}
+
+			&.behaviors {
+				padding: 0;
+
+				.metrics-list-header {
+					float: left;
+					display: block;
 					width: 100%;
-					text-align: left;
-					font-weight: 200 !important;
+
+					&::after {
+						content: '';
+						display: table;
+						clear: both;
+					}
+				}
+
+				.tracking-metric {
+					width: 45%;
+					float: left !important;
+					padding: 0 20px;
 				}
 			}
 
-			.chart-legend {
-				margin-left: 0;
+			.tracking-metric {
+				page-break-inside: avoid;
+				margin: 0;
+				padding: 2rem 0;
 			}
-
-			.measure-info,
-			.measure-metric-info {
-				padding-top: 1.5rem;
-			}
-
-			.measure-info {
-				color: #000;
-				text-align: left;
-
-				.metric-last-updated {
-					text-align: left;
-				}
-
-				label {
-					margin-bottom: 0;
-				}
-
-				.metric-last-updated {
-					margin-top: .25rem;
-				}
-
-				span.val {
-					color: #000;
-				}
-
-			}
-
-			h2 {
-				display: none;
-			}
-
 		}
-
 	}
 
-	.chart-legend {
-		margin-left: 0;
-
-		ul.pie-legend {
-			li:first-child {
-				span {
-					-webkit-print-color-adjust: exact;
-				}
-			}
-			li:last-child {
-				span {
-					-webkit-print-color-adjust: exact;
-				}
-			}
-		}
-
-	}
-
-	.alignment {
-		margin: 0;
-		padding: 3rem 1rem 0;
-		display: block;
-		text-align: left;
-		border: none;
-		page-break-before: always !important;
-		page-break-inside: avoid !important;
-		position: relative;
-
-		.printpage {
-			display: none;
-		}
-
-		.alignment-header {
-			margin-bottom: .5rem;
-			position: relative;
-			display: block;
-			margin-top: 5rem;
-			page-break-before: always;
-
-			&::before {
-				content: 'Aligned to';
-				display: inline-block;
-				margin-right: 7px;
-			}
-		}
+	section.alignment {
+		page-break-before: always;
+		padding-top: 0;
+		border-top: none;
 
 		.card {
-			background: transparent;
-			border: none;
-			box-shadow: none;
 			color: #000;
-			margin: .25rem 0 0;
+			font-size: 1.5rem;
+			line-height: 1.5;
 			width: 100%;
-			padding: .5rem 1rem 1rem;
+			margin: 1rem 0 0;
+			background: transparent;
+			border: 1px solid $color-app-light-grey;
+			page-break-inside: avoid;
 			position: relative;
-			display: block;
-			float: none;
-			page-break-inside: avoid !important;
-
-			+ .card {
-				margin-top: .25rem;
-			}
-
-			&.primary + .primary {
-				margin-top: .5rem;
-			}
-
-			&.flipped {
-				.face.back, .face.front {
-					transform: rotatey(180deg);
-				}
-			}
 
 			&.primary {
 				background: transparent;
-				border: 1px solid $color-app-grey;
-				box-shadow: none;
-				color: #000;
+				border: 1px solid #000;
+			}
 
-				.face {
-					border: none;
-					background: transparent;
-				}
-
+			&.primary .face {
+				background: transparent;
 			}
 
 			.card-block {
-				display: block;
-				position: relative;
-				text-align: left;
-				padding: 0;
-				min-height: 0;
+				padding: 1rem;
+				min-height: auto;
 
-				&.face {
-					display: block;
-					position: relative;
-					text-align: left;
-					min-height: 0;
-					font-size: 1.35rem;
-					line-height: 1.35;
-					border: none;
-
-					&.front,
-					&.back {
-						background: transparent;
-					}
-				}
-
-				.fa.fa-info-circle {
+				.fa {
 					display: none;
 				}
-
-				&.back {
-					transform: none;
-					text-align: left;
-
-					.card-text {
-						font-size: .8rem;
-						line-height: 1.25;
-						font-weight: 300;
-						font-style: italic;
-					}
-				}
 			}
-
 		}
 
-		&.personal-alignment, &.leadership-alignment {
+		.flip-card {
 
-			canvas {
-				width: 100% !important;
-				height: auto !important;
-			}
+			.face.back {
+				transform: rotateY(0);
+				background: transparent;
 
-			.chart-legend {
-				text-align: center;
-				max-width: none;
-				margin: 0 auto;
-				flex-flow: column nowrap;
-
-				.polararea-legend {
-					text-align: center;
-				}
-
-				&::after {
-					content: 'This goal is aligned with the bolded category/categories.';
-					display: block;
-					margin-top: 1rem;
-					font-style: italic;
-					font-size: .7rem;
+				.card-text {
+					font-size: 1.15rem;
 				}
 			}
 		}
 	}
-
 }
