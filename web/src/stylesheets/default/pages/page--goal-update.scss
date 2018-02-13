@@ -112,7 +112,7 @@ section.tracking-metrics-update {
 	margin: 0;
 	background: transparent;
 
-	> .card-headertracking-metrics-update-header {
+	> .card-title.tracking-metrics-update-header {
 		padding-bottom: 0;
 
 		> .tracking-metrics-label {
@@ -127,7 +127,7 @@ section.tracking-metrics-update {
 		margin: 0 0 .75rem;
 		padding-bottom: .75rem;
 
-		.card-headertracking-metric-update-header {
+		.card-title.tracking-metric-update-header {
 			background: lighten($color-app-light-grey, 25%);
 			border-top-left-radius: $border-radius-sm;
 			border-top-right-radius: $border-radius-sm;
