@@ -1,9 +1,9 @@
 {
-  "name": "Leadership-Resource-Development",
+  "name": "ldp-webdev",
   "repository": "git@github.com:VentureTech/ldp-webdev.git",
   "version": "1.6.0",
-  "group": "com.example",
-  "versionStatus": "SNAPSHOT",
+  "group": "com.lrsuccess",
+  "versionStatus": "RELEASE",
   "slack_token": "",
   "slack_channel": "",
   "slack_user": "",
