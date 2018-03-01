@@ -14,6 +14,7 @@
 	.goal-update-card {
 		background: transparent;
 		border: none;
+		margin-bottom: 2rem;
 	}
 
 }
@@ -82,7 +83,7 @@ div.prop.goal-progress {
 		margin-right: .5rem;
 		background: $color-white;
 		border-radius: $border-radius-sm;
-		flex: 1;
+		flex: 1 0 auto;
 	}
 
 }
