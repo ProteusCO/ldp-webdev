@@ -9,7 +9,6 @@ require('./gulp-tasks/styles');
 require('./gulp-tasks/javascript');
 require('./gulp-tasks/design');
 require('./gulp-tasks/favicons');
-require('./gulp-tasks/iconfont');
 require('./gulp-tasks/config');
 require('./gulp-tasks/artifact/zip');
 require('./gulp-tasks/artifact/publish');
