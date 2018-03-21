@@ -20,7 +20,6 @@
     "gulp-consolidate": "0.1.x",
     "gulp-favicons": "^2.2.6",
     "gulp-flatten": "^0.3.0",
-    "gulp-iconfont": "^9.0.0",
     "gulp-include": "~2.2.1",
     "gulp-inline-css": "^3.1.0",
     "gulp-remove-html-comments": "^1.0.1",
@@ -40,7 +39,7 @@
   "dependencies": {
     "autotrack": "^2.4.1",
     "bootstrap": "^4.0.0",
-    "bootstrap-tour": "^0.12.0",
+    "bootstrap-tour": "https://github.com/djacobi-venturetech/bootstrap-tour.git#v0.12.1",
     "jquery": "^3.2.1",
     "jquery.cookie": "^1.4.1",
     "popper.js": "^1.12.9",
